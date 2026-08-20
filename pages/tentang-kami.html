@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tentang Kami | PT BETAMI</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #03170d;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* =========================
+           HEADER
+        ========================= */
+
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px 7%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        z-index: 10;
+
+        background: linear-gradient(rgba(0, 0, 0, 0.45), transparent);
+      }
+
+      .logo {
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 5px;
+      }
+
+      .logo span {
+        color: #d5a84b;
+      }
+
+      .home {
+        color: white;
+        text-decoration: none;
+
+        border: 1px solid rgba(255, 255, 255, 0.5);
+
+        padding: 11px 22px;
+
+        border-radius: 5px;
+
+        transition: 0.3s;
+      }
+
+      .home:hover {
+        background: #d5a84b;
+        color: #03170d;
+        border-color: #d5a84b;
+      }
+
+      /* =========================
+           HERO
+        ========================= */
+
+      .hero {
+        position: relative;
+
+        width: 100%;
+        height: 720px;
+
+        overflow: hidden;
+      }
+
+      .hero img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        animation: zoomFoto 1.5s ease;
+      }
+
+      .hero::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 20, 11, 0.88),
+          rgba(0, 20, 11, 0.45),
+          rgba(0, 20, 11, 0.1)
+        );
+      }
+
+      .hero-content {
+        position: absolute;
+
+        z-index: 2;
+
+        left: 8%;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        max-width: 850px;
+
+        animation: masuk 1s ease;
+      }
+
+      .label {
+        color: #d5a84b;
+
+        letter-spacing: 6px;
+
+        font-size: 14px;
+
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(50px, 7vw, 90px);
+
+        line-height: 1.02;
+
+        margin-bottom: 25px;
+      }
+
+      .hero h1 span {
+        color: #d5a84b;
+      }
+
+      .hero p {
+        color: #e2e8e4;
+
+        font-size: 18px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.7;
+      }
+
+      /* =========================
+           SECTION
+        ========================= */
+
+      .section {
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding: 110px 30px;
+      }
+
+      .section-title {
+        font-size: 48px;
+
+        margin-bottom: 25px;
+
+        line-height: 1.2;
+      }
+
+      .section-text {
+        color: #aebbb3;
+
+        font-size: 17px;
+
+        line-height: 1.9;
+
+        max-width: 850px;
+      }
+
+      /* =========================
+           FOTO PROFIL
+        ========================= */
+
+      .foto-lebar {
+        width: 100%;
+
+        height: 470px;
+
+        margin-top: 55px;
+
+        overflow: hidden;
+
+        border-radius: 20px;
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .foto-lebar img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        transition: 0.8s;
+      }
+
+      .foto-lebar:hover img {
+        transform: scale(1.05);
+      }
+
+      /* =========================
+           3 KARTU
+        ========================= */
+
+      .cards {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 22px;
+
+        margin-top: 65px;
+      }
+
+      .card {
+        position: relative;
+
+        min-height: 330px;
+
+        overflow: hidden;
+
+        border-radius: 18px;
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        background: #092317;
+
+        transition: 0.4s;
+
+        animation: naik 1s ease both;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+
+      .card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+
+        border-color: #d5a84b;
+      }
+
+      .card img {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+
+        inset: 0;
+
+        object-fit: cover;
+
+        transition: 0.7s;
+      }
+
+      .card:hover img {
+        transform: scale(1.08);
+      }
+
+      .card::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.9));
+      }
+
+      .card-content {
+        position: absolute;
+
+        z-index: 2;
+
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+      }
+
+      .card-content h3 {
+        font-size: 25px;
+
+        color: #d5a84b;
+
+        margin-bottom: 10px;
+      }
+
+      .card-content p {
+        color: #d2dad5;
+
+        line-height: 1.7;
+
+        font-size: 14px;
+      }
+
+      /* =========================
+           PROFESIONAL
+        ========================= */
+
+      .professional {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 70px;
+
+        align-items: center;
+      }
+
+      .professional-image {
+        height: 500px;
+
+        overflow: hidden;
+
+        border-radius: 20px;
+      }
+
+      .professional-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        transition: 0.7s;
+      }
+
+      .professional-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .professional h2 {
+        font-size: 46px;
+
+        line-height: 1.2;
+
+        margin-bottom: 25px;
+      }
+
+      .professional h2 span {
+        color: #d5a84b;
+      }
+
+      .professional p {
+        color: #adb9b2;
+
+        font-size: 17px;
+
+        line-height: 1.9;
+      }
+
+      /* =========================
+           KEBERLANJUTAN
+        ========================= */
+
+      .sustainability {
+        position: relative;
+
+        min-height: 550px;
+
+        display: flex;
+
+        align-items: center;
+
+        overflow: hidden;
+
+        margin-top: 30px;
+      }
+
+      .sustainability img {
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        inset: 0;
+      }
+
+      .sustainability::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 25, 13, 0.92),
+          rgba(0, 25, 13, 0.5),
+          rgba(0, 25, 13, 0.25)
+        );
+      }
+
+      .sustainability-content {
+        position: relative;
+
+        z-index: 2;
+
+        max-width: 700px;
+
+        padding: 80px 8%;
+      }
+
+      .sustainability h2 {
+        font-size: 50px;
+
+        line-height: 1.15;
+
+        margin-bottom: 25px;
+      }
+
+      .sustainability h2 span {
+        color: #d5a84b;
+      }
+
+      .sustainability p {
+        color: #d2dad5;
+
+        font-size: 17px;
+
+        line-height: 1.9;
+      }
+
+      /* =========================
+           VISI MISI
+        ========================= */
+
+      .visi-misi {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+
+        margin-top: 60px;
+      }
+
+      .visi-box {
+        background: #092317;
+
+        padding: 40px;
+
+        border-left: 3px solid #d5a84b;
+
+        border-radius: 0 15px 15px 0;
+      }
+
+      .visi-box h3 {
+        font-size: 30px;
+
+        margin-bottom: 18px;
+
+        color: #d5a84b;
+      }
+
+      .visi-box p {
+        color: #aebbb3;
+
+        line-height: 1.8;
+      }
+
+      /* =========================
+           BUTTON
+        ========================= */
+
+      .button-area {
+        text-align: center;
+
+        margin-top: 80px;
+      }
+
+      .button {
+        display: inline-block;
+
+        padding: 15px 30px;
+
+        color: #d5a84b;
+
+        border: 1px solid #d5a84b;
+
+        text-decoration: none;
+
+        border-radius: 5px;
+
+        transition: 0.3s;
+      }
+
+      .button:hover {
+        background: #d5a84b;
+
+        color: #03170d;
+      }
+
+      /* =========================
+           FOOTER
+        ========================= */
+
+      footer {
+        text-align: center;
+
+        padding: 35px 20px;
+
+        background: #021109;
+
+        color: #718079;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+        font-size: 13px;
+
+        line-height: 1.8;
+      }
+
+      /* =========================
+           ANIMASI
+        ========================= */
+
+      @keyframes zoomFoto {
+        from {
+          transform: scale(1.12);
+          opacity: 0;
+        }
+
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes masuk {
+        from {
+          opacity: 0;
+
+          transform: translateY(-50%) translateX(-60px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(-50%) translateX(0);
+        }
+      }
+
+      @keyframes naik {
+        from {
+          opacity: 0;
+
+          transform: translateY(40px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================
+           HP
+        ========================= */
+
+      @media (max-width: 800px) {
+        header {
+          padding: 20px 6%;
+        }
+
+        .hero {
+          height: 600px;
+        }
+
+        .hero-content {
+          left: 7%;
+          right: 7%;
+        }
+
+        .hero h1 {
+          font-size: 50px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .professional {
+          grid-template-columns: 1fr;
+        }
+
+        .professional-image {
+          height: 350px;
+        }
+
+        .visi-misi {
+          grid-template-columns: 1fr;
+        }
+
+        .foto-lebar {
+          height: 350px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+     HEADER
+========================= -->
+
+    <header>
+      <div class="logo">BET<span>AMI</span></div>
+
+      <a href="../index.html" class="home"> ← Beranda </a>
+    </header>
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="hero">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Oil_palm_plantation_in_Indonesia.jpg"
+        alt="Perkebunan Kelapa Sawit Indonesia"
+      />
+
+      <div class="hero-content">
+        <div class="label">PT BETAMI</div>
+
+        <h1>
+          Tumbuh Bersama
+          <br />
+          <span>Kelapa Sawit</span>
+        </h1>
+
+        <p>Profesional • Bertanggung Jawab • Berkelanjutan</p>
+      </div>
+    </section>
+
+    <!-- =========================
+     TENTANG KAMI
+========================= -->
+
+    <section class="section">
+      <div class="label">TENTANG KAMI</div>
+
+      <h2 class="section-title">Mengenal PT BETAMI</h2>
+
+      <p class="section-text">
+        PT BETAMI merupakan perusahaan yang menjalankan kegiatan usaha dengan
+        mengedepankan profesionalisme, tanggung jawab dan keberlanjutan.
+
+        <br /><br />
+
+        Dalam kegiatan yang berkaitan dengan kelapa sawit, perusahaan
+        berkomitmen untuk menjaga kualitas operasional, memperhatikan lingkungan
+        serta membangun hubungan yang baik dengan masyarakat sekitar.
+      </p>
+
+      <!-- FOTO PERKEBUNAN -->
+
+      <div class="foto-lebar">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Oil_palm_plantation_in_Indonesia.jpg"
+          alt="Hamparan Perkebunan Kelapa Sawit"
+        />
+      </div>
+    </section>
+
+    <!-- =========================
+     3 FOTO
+========================= -->
+
+    <section class="section">
+      <div class="label">KEGIATAN KAMI</div>
+
+      <h2 class="section-title">
+        Perkebunan, keberlanjutan
+        <br />
+        dan profesionalisme.
+      </h2>
+
+      <p class="section-text">
+        Tiga hal yang menjadi bagian penting dalam pengelolaan kegiatan
+        perusahaan.
+      </p>
+
+      <div class="cards">
+        <!-- PERKEBUNAN -->
+
+        <div class="card">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Oil_palm_plantation_in_Indonesia.jpg"
+            alt="Perkebunan Kelapa Sawit"
+          />
+
+          <div class="card-content">
+            <h3>🌴 Perkebunan</h3>
+
+            <p>
+              Pengelolaan perkebunan secara terencana untuk mendukung kegiatan
+              operasional yang baik.
+            </p>
+          </div>
+        </div>
+
+        <!-- KEBERLANJUTAN -->
+
+        <div class="card">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Oil_Palm_nursery_beds_in_Kalangala_district.jpg"
+            alt="Bibit Kelapa Sawit"
+          />
+
+          <div class="card-content">
+            <h3>🌱 Keberlanjutan</h3>
+
+            <p>
+              Menjaga keseimbangan kegiatan usaha dengan perhatian terhadap
+              lingkungan dan sumber daya.
+            </p>
+          </div>
+        </div>
+
+        <!-- PROFESIONAL -->
+
+        <div class="card">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Kimanis_Sabah_Workers-in-Palm-Oil-Plantation-01.jpg"
+            alt="Pekerja Perkebunan Kelapa Sawit"
+          />
+
+          <div class="card-content">
+            <h3>👷 Profesional</h3>
+
+            <p>
+              Sumber daya manusia yang bekerja secara disiplin, aman dan
+              bertanggung jawab.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     PROFESIONALISME
+========================= -->
+
+    <section class="section">
+      <div class="professional">
+        <div class="professional-image">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Panen_Sawit.jpg"
+            alt="Kegiatan Panen Sawit"
+          />
+        </div>
+
+        <div>
+          <div class="label">PROFESIONALISME</div>
+
+          <h2>
+            Bekerja dengan
+            <span>tanggung jawab.</span>
+          </h2>
+
+          <p>
+            Kegiatan perkebunan membutuhkan perencanaan, ketelitian dan kerja
+            sama dari berbagai pihak.
+
+            <br /><br />
+
+            Profesionalisme menjadi bagian penting dalam menjaga kualitas
+            pekerjaan, keselamatan dan kelancaran kegiatan operasional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     KEBERLANJUTAN
+========================= -->
+
+    <section class="sustainability">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Oil_Palm_nursery_beds_in_Kalangala_district.jpg"
+        alt="Lingkungan dan Bibit Kelapa Sawit"
+      />
+
+      <div class="sustainability-content">
+        <div class="label">KEBERLANJUTAN</div>
+
+        <h2>
+          Menjaga alam,
+          <br />
+          <span>membangun masa depan.</span>
+        </h2>
+
+        <p>
+          Keberlanjutan menjadi bagian dari cara perusahaan melihat pertumbuhan
+          jangka panjang.
+
+          <br /><br />
+
+          Pengelolaan lingkungan, penggunaan sumber daya secara bertanggung
+          jawab, serta perhatian terhadap masyarakat menjadi bagian penting
+          dalam kegiatan perusahaan.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+     VISI MISI
+========================= -->
+
+    <section class="section">
+      <div class="label">ARAH PERUSAHAAN</div>
+
+      <h2 class="section-title">Visi & Misi</h2>
+
+      <div class="visi-misi">
+        <div class="visi-box">
+          <h3>Visi</h3>
+
+          <p>
+            Menjadi perusahaan yang berkembang secara profesional, terpercaya
+            dan berkelanjutan serta mampu menciptakan nilai jangka panjang.
+          </p>
+        </div>
+
+        <div class="visi-box">
+          <h3>Misi</h3>
+
+          <p>
+            Menjalankan kegiatan usaha dengan mengutamakan kualitas,
+            profesionalisme, keselamatan, tanggung jawab sosial dan kepedulian
+            terhadap lingkungan.
+          </p>
+        </div>
+      </div>
+
+      <div class="button-area">
+        <a href="../index.html" class="button"> ← Kembali ke Beranda </a>
+      </div>
+    </section>
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+      © 2026 PT BETAMI — All Rights Reserved
+
+      <br />
+
+      Foto menggunakan sumber berlisensi dari Wikimedia Commons. Pastikan
+      atribusi/lisensi dipertahankan jika website dipublikasikan.
+    </footer>
+  </body>
+</html>

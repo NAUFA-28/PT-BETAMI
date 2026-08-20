@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keberlanjutan | PT BETAMI</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #03170d;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 25px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            z-index: 10;
+
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.55),
+                transparent
+            );
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        .logo span {
+            color: #d5a84b;
+        }
+
+        .home {
+            color: white;
+            text-decoration: none;
+
+            border: 1px solid rgba(255,255,255,0.5);
+
+            padding: 11px 22px;
+
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .home:hover {
+            background: #d5a84b;
+            color: #03170d;
+            border-color: #d5a84b;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 680px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            animation: zoomFoto 1.5s ease;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,25,13,0.92),
+                    rgba(0,25,13,0.55),
+                    rgba(0,25,13,0.12)
+                );
+        }
+
+        .hero-content {
+            position: absolute;
+
+            z-index: 2;
+
+            left: 8%;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            max-width: 800px;
+
+            animation: masuk 1s ease;
+        }
+
+        .label {
+            color: #d5a84b;
+
+            letter-spacing: 6px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 85px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d5a84b;
+        }
+
+        .hero p {
+            color: #dce4df;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 110px 30px;
+        }
+
+        .section h2 {
+            font-size: 48px;
+
+            line-height: 1.2;
+
+            margin-bottom: 25px;
+        }
+
+        .section h2 span {
+            color: #d5a84b;
+        }
+
+        .text {
+            color: #aebbb3;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            max-width: 850px;
+        }
+
+        /* =========================
+           FOTO LEBAR
+        ========================= */
+
+        .wide-image {
+            width: 100%;
+            height: 500px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            margin-top: 60px;
+        }
+
+        .wide-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.8s;
+        }
+
+        .wide-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* =========================
+           3 PILAR
+        ========================= */
+
+        .pilar {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            margin-top: 60px;
+        }
+
+        .box {
+            background: #092317;
+
+            padding: 38px 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid
+                rgba(255,255,255,0.08);
+
+            transition: 0.4s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+
+            border-color: #d5a84b;
+        }
+
+        .icon {
+            font-size: 40px;
+
+            margin-bottom: 25px;
+        }
+
+        .box h3 {
+            color: #d5a84b;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .box p {
+            color: #aebbb3;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+        /* =========================
+           LINGKUNGAN
+        ========================= */
+
+        .environment {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .environment-image {
+            height: 500px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+        }
+
+        .environment-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.7s;
+        }
+
+        .environment-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .environment-content h2 {
+            font-size: 45px;
+
+            margin-bottom: 25px;
+
+            line-height: 1.2;
+        }
+
+        .environment-content h2 span {
+            color: #d5a84b;
+        }
+
+        .environment-content p {
+            color: #aebbb3;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+        /* =========================
+           MASYARAKAT / PEKERJA
+        ========================= */
+
+        .social {
+            position: relative;
+
+            min-height: 550px;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            margin-top: 30px;
+        }
+
+        .social img {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .social::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,20,11,0.93),
+                    rgba(0,20,11,0.58),
+                    rgba(0,20,11,0.12)
+                );
+        }
+
+        .social-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 700px;
+
+            padding: 80px 8%;
+        }
+
+        .social-content h2 {
+            font-size: 50px;
+
+            line-height: 1.15;
+
+            margin-bottom: 25px;
+        }
+
+        .social-content h2 span {
+            color: #d5a84b;
+        }
+
+        .social-content p {
+            color: #d4ddd8;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+        /* =========================
+           TUJUAN
+        ========================= */
+
+        .tujuan {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+
+            margin-top: 55px;
+        }
+
+        .tujuan-box {
+            padding: 35px;
+
+            background: #092317;
+
+            border-radius: 15px;
+
+            border-left: 3px solid #d5a84b;
+
+            transition: 0.3s;
+        }
+
+        .tujuan-box:hover {
+            transform: translateY(-6px);
+        }
+
+        .tujuan-box h3 {
+            color: #d5a84b;
+
+            margin-bottom: 12px;
+
+            font-size: 24px;
+        }
+
+        .tujuan-box p {
+            color: #aebbb3;
+
+            line-height: 1.8;
+        }
+
+        /* =========================
+           TOMBOL
+        ========================= */
+
+        .button-area {
+            text-align: center;
+
+            margin-top: 80px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            color: #d5a84b;
+
+            border: 1px solid #d5a84b;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #d5a84b;
+
+            color: #03170d;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 35px 20px;
+
+            background: #021109;
+
+            color: #718079;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        /* =========================
+           ANIMASI
+        ========================= */
+
+        @keyframes zoomFoto {
+
+            from {
+                opacity: 0;
+                transform: scale(1.12);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        @keyframes masuk {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(-50%)
+                    translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(-50%)
+                    translateX(0);
+            }
+
+        }
+
+        /* =========================
+           HP
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                height: 600px;
+            }
+
+            .hero-content {
+                left: 7%;
+                right: 7%;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .pilar {
+                grid-template-columns: 1fr;
+            }
+
+            .environment {
+                grid-template-columns: 1fr;
+            }
+
+            .environment-image {
+                height: 350px;
+            }
+
+            .tujuan {
+                grid-template-columns: 1fr;
+            }
+
+            .wide-image {
+                height: 350px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        BET<span>AMI</span>
+    </div>
+
+    <a href="../index.html" class="home">
+        ← Beranda
+    </a>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+     FOTO 1
+========================= -->
+
+<section class="hero">
+
+    <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/G47RP95AZhJijp6.jpg"
+        alt="Perkebunan Kelapa Sawit dan Gunung">
+
+    <div class="hero-content">
+
+        <div class="label">
+            PT BETAMI
+        </div>
+
+        <h1>
+            Masa Depan
+            <br>
+            <span>Yang Berkelanjutan</span>
+        </h1>
+
+        <p>
+            Menjaga keseimbangan antara lingkungan,
+            manusia dan pertumbuhan usaha.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PENGANTAR
+========================= -->
+
+<section class="section">
+
+    <div class="label">
+        KEBERLANJUTAN
+    </div>
+
+    <h2>
+        Tumbuh bersama
+        <span>lingkungan.</span>
+    </h2>
+
+    <p class="text">
+
+        Keberlanjutan merupakan bagian penting
+        dalam membangun kegiatan usaha untuk
+        jangka panjang.
+
+        <br><br>
+
+        Melalui pengelolaan yang bertanggung jawab,
+        perhatian terhadap lingkungan serta
+        hubungan yang baik dengan masyarakat,
+        perusahaan dapat terus menciptakan nilai
+        secara berkelanjutan.
+
+    </p>
+
+
+    <!-- FOTO 2 -->
+
+    <div class="wide-image">
+
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Oil_palm_Plantation_%282%29.JPG"
+            alt="Perkebunan Kelapa Sawit">
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     3 PILAR
+========================= -->
+
+<section class="section">
+
+    <div class="label">
+        TIGA PILAR
+    </div>
+
+    <h2>
+        Fokus utama
+        <span>keberlanjutan.</span>
+    </h2>
+
+    <p class="text">
+
+        Keberlanjutan dapat dibangun melalui
+        keseimbangan antara lingkungan,
+        manusia dan kegiatan usaha.
+
+    </p>
+
+
+    <div class="pilar">
+
+
+        <!-- LINGKUNGAN -->
+
+        <div class="box">
+
+            <div class="icon">
+                🌱
+            </div>
+
+            <h3>
+                Lingkungan
+            </h3>
+
+            <p>
+
+                Menjaga lingkungan dan menggunakan
+                sumber daya secara bijaksana menjadi
+                bagian penting dalam kegiatan
+                perkebunan.
+
+            </p>
+
+        </div>
+
+
+        <!-- MASYARAKAT -->
+
+        <div class="box">
+
+            <div class="icon">
+                🤝
+            </div>
+
+            <h3>
+                Masyarakat
+            </h3>
+
+            <p>
+
+                Membangun hubungan yang baik dengan
+                masyarakat melalui komunikasi,
+                kepedulian dan kerja sama.
+
+            </p>
+
+        </div>
+
+
+        <!-- PERTUMBUHAN -->
+
+        <div class="box">
+
+            <div class="icon">
+                📈
+            </div>
+
+            <h3>
+                Pertumbuhan
+            </h3>
+
+            <p>
+
+                Mendorong kegiatan usaha yang
+                bertanggung jawab agar dapat
+                berkembang dalam jangka panjang.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LINGKUNGAN
+     FOTO 3
+========================= -->
+
+<section class="section">
+
+    <div class="environment">
+
+
+        <div class="environment-image">
+
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Pepohonan_di_semak_belukar_%281%29.JPG"
+                alt="Pepohonan di Sekitar Perkebunan Sawit">
+
+        </div>
+
+
+        <div class="environment-content">
+
+            <div class="label">
+                LINGKUNGAN
+            </div>
+
+            <h2>
+                Menjaga alam untuk
+                <span>masa depan.</span>
+            </h2>
+
+            <p>
+
+                Lingkungan merupakan bagian penting
+                dari ekosistem perkebunan.
+
+                <br><br>
+
+                Pengelolaan sumber daya secara
+                bertanggung jawab serta perhatian
+                terhadap kondisi lingkungan menjadi
+                bagian penting dalam menjaga
+                keberlanjutan.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PEKERJA
+     FOTO 4
+========================= -->
+
+<section class="social">
+
+    <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Kimanis_Sabah_Workers-in-Palm-Oil-Plantation-02.jpg"
+        alt="Pekerja Perkebunan Kelapa Sawit">
+
+
+    <div class="social-content">
+
+        <div class="label">
+            SUMBER DAYA MANUSIA
+        </div>
+
+        <h2>
+            Manusia adalah bagian
+            <br>
+            <span>dari keberlanjutan.</span>
+        </h2>
+
+        <p>
+
+            Sumber daya manusia memiliki peran
+            penting dalam kegiatan operasional.
+
+            <br><br>
+
+            Profesionalisme, kerja sama dan
+            lingkungan kerja yang baik menjadi
+            bagian penting dalam mendukung
+            kegiatan perusahaan.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PERKEBUNAN
+     FOTO 5
+========================= -->
+
+<section class="section">
+
+    <div class="label">
+        PENGELOLAAN PERKEBUNAN
+    </div>
+
+    <h2>
+        Perkebunan yang
+        <span>bertanggung jawab.</span>
+    </h2>
+
+    <p class="text">
+
+        Pengelolaan perkebunan membutuhkan
+        perencanaan yang baik, perhatian terhadap
+        lingkungan dan penggunaan sumber daya
+        secara bijaksana.
+
+    </p>
+
+
+    <div class="wide-image">
+
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Jalan_dan_perkebunan.jpg"
+            alt="Jalan di Tengah Perkebunan Kelapa Sawit">
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     KOMITMEN
+========================= -->
+
+<section class="section">
+
+    <div class="label">
+        KOMITMEN JANGKA PANJANG
+    </div>
+
+    <h2>
+        Membangun nilai
+        <span>untuk masa depan.</span>
+    </h2>
+
+    <p class="text">
+
+        Keberlanjutan bukan hanya tentang
+        lingkungan, tetapi juga bagaimana
+        perusahaan dapat berkembang,
+        memberikan manfaat dan menjaga
+        hubungan yang baik dengan berbagai
+        pihak.
+
+    </p>
+
+
+    <div class="tujuan">
+
+
+        <div class="tujuan-box">
+
+            <h3>
+                🌿 Lingkungan
+            </h3>
+
+            <p>
+
+                Mendorong pengelolaan sumber daya
+                dan lingkungan secara bertanggung
+                jawab.
+
+            </p>
+
+        </div>
+
+
+        <div class="tujuan-box">
+
+            <h3>
+                👥 Masyarakat
+            </h3>
+
+            <p>
+
+                Menjaga hubungan yang baik dengan
+                masyarakat dan lingkungan sosial
+                sekitar.
+
+            </p>
+
+        </div>
+
+
+        <div class="tujuan-box">
+
+            <h3>
+                🏢 Operasional
+            </h3>
+
+            <p>
+
+                Mendukung kegiatan operasional yang
+                terencana, profesional dan
+                bertanggung jawab.
+
+            </p>
+
+        </div>
+
+
+        <div class="tujuan-box">
+
+            <h3>
+                📈 Masa Depan
+            </h3>
+
+            <p>
+
+                Membangun pertumbuhan jangka panjang
+                yang memberikan nilai secara
+                berkelanjutan.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- KEMBALI -->
+
+    <div class="button-area">
+
+        <a
+            href="../index.html"
+            class="button">
+
+            ← Kembali ke Beranda
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 PT BETAMI — All Rights Reserved
+
+    <br>
+
+    Foto: Wikimedia Commons.
+    Periksa lisensi dan atribusi masing-masing
+    foto sebelum website dipublikasikan.
+
+</footer>
+
+
+</body>
+
+</html>

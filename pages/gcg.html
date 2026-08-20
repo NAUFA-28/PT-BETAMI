@@ -1,0 +1,2430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tata Kelola | PT BETAMI</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#03170d;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:50;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.78),
+            transparent
+        );
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:5px;
+}
+
+.logo span{
+    color:#d5a84b;
+}
+
+.home{
+    color:#fff;
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    padding:11px 22px;
+
+    border-radius:6px;
+
+    transition:.3s;
+}
+
+.home:hover{
+    background:#d5a84b;
+    color:#03170d;
+    border-color:#d5a84b;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    height:620px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    animation:heroZoom 1.5s ease;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(1,18,10,.97),
+            rgba(1,22,13,.76),
+            rgba(1,20,12,.25)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(3,23,13,.95),
+            transparent 45%
+        );
+}
+
+.hero-content{
+    position:absolute;
+
+    z-index:2;
+
+    left:8%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    max-width:820px;
+
+    animation:heroText 1s ease;
+}
+
+.label{
+    color:#d5a84b;
+
+    letter-spacing:6px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(52px,7vw,88px);
+
+    line-height:1;
+
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    color:#d5a84b;
+}
+
+.hero p{
+    color:#d6dfda;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:690px;
+}
+
+
+/* =====================================================
+   DECORATION
+===================================================== */
+
+.hero-line{
+    width:100px;
+    height:2px;
+
+    background:#d5a84b;
+
+    margin-top:30px;
+
+    animation:lineGrow 1s ease .5s both;
+}
+
+
+/* =====================================================
+   MAIN SECTION
+===================================================== */
+
+.section{
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:105px 30px;
+}
+
+.section-title{
+    margin-bottom:55px;
+}
+
+.section-title h2{
+    font-size:48px;
+
+    line-height:1.15;
+}
+
+.section-title h2 span{
+    color:#d5a84b;
+}
+
+.section-title p{
+    max-width:760px;
+
+    color:#89978f;
+
+    line-height:1.9;
+
+    margin-top:20px;
+}
+
+
+/* =====================================================
+   INTRO GCG
+===================================================== */
+
+.gcg-intro{
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:45px;
+
+    margin-bottom:100px;
+}
+
+.intro-text{
+    padding:45px 0;
+}
+
+.intro-text h3{
+    font-size:34px;
+
+    line-height:1.3;
+
+    margin-bottom:22px;
+}
+
+.intro-text h3 span{
+    color:#d5a84b;
+}
+
+.intro-text p{
+    color:#aebbb3;
+
+    line-height:2;
+
+    font-size:16px;
+
+    margin-bottom:18px;
+}
+
+.intro-box{
+    position:relative;
+
+    min-height:350px;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b2a1b,
+            #06170e
+        );
+
+    border:1px solid rgba(213,168,75,.25);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    transition:.5s;
+}
+
+.intro-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(213,168,75,.15);
+
+    top:-70px;
+    right:-70px;
+}
+
+.intro-box:hover{
+    transform:translateY(-8px);
+
+    border-color:#d5a84b;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+.intro-number{
+    position:absolute;
+
+    top:30px;
+    right:35px;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    color:rgba(213,168,75,.12);
+}
+
+.intro-box small{
+    color:#d5a84b;
+
+    letter-spacing:3px;
+
+    font-size:11px;
+
+    margin-bottom:12px;
+}
+
+.intro-box h3{
+    font-size:29px;
+
+    margin-bottom:12px;
+}
+
+.intro-box p{
+    color:#89978f;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   GCG CARDS
+===================================================== */
+
+.gcg-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:24px;
+}
+
+.gcg-card{
+    position:relative;
+
+    min-height:365px;
+
+    background:#092317;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    cursor:pointer;
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+.gcg-card:hover{
+    transform:
+        translateY(-12px)
+        scale(1.01);
+
+    border-color:#d5a84b;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.38);
+}
+
+.gcg-card::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(2,17,10,.96)
+        );
+
+    pointer-events:none;
+}
+
+.card-image{
+    height:220px;
+
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .8s ease,
+        filter .5s ease;
+}
+
+.gcg-card:hover .card-image img{
+    transform:scale(1.1);
+
+    filter:saturate(1.15);
+}
+
+.card-content{
+    position:absolute;
+
+    z-index:3;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:28px;
+}
+
+.card-number{
+    color:#d5a84b;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+}
+
+.card-content h3{
+    font-size:23px;
+
+    line-height:1.25;
+
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#aebbb3;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-bottom:17px;
+}
+
+.card-button{
+    color:#d5a84b;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    transition:.3s;
+}
+
+.gcg-card:hover .card-button{
+    gap:13px;
+}
+
+
+/* =====================================================
+   GOVERNANCE PRINCIPLES
+===================================================== */
+
+.principles{
+    margin-top:120px;
+
+    padding-top:100px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+.principle-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:15px;
+}
+
+.principle{
+    min-height:190px;
+
+    padding:28px 20px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #092317,
+            #061a10
+        );
+
+    border:1px solid rgba(255,255,255,.07);
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.principle:hover{
+    transform:translateY(-8px);
+
+    border-color:#d5a84b;
+
+    background:#0b2a1b;
+}
+
+.principle-icon{
+    width:52px;
+    height:52px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#d5a84b;
+
+    font-size:22px;
+
+    border:1px solid rgba(213,168,75,.45);
+
+    background:rgba(213,168,75,.06);
+}
+
+.principle h4{
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.principle p{
+    color:#718079;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   LOGO / FRAMEWORK SECTION
+===================================================== */
+
+.framework{
+    margin-top:110px;
+
+    padding:65px 45px;
+
+    border-radius:25px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(213,168,75,.10),
+            transparent 35%
+        ),
+        #071c11;
+
+    border:
+        1px solid rgba(213,168,75,.16);
+}
+
+.framework-title{
+    text-align:center;
+
+    max-width:720px;
+
+    margin:0 auto 50px;
+}
+
+.framework-title .label{
+    margin-bottom:15px;
+}
+
+.framework-title h2{
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.framework-title h2 span{
+    color:#d5a84b;
+}
+
+.framework-title p{
+    color:#89978f;
+
+    line-height:1.8;
+}
+
+.logo-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+.logo-card{
+    min-height:150px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+    cursor:pointer;
+}
+
+.logo-card:hover{
+    transform:translateY(-7px);
+
+    border-color:#d5a84b;
+
+    background:
+        rgba(213,168,75,.06);
+}
+
+.logo-symbol{
+    width:60px;
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    border:
+        1px solid rgba(213,168,75,.35);
+
+    color:#d5a84b;
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+    background:
+        rgba(213,168,75,.05);
+
+    transition:.4s;
+}
+
+.logo-card:hover .logo-symbol{
+    transform:rotate(5deg) scale(1.08);
+
+    background:#d5a84b;
+
+    color:#03170d;
+}
+
+.logo-card h4{
+    font-size:14px;
+
+    margin-bottom:6px;
+}
+
+.logo-card p{
+    color:#718079;
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   DETAIL OVERLAY
+===================================================== */
+
+.detail-overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    background:
+        rgba(1,10,6,.88);
+
+    backdrop-filter:blur(12px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.detail-overlay.active{
+    display:flex;
+
+    opacity:1;
+}
+
+.detail-box{
+    width:100%;
+
+    max-width:900px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b281a,
+            #04170d
+        );
+
+    border:
+        1px solid rgba(213,168,75,.3);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.6);
+
+    transform:
+        translateY(50px)
+        scale(.96);
+
+    opacity:0;
+
+    transition:
+        transform .55s
+        cubic-bezier(.22,1,.36,1),
+        opacity .4s;
+}
+
+.detail-overlay.active .detail-box{
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity:1;
+}
+
+.detail-head{
+    padding:35px 40px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    align-items:flex-start;
+}
+
+.detail-category{
+    color:#d5a84b;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+}
+
+.detail-head h2{
+    font-size:36px;
+
+    line-height:1.2;
+}
+
+.close-detail{
+    width:42px;
+    height:42px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.close-detail:hover{
+    background:#d5a84b;
+
+    color:#03170d;
+
+    transform:rotate(90deg);
+}
+
+.detail-body{
+    padding:10px 40px 40px;
+}
+
+.detail-body p{
+    color:#aebbb3;
+
+    line-height:2;
+
+    font-size:16px;
+
+    margin-bottom:20px;
+}
+
+.detail-highlight{
+    margin:30px 0;
+
+    padding:25px;
+
+    border-left:
+        3px solid #d5a84b;
+
+    background:
+        rgba(213,168,75,.05);
+
+    color:#d6dfda;
+
+    line-height:1.8;
+}
+
+.detail-back{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:13px 20px;
+
+    border:1px solid #d5a84b;
+
+    border-radius:6px;
+
+    background:transparent;
+
+    color:#d5a84b;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.detail-back:hover{
+    background:#d5a84b;
+
+    color:#03170d;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+    margin-top:100px;
+
+    padding:70px 40px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a2919,
+            #05170d
+        );
+
+    border:
+        1px solid rgba(213,168,75,.15);
+}
+
+.cta h2{
+    font-size:36px;
+
+    margin-bottom:15px;
+}
+
+.cta h2 span{
+    color:#d5a84b;
+}
+
+.cta p{
+    color:#89978f;
+
+    max-width:650px;
+
+    margin:0 auto 28px;
+
+    line-height:1.8;
+}
+
+.cta-button{
+    display:inline-block;
+
+    color:#03170d;
+
+    background:#d5a84b;
+
+    text-decoration:none;
+
+    padding:14px 25px;
+
+    border-radius:6px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.cta-button:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(213,168,75,.2);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    margin-top:100px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:#021109;
+
+    color:#718079;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes heroZoom{
+
+    from{
+        opacity:0;
+        transform:scale(1.12);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes heroText{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(-50%)
+            translateX(-60px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(-50%)
+            translateX(0);
+    }
+}
+
+@keyframes lineGrow{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100px;
+    }
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media(max-width:1000px){
+
+    .gcg-intro{
+        grid-template-columns:1fr;
+    }
+
+    .gcg-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .principle-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .logo-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE HP
+===================================================== */
+
+@media(max-width:600px){
+
+    header{
+        padding:20px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .home{
+        padding:9px 14px;
+
+        font-size:12px;
+    }
+
+    .hero{
+        height:570px;
+    }
+
+    .hero-content{
+        left:7%;
+        right:7%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .section{
+        padding:75px 20px;
+    }
+
+    .section-title h2{
+        font-size:37px;
+    }
+
+    .intro-text{
+        padding:10px 0;
+    }
+
+    .intro-text h3{
+        font-size:28px;
+    }
+
+    .intro-box{
+        min-height:300px;
+    }
+
+    .gcg-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gcg-card{
+        min-height:340px;
+    }
+
+    .principles{
+        margin-top:80px;
+
+        padding-top:70px;
+    }
+
+    .principle-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .principle{
+        min-height:175px;
+    }
+
+    .framework{
+        padding:45px 20px;
+    }
+
+    .framework-title h2{
+        font-size:30px;
+    }
+
+    .logo-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .logo-card{
+        min-height:140px;
+
+        padding:18px 10px;
+    }
+
+    .detail-overlay{
+        padding:12px;
+    }
+
+    .detail-box{
+        max-height:94vh;
+
+        border-radius:20px;
+    }
+
+    .detail-head{
+        padding:25px 22px 15px;
+    }
+
+    .detail-head h2{
+        font-size:27px;
+    }
+
+    .detail-body{
+        padding:10px 22px 28px;
+    }
+
+    .detail-body p{
+        font-size:14px;
+    }
+
+    .cta{
+        padding:50px 22px;
+    }
+
+    .cta h2{
+        font-size:29px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="logo">
+        BET<span>AMI</span>
+    </div>
+
+    <a
+        href="../index.html"
+        class="home">
+
+        ← Beranda
+
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <img
+        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=85"
+        alt="Gedung dan ruang kerja perusahaan">
+
+    <div class="hero-content">
+
+        <div class="label">
+            PT BETAMI
+        </div>
+
+        <h1>
+            Tata Kelola
+            <br>
+
+            <span>Good Corporate Governance</span>
+        </h1>
+
+        <p>
+            Membangun tata kelola perusahaan yang
+            transparan, bertanggung jawab,
+            berintegritas dan berorientasi pada
+            keberlanjutan.
+        </p>
+
+        <div class="hero-line"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="section" id="gcg-home">
+
+
+    <!-- INTRO -->
+
+    <section class="gcg-intro reveal">
+
+        <div class="intro-text">
+
+            <div class="label">
+                GOVERNANCE
+            </div>
+
+            <h3>
+                Tata kelola yang baik
+                untuk <span>masa depan.</span>
+            </h3>
+
+            <p>
+                Tata Kelola Perusahaan yang Baik atau
+                Good Corporate Governance merupakan
+                bagian penting dalam menjalankan
+                kegiatan perusahaan secara profesional.
+            </p>
+
+            <p>
+                Prinsip tata kelola membantu membangun
+                kepercayaan, memperkuat akuntabilitas
+                dan memastikan proses pengambilan
+                keputusan dilakukan secara bertanggung
+                jawab.
+            </p>
+
+        </div>
+
+
+        <div class="intro-box">
+
+            <div class="intro-number">
+                GCG
+            </div>
+
+            <small>
+                PT BETAMI
+            </small>
+
+            <h3>
+                Governance
+                <span>with Integrity.</span>
+            </h3>
+
+            <p>
+                Integritas, transparansi dan
+                tanggung jawab menjadi fondasi
+                dalam menjalankan perusahaan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         GCG CARDS
+    ================================================= -->
+
+    <section>
+
+        <div class="section-title reveal">
+
+            <div class="label">
+                TATA KELOLA
+            </div>
+
+            <h2>
+                Pilar
+                <span>GCG.</span>
+            </h2>
+
+            <p>
+                Pelajari berbagai aspek tata kelola
+                perusahaan melalui informasi berikut.
+                Setiap bagian dapat dibuka untuk
+                melihat penjelasan lebih lengkap.
+            </p>
+
+        </div>
+
+
+        <div class="gcg-grid">
+
+
+            <!-- 01 -->
+
+            <article
+                class="gcg-card reveal"
+                onclick="bukaDetail('pedoman')">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=85"
+                        alt="Dokumen tata kelola">
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        01 / GOVERNANCE
+                    </div>
+
+                    <h3>
+                        Pedoman Tata Kelola
+                    </h3>
+
+                    <p>
+                        Landasan dan pedoman dalam
+                        menjalankan tata kelola perusahaan.
+                    </p>
+
+                    <div class="card-button">
+                        Buka Detail →
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article
+                class="gcg-card reveal"
+                onclick="bukaDetail('transparansi')">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+                        alt="Rapat perusahaan">
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        02 / TRANSPARENCY
+                    </div>
+
+                    <h3>
+                        Transparansi
+                    </h3>
+
+                    <p>
+                        Mendorong keterbukaan informasi
+                        yang relevan dan dapat dipercaya.
+                    </p>
+
+                    <div class="card-button">
+                        Buka Detail →
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article
+                class="gcg-card reveal"
+                onclick="bukaDetail('akuntabilitas')">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
+                        alt="Kerja tim perusahaan">
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        03 / ACCOUNTABILITY
+                    </div>
+
+                    <h3>
+                        Akuntabilitas
+                    </h3>
+
+                    <p>
+                        Menjelaskan tanggung jawab,
+                        fungsi dan peran dalam perusahaan.
+                    </p>
+
+                    <div class="card-button">
+                        Buka Detail →
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article
+                class="gcg-card reveal"
+                onclick="bukaDetail('etika')">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+                        alt="Kerja sama tim">
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        04 / INTEGRITY
+                    </div>
+
+                    <h3>
+                        Etika & Integritas
+                    </h3>
+
+                    <p>
+                        Membangun budaya kerja yang
+                        menjunjung integritas dan etika.
+                    </p>
+
+                    <div class="card-button">
+                        Buka Detail →
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 05 -->
+
+            <article
+                class="gcg-card reveal"
+                onclick="bukaDetail('risiko')">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85"
+                        alt="Manajemen risiko">
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        05 / RISK
+                    </div>
+
+                    <h3>
+                        Manajemen Risiko
+                    </h3>
+
+                    <p>
+                        Mengenali dan mengelola berbagai
+                        risiko dalam kegiatan perusahaan.
+                    </p>
+
+                    <div class="card-button">
+                        Buka Detail →
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 06 -->
+
+            <article
+                class="gcg-card reveal"
+                onclick="bukaDetail('keberlanjutan')">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=85"
+                        alt="Keberlanjutan lingkungan">
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        06 / SUSTAINABILITY
+                    </div>
+
+                    <h3>
+                        Keberlanjutan
+                    </h3>
+
+                    <p>
+                        Mengintegrasikan aspek ekonomi,
+                        sosial dan lingkungan.
+                    </p>
+
+                    <div class="card-button">
+                        Buka Detail →
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PRINCIPLES
+    ================================================= -->
+
+    <section class="principles">
+
+        <div class="section-title reveal">
+
+            <div class="label">
+                PRINSIP UTAMA
+            </div>
+
+            <h2>
+                Lima prinsip
+                <span>GCG.</span>
+            </h2>
+
+            <p>
+                Prinsip-prinsip berikut menjadi
+                dasar dalam membangun tata kelola
+                perusahaan yang sehat.
+            </p>
+
+        </div>
+
+
+        <div class="principle-grid">
+
+
+            <div class="principle reveal">
+
+                <div class="principle-icon">
+                    ◇
+                </div>
+
+                <h4>
+                    Transparansi
+                </h4>
+
+                <p>
+                    Keterbukaan informasi
+                    yang relevan.
+                </p>
+
+            </div>
+
+
+            <div class="principle reveal">
+
+                <div class="principle-icon">
+                    ✓
+                </div>
+
+                <h4>
+                    Akuntabilitas
+                </h4>
+
+                <p>
+                    Kejelasan fungsi dan
+                    tanggung jawab.
+                </p>
+
+            </div>
+
+
+            <div class="principle reveal">
+
+                <div class="principle-icon">
+                    ⚖
+                </div>
+
+                <h4>
+                    Responsibilitas
+                </h4>
+
+                <p>
+                    Tanggung jawab terhadap
+                    kegiatan perusahaan.
+                </p>
+
+            </div>
+
+
+            <div class="principle reveal">
+
+                <div class="principle-icon">
+                    ◎
+                </div>
+
+                <h4>
+                    Independensi
+                </h4>
+
+                <p>
+                    Pengelolaan secara
+                    profesional.
+                </p>
+
+            </div>
+
+
+            <div class="principle reveal">
+
+                <div class="principle-icon">
+                    +
+                </div>
+
+                <h4>
+                    Kewajaran
+                </h4>
+
+                <p>
+                    Perlakuan yang adil
+                    dan seimbang.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FRAMEWORK / LOGO
+    ================================================= -->
+
+    <section class="framework reveal">
+
+        <div class="framework-title">
+
+            <div class="label">
+                GOVERNANCE FRAMEWORK
+            </div>
+
+            <h2>
+                Ekosistem
+                <span>Tata Kelola.</span>
+            </h2>
+
+            <p>
+                Elemen-elemen penting yang saling
+                mendukung dalam membangun tata kelola
+                perusahaan yang baik.
+            </p>
+
+        </div>
+
+
+        <div class="logo-grid">
+
+
+            <div
+                class="logo-card"
+                onclick="bukaDetail('direksi')">
+
+                <div class="logo-symbol">
+                    ◈
+                </div>
+
+                <h4>
+                    Direksi
+                </h4>
+
+                <p>
+                    Pengelolaan perusahaan
+                </p>
+
+            </div>
+
+
+            <div
+                class="logo-card"
+                onclick="bukaDetail('komisaris')">
+
+                <div class="logo-symbol">
+                    ◉
+                </div>
+
+                <h4>
+                    Komisaris
+                </h4>
+
+                <p>
+                    Pengawasan perusahaan
+                </p>
+
+            </div>
+
+
+            <div
+                class="logo-card"
+                onclick="bukaDetail('audit')">
+
+                <div class="logo-symbol">
+                    ⌕
+                </div>
+
+                <h4>
+                    Audit
+                </h4>
+
+                <p>
+                    Pengawasan & evaluasi
+                </p>
+
+            </div>
+
+
+            <div
+                class="logo-card"
+                onclick="bukaDetail('kepatuhan')">
+
+                <div class="logo-symbol">
+                    ✓
+                </div>
+
+                <h4>
+                    Kepatuhan
+                </h4>
+
+                <p>
+                    Compliance perusahaan
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CTA
+    ================================================= -->
+
+    <section class="cta reveal">
+
+        <div class="label">
+            PT BETAMI
+        </div>
+
+        <h2>
+            Tata kelola untuk
+            <span>masa depan.</span>
+        </h2>
+
+        <p>
+            Tata kelola yang baik bukan hanya
+            mengenai aturan, tetapi juga mengenai
+            budaya, integritas dan tanggung jawab
+            dalam setiap keputusan.
+        </p>
+
+        <a
+            href="../index.html"
+            class="cta-button">
+
+            Kembali ke Beranda
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     DETAIL MODAL
+===================================================== -->
+
+<div
+    class="detail-overlay"
+    id="detailOverlay"
+    onclick="klikOverlay(event)">
+
+    <div class="detail-box">
+
+        <div class="detail-head">
+
+            <div>
+
+                <div
+                    class="detail-category"
+                    id="detailCategory">
+
+                    GOVERNANCE
+
+                </div>
+
+                <h2 id="detailTitle">
+                    Detail Tata Kelola
+                </h2>
+
+            </div>
+
+            <button
+                class="close-detail"
+                onclick="tutupDetail()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="detail-body">
+
+            <div id="detailContent">
+
+            </div>
+
+            <button
+                class="detail-back"
+                onclick="tutupDetail()">
+
+                ← Kembali
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 PT BETAMI — All Rights Reserved
+
+    <br>
+
+    Tata Kelola Perusahaan / Good Corporate Governance
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   DATA DETAIL
+===================================================== */
+
+const detailData = {
+
+    pedoman:{
+        category:"01 / GOVERNANCE",
+        title:"Pedoman Tata Kelola",
+        content:`
+
+            <p>
+                Pedoman tata kelola menjadi landasan
+                dalam menjalankan kegiatan perusahaan
+                secara terarah, profesional dan
+                bertanggung jawab.
+            </p>
+
+            <p>
+                Pedoman tersebut membantu memberikan
+                kejelasan mengenai prinsip, fungsi,
+                tanggung jawab dan proses yang
+                diperlukan dalam pengelolaan perusahaan.
+            </p>
+
+            <div class="detail-highlight">
+                Tata kelola yang baik membantu
+                perusahaan membangun proses kerja
+                yang konsisten, transparan dan
+                bertanggung jawab.
+            </div>
+
+            <p>
+                Penerapan pedoman dilakukan dengan
+                memperhatikan kebutuhan perusahaan
+                serta prinsip tata kelola yang baik.
+            </p>
+
+        `
+    },
+
+
+    transparansi:{
+        category:"02 / TRANSPARENCY",
+        title:"Transparansi",
+        content:`
+
+            <p>
+                Transparansi merupakan prinsip yang
+                mendorong keterbukaan informasi
+                yang relevan dan dapat dipahami
+                oleh pihak yang berkepentingan.
+            </p>
+
+            <p>
+                Keterbukaan informasi membantu
+                membangun kepercayaan dan mendukung
+                proses pengambilan keputusan yang
+                lebih baik.
+            </p>
+
+            <div class="detail-highlight">
+                Informasi perusahaan disampaikan
+                secara bertanggung jawab dengan
+                memperhatikan ketentuan dan
+                kepentingan perusahaan.
+            </div>
+
+        `
+    },
+
+
+    akuntabilitas:{
+        category:"03 / ACCOUNTABILITY",
+        title:"Akuntabilitas",
+        content:`
+
+            <p>
+                Akuntabilitas berkaitan dengan
+                kejelasan fungsi, peran dan
+                tanggung jawab setiap bagian
+                dalam perusahaan.
+            </p>
+
+            <p>
+                Setiap tugas perlu dijalankan
+                secara bertanggung jawab sehingga
+                proses kerja dapat dipantau dan
+                dievaluasi.
+            </p>
+
+            <div class="detail-highlight">
+                Kejelasan tanggung jawab menjadi
+                salah satu fondasi penting dalam
+                menjaga kualitas tata kelola.
+            </div>
+
+        `
+    },
+
+
+    etika:{
+        category:"04 / INTEGRITY",
+        title:"Etika & Integritas",
+        content:`
+
+            <p>
+                Integritas merupakan nilai penting
+                dalam membangun budaya perusahaan
+                yang sehat.
+            </p>
+
+            <p>
+                Setiap individu di lingkungan
+                perusahaan diharapkan menjalankan
+                tugas secara jujur, profesional
+                dan bertanggung jawab.
+            </p>
+
+            <div class="detail-highlight">
+                Integritas dimulai dari keputusan
+                dan tindakan yang dilakukan secara
+                konsisten, bahkan ketika tidak
+                ada yang melihat.
+            </div>
+
+        `
+    },
+
+
+    risiko:{
+        category:"05 / RISK MANAGEMENT",
+        title:"Manajemen Risiko",
+        content:`
+
+            <p>
+                Manajemen risiko merupakan proses
+                untuk mengenali, menilai dan
+                mengelola berbagai risiko yang
+                dapat memengaruhi kegiatan perusahaan.
+            </p>
+
+            <p>
+                Pengelolaan risiko membantu
+                perusahaan mempersiapkan langkah
+                yang tepat dalam menghadapi
+                berbagai kondisi.
+            </p>
+
+            <div class="detail-highlight">
+                Risiko yang dikelola dengan baik
+                dapat membantu perusahaan menjaga
+                keberlangsungan kegiatan operasional.
+            </div>
+
+        `
+    },
+
+
+    keberlanjutan:{
+        category:"06 / SUSTAINABILITY",
+        title:"Keberlanjutan",
+        content:`
+
+            <p>
+                Keberlanjutan merupakan bagian
+                penting dalam perjalanan perusahaan
+                untuk membangun nilai jangka panjang.
+            </p>
+
+            <p>
+                Aspek ekonomi, sosial dan lingkungan
+                perlu diperhatikan secara seimbang
+                dalam menjalankan kegiatan perusahaan.
+            </p>
+
+            <div class="detail-highlight">
+                Pertumbuhan yang berkelanjutan
+                membutuhkan keseimbangan antara
+                kinerja perusahaan, masyarakat
+                dan lingkungan.
+            </div>
+
+        `
+    },
+
+
+    direksi:{
+        category:"GOVERNANCE FRAMEWORK",
+        title:"Direksi",
+        content:`
+
+            <p>
+                Direksi memiliki peran penting
+                dalam pengelolaan dan pelaksanaan
+                kegiatan perusahaan.
+            </p>
+
+            <p>
+                Pengelolaan dilakukan dengan
+                memperhatikan tujuan perusahaan,
+                ketentuan yang berlaku serta
+                kepentingan jangka panjang.
+            </p>
+
+        `
+    },
+
+
+    komisaris:{
+        category:"GOVERNANCE FRAMEWORK",
+        title:"Komisaris",
+        content:`
+
+            <p>
+                Komisaris memiliki fungsi
+                pengawasan terhadap pengelolaan
+                perusahaan yang dilakukan oleh
+                Direksi.
+            </p>
+
+            <p>
+                Fungsi pengawasan membantu menjaga
+                agar pengelolaan perusahaan berjalan
+                sesuai dengan prinsip tata kelola
+                yang baik.
+            </p>
+
+        `
+    },
+
+
+    audit:{
+        category:"GOVERNANCE FRAMEWORK",
+        title:"Audit",
+        content:`
+
+            <p>
+                Audit merupakan bagian penting
+                dalam proses evaluasi dan
+                pengawasan kegiatan perusahaan.
+            </p>
+
+            <p>
+                Proses audit dapat membantu
+                memberikan informasi mengenai
+                kondisi dan efektivitas proses
+                yang berjalan.
+            </p>
+
+            <div class="detail-highlight">
+                Evaluasi yang baik membantu
+                perusahaan melakukan perbaikan
+                secara berkelanjutan.
+            </div>
+
+        `
+    },
+
+
+    kepatuhan:{
+        category:"GOVERNANCE FRAMEWORK",
+        title:"Kepatuhan",
+        content:`
+
+            <p>
+                Kepatuhan merupakan komitmen untuk
+                menjalankan kegiatan perusahaan
+                sesuai dengan ketentuan dan
+                kebijakan yang berlaku.
+            </p>
+
+            <p>
+                Budaya kepatuhan membantu menjaga
+                proses kerja agar dilakukan secara
+                tertib dan bertanggung jawab.
+            </p>
+
+        `
+    }
+
+};
+
+
+/* =====================================================
+   BUKA DETAIL
+===================================================== */
+
+function bukaDetail(id){
+
+    const data = detailData[id];
+
+    if(!data){
+        return;
+    }
+
+    document.getElementById(
+        "detailCategory"
+    ).textContent = data.category;
+
+    document.getElementById(
+        "detailTitle"
+    ).textContent = data.title;
+
+    document.getElementById(
+        "detailContent"
+    ).innerHTML = data.content;
+
+
+    const overlay =
+        document.getElementById(
+            "detailOverlay"
+        );
+
+    overlay.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+
+        overlay.classList.add("active");
+
+    });
+
+}
+
+
+/* =====================================================
+   TUTUP DETAIL
+===================================================== */
+
+function tutupDetail(){
+
+    const overlay =
+        document.getElementById(
+            "detailOverlay"
+        );
+
+    overlay.classList.remove("active");
+
+    setTimeout(() => {
+
+        overlay.style.display = "none";
+
+        document.body.style.overflow = "";
+
+    },400);
+
+}
+
+
+/* =====================================================
+   KLIK DI LUAR MODAL
+===================================================== */
+
+function klikOverlay(event){
+
+    if(
+        event.target ===
+        document.getElementById(
+            "detailOverlay"
+        )
+    ){
+
+        tutupDetail();
+
+    }
+
+}
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            tutupDetail();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>
