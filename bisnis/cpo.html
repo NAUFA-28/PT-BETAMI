@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harga CPO - PT BETAMI</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        background: #071a12;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+        max-width: 500px;
+        background: #0d2b1d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 35px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
+        color: #b7d8b0;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        color: #b8c9c0;
+        margin-bottom: 30px;
+      }
+
+      .price-box {
+        background: #123a27;
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+
+      .label {
+        color: #b8c9c0;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      #harga {
+        font-size: 38px;
+        font-weight: bold;
+      }
+
+      #status {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #b8c9c0;
+      }
+
+      button {
+        border: none;
+        border-radius: 10px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="logo">PT BETAMI</div>
+
+      <h1>Harga CPO</h1>
+
+      <p class="subtitle">Harga minyak sawit terkini</p>
+
+      <div class="price-box">
+        <div class="label">HARGA CPO</div>
+
+        <div id="harga">Memuat...</div>
+
+        <div id="status">Menghubungkan ke server...</div>
+      </div>
+
+      <button onclick="ambilHarga()">🔄 Perbarui Harga</button>
+    </div>
+
+    <script>
+      async function ambilHarga() {
+        const harga = document.getElementById("harga");
+        const status = document.getElementById("status");
+
+        harga.textContent = "Memuat...";
+        status.textContent = "Menghubungkan ke server...";
+
+        try {
+          const response = await fetch("/api/cpo");
+          const result = await response.json();
+
+          console.log("RESPON CPO:", result);
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.error || "Gagal mengambil harga CPO");
+          }
+
+          const data = result.data;
+
+          /*
+          Bagian ini menyesuaikan data dari API.
+          Kita cek beberapa kemungkinan format harga.
+        */
+          let nilaiHarga = null;
+
+          if (data?.rates?.CPO !== undefined) {
+            nilaiHarga = data.rates.CPO;
+          } else if (data?.price !== undefined) {
+            nilaiHarga = data.price;
+          } else if (data?.data?.price !== undefined) {
+            nilaiHarga = data.data.price;
+          }
+
+          if (nilaiHarga === null) {
+            harga.textContent = "Data tidak ditemukan";
+            status.textContent =
+              "API terhubung, tetapi format harga belum cocok.";
+            return;
+          }
+
+          harga.textContent = "$ " + Number(nilaiHarga).toLocaleString("en-US");
+
+          status.textContent =
+            "Terakhir diperbarui: " + new Date().toLocaleString("id-ID");
+        } catch (error) {
+          console.error(error);
+
+          harga.textContent = "Gagal";
+
+          status.textContent = error.message;
+        }
+      }
+
+      ambilHarga();
+
+      setInterval(ambilHarga, 300000);
+    </script>
+  </body>
+</html>

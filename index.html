@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PT BETAMI — ustainabe Palm Oil ExcellenceS</title>
+  <title>PT BETAMI — Sustainable Palm Oil Excellence</title>
     <meta
       name="description"
       content="PT BETAMI — Perusahaan perkebunan & pengolahan kelapa sawit terintegrasi, berkelanjutan, dan bersertifikasi RSPO/ISPO."
@@ -446,17 +446,100 @@
         align-items: center;
         gap: 4px;
       }
+      .menu > li {
+        position: relative;
+      }
       .menu > li > a {
-        padding: 11px 16px;
-        font-size: 0.79rem;
-        font-weight: 600;
-        letter-spacing: 0.13em;
+        padding: 11px 14px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.10em;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.85);
         border-radius: 40px;
         transition: 0.35s;
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 7px;
         position: relative;
+        white-space: nowrap;
+      }
+      .menu > li.has-drop > a::after {
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 0.55rem;
+        opacity: 0.65;
+        transition: transform .3s ease;
+      }
+      .menu > li.has-drop:hover > a::after,
+      .menu > li.has-drop:focus-within > a::after {
+        transform: rotate(180deg);
+      }
+      .menu-dropdown {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        min-width: 245px;
+        padding: 10px;
+        border-radius: 18px;
+        background: rgba(3, 33, 15, 0.97);
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        box-shadow: 0 28px 70px rgba(0,0,0,.28);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: .28s var(--ease);
+        z-index: 4000;
+      }
+      .menu > li:hover > .menu-dropdown,
+      .menu > li:focus-within > .menu-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      .menu-dropdown li a {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 11px 12px;
+        border-radius: 11px;
+        color: rgba(255,255,255,.82);
+        font-size: .76rem;
+        font-weight: 600;
+        letter-spacing: .03em;
+        transition: .25s ease;
+      }
+      .menu-dropdown li a i {
+        width: 26px;
+        color: var(--gold2);
+        text-align: center;
+      }
+      .menu-dropdown li a:hover {
+        background: rgba(212,175,55,.12);
+        color: var(--gold2);
+        transform: translateX(3px);
+      }
+      header.scrolled .menu-dropdown {
+        background: rgba(255,255,255,.98);
+        border-color: rgba(3,33,15,.10);
+        box-shadow: 0 28px 70px rgba(3,33,15,.18);
+      }
+      header.scrolled .menu-dropdown li a {
+        color: var(--g800);
+      }
+      header.scrolled .menu-dropdown li a:hover {
+        color: var(--gold3);
+        background: rgba(212,175,55,.12);
+      }
+      .menu-dropdown .drop-title {
+        padding: 8px 12px 6px;
+        color: var(--gold);
+        font-size: .63rem;
+        font-weight: 800;
+        letter-spacing: .16em;
+        text-transform: uppercase;
       }
       .menu > li > a:hover,
       .menu > li > a.active {
@@ -500,6 +583,147 @@
       }
       .btn-login:hover {
         transform: translateY(-3px) scale(1.03);
+      }
+
+      /* ================= SEARCH NAVIGATION ================= */
+      .nav-search-wrap {
+        position: relative;
+      }
+      .search-trigger {
+        min-width: 46px;
+        height: 46px;
+        padding: 0 16px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border: 1px solid rgba(212,175,55,.42);
+        background: rgba(255,255,255,.10);
+        color: #fff;
+        font-size: .78rem;
+        font-weight: 800;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: .35s var(--ease);
+      }
+      .search-trigger:hover, .search-trigger.open {
+        color: var(--g900);
+        background: linear-gradient(120deg,var(--gold3),var(--gold2));
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px -18px rgba(212,175,55,.9);
+      }
+      header.scrolled .search-trigger {
+        color: var(--g800);
+        background: rgba(3,33,15,.04);
+        border-color: rgba(3,33,15,.12);
+      }
+      header.scrolled .search-trigger:hover, header.scrolled .search-trigger.open {
+        color: var(--g900);
+        background: linear-gradient(120deg,var(--gold3),var(--gold2));
+      }
+      .search-panel {
+        position: absolute;
+        top: calc(100% + 14px);
+        right: 0;
+        width: min(430px, calc(100vw - 36px));
+        padding: 14px;
+        border: 1px solid rgba(212,175,55,.25);
+        border-radius: 22px;
+        background: rgba(3,33,15,.97);
+        box-shadow: 0 28px 70px rgba(0,0,0,.32);
+        backdrop-filter: blur(20px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px) scale(.98);
+        transition: .28s var(--ease);
+        z-index: 5000;
+      }
+      .search-panel.open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      .search-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 12px;
+        min-height: 48px;
+        border-radius: 14px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.12);
+      }
+      .search-box > i { color: var(--gold2); }
+      .search-box input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: #fff;
+        font: inherit;
+      }
+      .search-box input::placeholder { color: rgba(255,255,255,.55); }
+      .search-box button {
+        border: 0;
+        background: transparent;
+        color: rgba(255,255,255,.7);
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .search-hint {
+        padding: 10px 4px 7px;
+        color: rgba(255,255,255,.55);
+        font-size: .72rem;
+      }
+      .search-results {
+        max-height: 360px;
+        overflow: auto;
+        display: grid;
+        gap: 6px;
+      }
+      .search-result {
+        width: 100%;
+        text-align: left;
+        border: 1px solid transparent;
+        border-radius: 13px;
+        padding: 11px 12px;
+        background: rgba(255,255,255,.045);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        transition: .25s ease;
+      }
+      .search-result:hover {
+        background: rgba(212,175,55,.12);
+        border-color: rgba(212,175,55,.25);
+        transform: translateX(2px);
+      }
+      .search-result i {
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: rgba(212,175,55,.14);
+        color: var(--gold2);
+        flex: 0 0 32px;
+      }
+      .search-result strong { display:block; font-size:.82rem; }
+      .search-result small { display:block; color:rgba(255,255,255,.55); margin-top:2px; }
+      .search-empty { padding: 18px 10px; color: rgba(255,255,255,.6); font-size:.8rem; text-align:center; }
+
+      @media (max-width: 1180px) {
+        .menu > li > a { padding-inline: 9px; font-size: .69rem; }
+        .nav { gap: 10px; padding-inline: 20px; }
+        .logo-txt strong { font-size: 1.05rem; }
+      }
+      @media (max-width: 1100px) {
+        .search-trigger span { display:none; }
+        .search-trigger { width:44px; padding:0; }
       }
       .burger {
         display: none;
@@ -1343,6 +1567,43 @@
         color: var(--gold2);
         font-weight: 700;
       }
+      .loc-actions {
+        display: flex;
+        gap: 8px;
+        margin: 12px 0 0 24px;
+        flex-wrap: wrap;
+      }
+      .loc-action {
+        border: 1px solid rgba(212, 175, 55, 0.45);
+        background: rgba(212, 175, 55, 0.1);
+        color: var(--gold2);
+        border-radius: 999px;
+        padding: 7px 11px;
+        font: inherit;
+        font-size: 0.68rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        transition: .25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .loc-action:hover {
+        background: var(--gold);
+        color: #102b1d;
+        transform: translateY(-1px);
+      }
+      .loc { position: relative; }
+      .loc::after {
+        content: '›';
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        color: var(--gold);
+        font-size: 1.35rem;
+        opacity: .75;
+      }
       #map {
         height: 620px;
         width: 100%;
@@ -1369,16 +1630,19 @@
       .leaflet-container a.leaflet-popup-close-button {
         color: var(--gold2);
       }
+      .betami-marker { background: transparent !important; border: 0 !important; }
       .pin {
-        width: 34px;
+        width: 38px;
         height: 34px;
         border-radius: 50%;
         background: linear-gradient(140deg, var(--gold), var(--gold3));
         display: grid;
         place-items: center;
         color: var(--g900);
-        font-size: 0.85rem;
-        box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.25);
+        font-size: 0.9rem;
+        box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.25), 0 5px 16px rgba(0,0,0,.25);
+        border: 2px solid #fff;
+        cursor: pointer;
         animation: pulse 2.2s infinite;
       }
       @keyframes pulse {
@@ -2376,8 +2640,1357 @@
         }
       }
 
-    </style>
-  </head>
+    
+      .map-status {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .map-status span {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(212,175,55,.18);
+        background: rgba(255,255,255,.035);
+        color: rgba(255,255,255,.68);
+        font-size: .68rem;
+        font-weight: 700;
+      }
+      .map-status i { color: var(--gold2); }
+
+
+/* Additional reusable production design utilities */
+.u-radius-0{border-radius:0px!important}
+.u-max-0{max-width:20rem!important}
+.u-minh-0{min-height:20px!important}
+.u-lh-0{line-height:1.00!important}
+.u-radius-1{border-radius:2px!important}
+.u-max-1{max-width:22rem!important}
+.u-minh-1{min-height:22px!important}
+.u-lh-1{line-height:1.02!important}
+.u-radius-2{border-radius:4px!important}
+.u-max-2{max-width:24rem!important}
+.u-minh-2{min-height:24px!important}
+.u-lh-2{line-height:1.04!important}
+.u-radius-3{border-radius:6px!important}
+.u-max-3{max-width:26rem!important}
+.u-minh-3{min-height:26px!important}
+.u-lh-3{line-height:1.06!important}
+.u-radius-4{border-radius:8px!important}
+.u-max-4{max-width:28rem!important}
+.u-minh-4{min-height:28px!important}
+.u-lh-4{line-height:1.08!important}
+.u-radius-5{border-radius:10px!important}
+.u-max-5{max-width:30rem!important}
+.u-minh-5{min-height:30px!important}
+.u-lh-5{line-height:1.10!important}
+.u-radius-6{border-radius:12px!important}
+.u-max-6{max-width:32rem!important}
+.u-minh-6{min-height:32px!important}
+.u-lh-6{line-height:1.12!important}
+.u-radius-7{border-radius:14px!important}
+.u-max-7{max-width:34rem!important}
+.u-minh-7{min-height:34px!important}
+.u-lh-7{line-height:1.14!important}
+.u-radius-8{border-radius:16px!important}
+.u-max-8{max-width:36rem!important}
+.u-minh-8{min-height:36px!important}
+.u-lh-8{line-height:1.16!important}
+.u-radius-9{border-radius:18px!important}
+.u-max-9{max-width:38rem!important}
+.u-minh-9{min-height:38px!important}
+.u-lh-9{line-height:1.18!important}
+.u-radius-10{border-radius:20px!important}
+.u-max-10{max-width:40rem!important}
+.u-minh-10{min-height:40px!important}
+.u-lh-10{line-height:1.20!important}
+.u-radius-11{border-radius:22px!important}
+.u-max-11{max-width:42rem!important}
+.u-minh-11{min-height:42px!important}
+.u-lh-11{line-height:1.22!important}
+.u-radius-12{border-radius:24px!important}
+.u-max-12{max-width:44rem!important}
+.u-minh-12{min-height:44px!important}
+.u-lh-12{line-height:1.24!important}
+.u-radius-13{border-radius:26px!important}
+.u-max-13{max-width:46rem!important}
+.u-minh-13{min-height:46px!important}
+.u-lh-13{line-height:1.26!important}
+.u-radius-14{border-radius:28px!important}
+.u-max-14{max-width:48rem!important}
+.u-minh-14{min-height:48px!important}
+.u-lh-14{line-height:1.28!important}
+.u-radius-15{border-radius:30px!important}
+.u-max-15{max-width:50rem!important}
+.u-minh-15{min-height:50px!important}
+.u-lh-15{line-height:1.30!important}
+.u-radius-16{border-radius:32px!important}
+.u-max-16{max-width:52rem!important}
+.u-minh-16{min-height:52px!important}
+.u-lh-16{line-height:1.32!important}
+.u-radius-17{border-radius:34px!important}
+.u-max-17{max-width:54rem!important}
+.u-minh-17{min-height:54px!important}
+.u-lh-17{line-height:1.34!important}
+.u-radius-18{border-radius:36px!important}
+.u-max-18{max-width:56rem!important}
+.u-minh-18{min-height:56px!important}
+.u-lh-18{line-height:1.36!important}
+.u-radius-19{border-radius:38px!important}
+.u-max-19{max-width:58rem!important}
+.u-minh-19{min-height:58px!important}
+.u-lh-19{line-height:1.38!important}
+.u-radius-20{border-radius:40px!important}
+.u-max-20{max-width:60rem!important}
+.u-minh-20{min-height:60px!important}
+.u-lh-20{line-height:1.40!important}
+.u-radius-21{border-radius:42px!important}
+.u-max-21{max-width:62rem!important}
+.u-minh-21{min-height:62px!important}
+.u-lh-21{line-height:1.42!important}
+.u-radius-22{border-radius:44px!important}
+.u-max-22{max-width:64rem!important}
+.u-minh-22{min-height:64px!important}
+.u-lh-22{line-height:1.44!important}
+.u-radius-23{border-radius:46px!important}
+.u-max-23{max-width:66rem!important}
+.u-minh-23{min-height:66px!important}
+.u-lh-23{line-height:1.46!important}
+.u-radius-24{border-radius:48px!important}
+.u-max-24{max-width:68rem!important}
+.u-minh-24{min-height:68px!important}
+.u-lh-24{line-height:1.48!important}
+.u-radius-25{border-radius:50px!important}
+.u-max-25{max-width:70rem!important}
+.u-minh-25{min-height:70px!important}
+.u-lh-25{line-height:1.50!important}
+.u-radius-26{border-radius:52px!important}
+.u-max-26{max-width:72rem!important}
+.u-minh-26{min-height:72px!important}
+.u-lh-26{line-height:1.52!important}
+.u-radius-27{border-radius:54px!important}
+.u-max-27{max-width:74rem!important}
+.u-minh-27{min-height:74px!important}
+.u-lh-27{line-height:1.54!important}
+.u-radius-28{border-radius:56px!important}
+.u-max-28{max-width:76rem!important}
+.u-minh-28{min-height:76px!important}
+.u-lh-28{line-height:1.56!important}
+.u-radius-29{border-radius:58px!important}
+.u-max-29{max-width:78rem!important}
+.u-minh-29{min-height:78px!important}
+.u-lh-29{line-height:1.58!important}
+.u-radius-30{border-radius:60px!important}
+.u-max-30{max-width:80rem!important}
+.u-minh-30{min-height:80px!important}
+.u-lh-30{line-height:1.60!important}
+.u-radius-31{border-radius:62px!important}
+.u-max-31{max-width:82rem!important}
+.u-minh-31{min-height:82px!important}
+.u-lh-31{line-height:1.62!important}
+.u-radius-32{border-radius:64px!important}
+.u-max-32{max-width:84rem!important}
+.u-minh-32{min-height:84px!important}
+.u-lh-32{line-height:1.64!important}
+.u-radius-33{border-radius:66px!important}
+.u-max-33{max-width:86rem!important}
+.u-minh-33{min-height:86px!important}
+.u-lh-33{line-height:1.66!important}
+.u-radius-34{border-radius:68px!important}
+.u-max-34{max-width:88rem!important}
+.u-minh-34{min-height:88px!important}
+.u-lh-34{line-height:1.68!important}
+.u-radius-35{border-radius:70px!important}
+.u-max-35{max-width:90rem!important}
+.u-minh-35{min-height:90px!important}
+.u-lh-35{line-height:1.70!important}
+.u-radius-36{border-radius:72px!important}
+.u-max-36{max-width:92rem!important}
+.u-minh-36{min-height:92px!important}
+.u-lh-36{line-height:1.72!important}
+.u-radius-37{border-radius:74px!important}
+.u-max-37{max-width:94rem!important}
+.u-minh-37{min-height:94px!important}
+.u-lh-37{line-height:1.74!important}
+.u-radius-38{border-radius:76px!important}
+.u-max-38{max-width:96rem!important}
+.u-minh-38{min-height:96px!important}
+.u-lh-38{line-height:1.76!important}
+.u-radius-39{border-radius:78px!important}
+.u-max-39{max-width:98rem!important}
+.u-minh-39{min-height:98px!important}
+.u-lh-39{line-height:1.78!important}
+.u-radius-40{border-radius:80px!important}
+.u-max-40{max-width:100rem!important}
+.u-minh-40{min-height:100px!important}
+.u-lh-40{line-height:1.80!important}
+.u-tracking-0{letter-spacing:0.00em!important}
+.u-delay-0{transition-delay:0ms!important}
+.u-tracking-1{letter-spacing:0.01em!important}
+.u-delay-1{transition-delay:20ms!important}
+.u-tracking-2{letter-spacing:0.02em!important}
+.u-delay-2{transition-delay:40ms!important}
+.u-tracking-3{letter-spacing:0.03em!important}
+.u-delay-3{transition-delay:60ms!important}
+.u-tracking-4{letter-spacing:0.04em!important}
+.u-delay-4{transition-delay:80ms!important}
+.u-tracking-5{letter-spacing:0.05em!important}
+.u-delay-5{transition-delay:100ms!important}
+.u-tracking-6{letter-spacing:0.06em!important}
+.u-delay-6{transition-delay:120ms!important}
+.u-tracking-7{letter-spacing:0.07em!important}
+.u-delay-7{transition-delay:140ms!important}
+.u-tracking-8{letter-spacing:0.08em!important}
+.u-delay-8{transition-delay:160ms!important}
+.u-tracking-9{letter-spacing:0.09em!important}
+.u-delay-9{transition-delay:180ms!important}
+.u-tracking-10{letter-spacing:0.10em!important}
+.u-delay-10{transition-delay:200ms!important}
+.u-tracking-11{letter-spacing:0.11em!important}
+.u-delay-11{transition-delay:220ms!important}
+.u-tracking-12{letter-spacing:0.12em!important}
+.u-delay-12{transition-delay:240ms!important}
+.u-tracking-13{letter-spacing:0.13em!important}
+.u-delay-13{transition-delay:260ms!important}
+.u-tracking-14{letter-spacing:0.14em!important}
+.u-delay-14{transition-delay:280ms!important}
+.u-tracking-15{letter-spacing:0.15em!important}
+.u-delay-15{transition-delay:300ms!important}
+.u-tracking-16{letter-spacing:0.16em!important}
+.u-delay-16{transition-delay:320ms!important}
+.u-tracking-17{letter-spacing:0.17em!important}
+.u-delay-17{transition-delay:340ms!important}
+.u-tracking-18{letter-spacing:0.18em!important}
+.u-delay-18{transition-delay:360ms!important}
+.u-tracking-19{letter-spacing:0.19em!important}
+.u-delay-19{transition-delay:380ms!important}
+.u-tracking-20{letter-spacing:0.20em!important}
+.u-delay-20{transition-delay:400ms!important}
+.u-tracking-21{letter-spacing:0.21em!important}
+.u-delay-21{transition-delay:420ms!important}
+.u-tracking-22{letter-spacing:0.22em!important}
+.u-delay-22{transition-delay:440ms!important}
+.u-tracking-23{letter-spacing:0.23em!important}
+.u-delay-23{transition-delay:460ms!important}
+.u-tracking-24{letter-spacing:0.24em!important}
+.u-delay-24{transition-delay:480ms!important}
+.u-tracking-25{letter-spacing:0.25em!important}
+.u-delay-25{transition-delay:500ms!important}
+.u-tracking-26{letter-spacing:0.26em!important}
+.u-delay-26{transition-delay:520ms!important}
+.u-tracking-27{letter-spacing:0.27em!important}
+.u-delay-27{transition-delay:540ms!important}
+.u-tracking-28{letter-spacing:0.28em!important}
+.u-delay-28{transition-delay:560ms!important}
+.u-tracking-29{letter-spacing:0.29em!important}
+.u-delay-29{transition-delay:580ms!important}
+.u-tracking-30{letter-spacing:0.30em!important}
+.u-delay-30{transition-delay:600ms!important}
+
+/* ==========================================================
+   BETAMI MOTION SYSTEM
+   Animasi dibuat halus: premium, bukan ramai.
+   ========================================================== */
+:root{
+  --motion-fast:.22s;
+  --motion-med:.55s;
+  --motion-slow:1s;
+  --motion-ease:cubic-bezier(.2,.75,.2,1);
+  --motion-spring:cubic-bezier(.16,1,.3,1);
+  --cursor-x:50vw;
+  --cursor-y:30vh;
+}
+
+/* Page progress line */
+body::before{
+  content:"";
+  position:fixed;
+  z-index:99999;
+  top:0;
+  left:0;
+  width:calc(var(--betami-scroll-progress,0) * 100%);
+  height:3px;
+  background:linear-gradient(90deg,#b99020,#e7c55f,#8a6414);
+  box-shadow:0 0 12px rgba(212,175,55,.45);
+  pointer-events:none;
+  transform-origin:left;
+}
+
+/* Soft pointer glow on desktop */
+.motion-glow{
+  position:fixed;
+  z-index:0;
+  width:420px;
+  height:420px;
+  left:var(--cursor-x);
+  top:var(--cursor-y);
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(212,175,55,.055),transparent 68%);
+  pointer-events:none;
+  transition:left .45s ease-out,top .45s ease-out;
+}
+
+/* Hero depth */
+.hero,
+.home-hero,
+.banner{
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero::before,
+.home-hero::before,
+.banner::before{
+  transition:transform 1.2s var(--motion-ease);
+}
+.hero .container,
+.home-hero .container,
+.banner .container{
+  position:relative;
+  z-index:2;
+}
+.motion-float{
+  animation:betamiFloat 5s ease-in-out infinite;
+}
+@keyframes betamiFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-8px,0)}
+}
+
+/* Scroll reveal */
+.motion-reveal{
+  opacity:0;
+  transform:translate3d(0,34px,0) scale(.985);
+  filter:blur(3px);
+  transition:
+    opacity .8s var(--motion-ease),
+    transform .9s var(--motion-ease),
+    filter .8s var(--motion-ease);
+}
+.motion-reveal.is-visible{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+.motion-reveal[data-motion="left"]{transform:translate3d(-38px,0,0)}
+.motion-reveal[data-motion="right"]{transform:translate3d(38px,0,0)}
+.motion-reveal[data-motion="scale"]{transform:scale(.92)}
+.motion-reveal.is-visible[data-motion="left"],
+.motion-reveal.is-visible[data-motion="right"],
+.motion-reveal.is-visible[data-motion="scale"]{transform:none}
+
+/* Cards */
+.motion-card{
+  transform-style:preserve-3d;
+  will-change:transform;
+  transition:
+    transform .45s var(--motion-spring),
+    box-shadow .45s var(--motion-ease),
+    border-color .35s ease;
+}
+.motion-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,.09) 48%,
+    transparent 65%
+  );
+  transform:translateX(-120%);
+  transition:transform .7s var(--motion-ease);
+}
+.motion-card:hover::after{transform:translateX(120%)}
+.motion-card:hover{
+  box-shadow:0 24px 55px rgba(0,0,0,.18);
+}
+
+/* Buttons */
+.motion-btn{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  transform:translateZ(0);
+  transition:
+    transform .28s var(--motion-spring),
+    box-shadow .28s ease,
+    filter .28s ease;
+}
+.motion-btn:hover{
+  transform:translateY(-3px);
+  filter:brightness(1.05);
+}
+.motion-btn:active{transform:translateY(0) scale(.97)}
+.motion-btn .ripple{
+  position:absolute;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:rgba(255,255,255,.38);
+  transform:translate(-50%,-50%) scale(0);
+  animation:betamiRipple .65s ease-out forwards;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes betamiRipple{
+  to{transform:translate(-50%,-50%) scale(18);opacity:0}
+}
+.motion-btn>*{position:relative;z-index:1}
+
+/* Animated underline for navigation */
+.menu>li>a{
+  position:relative;
+}
+.menu>li>a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-7px;
+  width:0;
+  height:2px;
+  border-radius:99px;
+  background:var(--gold2,#d4af37);
+  transform:translateX(-50%);
+  transition:width .3s var(--motion-spring);
+}
+.menu>li>a:hover::after,
+.menu>li>a.is-active::after{
+  width:70%;
+}
+
+/* Number counters */
+.counter-value{
+  display:inline-block;
+  min-width:1ch;
+  font-variant-numeric:tabular-nums;
+}
+
+/* Section heading glow */
+.section-heading,
+.eyebrow,
+.kicker{
+  transition:transform .6s var(--motion-ease),opacity .6s ease;
+}
+
+/* Image reveal */
+.motion-image{
+  overflow:hidden;
+}
+.motion-image img{
+  transform:scale(1.04);
+  transition:transform 1.1s var(--motion-ease),filter .8s ease;
+}
+.motion-image:hover img{
+  transform:scale(1.10);
+  filter:saturate(1.06);
+}
+
+/* Gallery */
+.gallery-item{
+  overflow:hidden;
+}
+.gallery-item img{
+  transition:transform .9s var(--motion-ease),filter .7s ease;
+}
+.gallery-item:hover img{
+  transform:scale(1.08);
+  filter:brightness(1.04);
+}
+
+/* Location cards */
+.loc{
+  transition:
+    transform .4s var(--motion-spring),
+    box-shadow .4s ease,
+    border-color .3s ease,
+    background .3s ease;
+}
+.loc:hover{
+  transform:translateX(5px);
+}
+.loc.on{
+  transform:translateX(8px);
+  box-shadow:0 16px 38px rgba(0,0,0,.16);
+}
+
+/* Map marker pulse */
+.betami-marker .pin{
+  animation:markerBreath 2.8s ease-in-out infinite;
+}
+.betami-marker:nth-child(2) .pin{animation-delay:.35s}
+.betami-marker:nth-child(3) .pin{animation-delay:.7s}
+.betami-marker:nth-child(4) .pin{animation-delay:1.05s}
+@keyframes markerBreath{
+  0%,100%{box-shadow:0 7px 18px rgba(0,0,0,.28),0 0 0 4px rgba(212,175,55,.13)}
+  50%{box-shadow:0 9px 25px rgba(0,0,0,.34),0 0 0 9px rgba(212,175,55,.05)}
+}
+
+/* Back to top */
+#toTop,
+.back-top,
+.scroll-top{
+  transition:transform .3s var(--motion-spring),box-shadow .3s ease;
+}
+#toTop:hover,
+.back-top:hover,
+.scroll-top:hover{
+  transform:translateY(-5px) rotate(-3deg);
+  box-shadow:0 14px 30px rgba(0,0,0,.2);
+}
+
+/* Header when scrolling */
+header.motion-scrolled,
+.site-header.motion-scrolled,
+.navbar.motion-scrolled{
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+  backdrop-filter:blur(14px);
+}
+
+/* Decorative floating dots */
+.motion-particles{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+.motion-particle{
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:rgba(212,175,55,.34);
+  animation:particleRise linear infinite;
+}
+@keyframes particleRise{
+  from{transform:translate3d(0,30px,0);opacity:0}
+  15%{opacity:1}
+  85%{opacity:.35}
+  to{transform:translate3d(30px,-120px,0);opacity:0}
+}
+
+/* Better focus */
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--gold2,#d4af37);
+  outline-offset:4px;
+}
+
+/* Footer OSM credit */
+.map-credit{
+  width:fit-content;
+  margin:14px auto 0;
+  padding:6px 10px;
+  border:1px solid rgba(212,175,55,.14);
+  border-radius:999px;
+  color:rgba(255,255,255,.42);
+  font-size:.64rem;
+  letter-spacing:.03em;
+}
+
+/* Mobile: no heavy tilt/glow */
+@media(max-width:768px){
+  .motion-glow{display:none}
+  .motion-card:hover{transform:none!important}
+  .motion-reveal,
+  .motion-reveal[data-motion="left"],
+  .motion-reveal[data-motion="right"]{
+    transform:translate3d(0,22px,0);
+  }
+  .motion-reveal.is-visible{transform:none}
+  .betami-marker .pin{animation:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .motion-glow,
+  .motion-particles{display:none}
+  .motion-reveal,
+  .motion-reveal[data-motion="left"],
+  .motion-reveal[data-motion="right"],
+  .motion-reveal[data-motion="scale"]{
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+    transition:none!important;
+  }
+  .motion-card,
+  .motion-btn,
+  .motion-image img,
+  .gallery-item img{
+    transition:none!important;
+  }
+}
+
+</style>
+  
+<!-- PT BETAMI MOBILE RESPONSIVE FIX -->
+<style id="betami-mobile-fix">
+
+/* =========================================================
+   PT BETAMI — MOBILE RESPONSIVE FIX
+   File terpisah: responsive-mobile.css
+   Tidak mengubah isi desktop; hanya merapikan tampilan HP.
+   ========================================================= */
+
+/* Tablet + HP */
+@media (max-width: 1100px) {
+  header {
+    top: 0 !important;
+  }
+
+  header .container {
+    width: calc(100% - 24px) !important;
+  }
+
+  .nav {
+    min-height: 68px;
+    padding: 10px 14px !important;
+    border-radius: 24px !important;
+    gap: 10px !important;
+  }
+
+  /* Menu desktop disembunyikan, tombol hamburger ditampilkan */
+  .menu {
+    display: none !important;
+  }
+
+  .nav-right {
+    margin-left: auto;
+    display: flex !important;
+    align-items: center;
+    gap: 8px !important;
+  }
+
+  .burger {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px !important;
+    height: 44px !important;
+    flex: 0 0 44px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* Logo tetap proporsional */
+  .betami-logo {
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .betami-logo-mark {
+    width: 46px !important;
+    height: 46px !important;
+    flex: 0 0 46px;
+  }
+
+  .logo-txt {
+    min-width: 0;
+  }
+
+  .logo-txt strong {
+    font-size: 1rem !important;
+    white-space: nowrap;
+  }
+
+  .logo-txt small {
+    font-size: .46rem !important;
+    white-space: nowrap;
+  }
+
+  /* Tombol pencarian cukup ikon, tanpa tulisan */
+  .search-trigger {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-trigger span {
+    display: none !important;
+  }
+
+  .nav-search-wrap {
+    position: relative;
+  }
+
+  /* Panel pencarian */
+  .search-panel {
+    position: fixed !important;
+    top: 82px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    border-radius: 20px !important;
+    padding: 12px !important;
+  }
+
+  .search-box {
+    min-height: 50px;
+  }
+
+  .search-results {
+    max-height: 55vh !important;
+  }
+
+  /* Mobile menu: jangan pakai tulisan raksasa */
+  .mobile {
+    padding: 88px 20px 30px !important;
+    overflow-y: auto !important;
+    place-items: start center !important;
+  }
+
+  .mobile ul {
+    width: min(100%, 390px) !important;
+    padding: 10px 0 30px !important;
+    text-align: left !important;
+  }
+
+  .mobile li {
+    border-bottom: 1px solid rgba(255,255,255,.09);
+  }
+
+  .mobile li:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile li a {
+    display: flex !important;
+    align-items: center;
+    min-height: 54px;
+    padding: 13px 12px !important;
+    font-family: var(--font-b) !important;
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    letter-spacing: .04em !important;
+    text-transform: uppercase;
+    text-align: left !important;
+  }
+
+  .mobile li a:hover {
+    padding-left: 17px !important;
+    color: var(--gold) !important;
+  }
+
+  .m-close {
+    top: 18px !important;
+    right: 18px !important;
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  /* Hindari konten horizontal melebar */
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  header .container {
+    width: calc(100% - 16px) !important;
+  }
+
+  .nav {
+    min-height: 60px !important;
+    padding: 8px 9px !important;
+    border-radius: 20px !important;
+    gap: 6px !important;
+  }
+
+  .betami-logo {
+    gap: 7px;
+  }
+
+  .betami-logo-mark {
+    width: 42px !important;
+    height: 42px !important;
+    flex-basis: 42px;
+  }
+
+  .logo-txt strong {
+    font-size: .9rem !important;
+    letter-spacing: .075em !important;
+  }
+
+  .logo-txt small {
+    font-size: .4rem !important;
+    letter-spacing: .16em !important;
+  }
+
+  .nav-right {
+    gap: 5px !important;
+  }
+
+  .search-trigger,
+  .burger {
+    width: 40px !important;
+    height: 40px !important;
+    flex-basis: 40px;
+  }
+
+  .search-panel {
+    top: 74px !important;
+    left: 8px !important;
+    right: 8px !important;
+    padding: 10px !important;
+    border-radius: 18px !important;
+  }
+
+  .search-box {
+    min-height: 48px;
+  }
+
+  .search-result {
+    padding: 12px 10px !important;
+  }
+
+  /* Menu HP lebih seperti menu website profesional */
+  .mobile {
+    padding: 78px 18px 24px !important;
+  }
+
+  .mobile ul {
+    width: 100% !important;
+    max-width: 390px;
+  }
+
+  .mobile li a {
+    min-height: 52px;
+    font-size: .94rem !important;
+    padding: 12px 10px !important;
+  }
+
+  .m-close {
+    top: 15px !important;
+    right: 15px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* Hero HP */
+  section {
+    padding: 72px 0;
+  }
+
+  .hero {
+    min-height: 720px !important;
+    padding: 120px 0 80px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 11vw, 3.4rem) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .hero p {
+    font-size: .9rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  /* Grid menjadi satu kolom */
+  .about-grid,
+  .esg-grid,
+  .contact-grid,
+  .map-wrap,
+  .grid-3,
+  .grid-4,
+  .f-grid,
+  .f-row {
+    width: 100% !important;
+  }
+
+  .grid-3,
+  .grid-4,
+  .gallery,
+  .stats-in,
+  .f-grid,
+  .f-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gitem.wide {
+    grid-column: span 1 !important;
+  }
+
+  /* Kartu lebih nyaman disentuh */
+  .card,
+  .contact-card,
+  .info-card {
+    border-radius: 18px;
+  }
+
+  /* Peta */
+  #map {
+    height: 390px !important;
+    min-height: 390px !important;
+  }
+
+  .map-wrap {
+    grid-template-columns: 1fr !important;
+  }
+
+  .map-side {
+    max-height: none !important;
+  }
+
+  /* Footer */
+  footer {
+    padding-top: 60px;
+  }
+
+  .f-bottom {
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* Tombol kembali ke atas */
+  #top {
+    width: 46px !important;
+    height: 46px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 380px) {
+  .betami-logo-mark {
+    width: 39px !important;
+    height: 39px !important;
+    flex-basis: 39px;
+  }
+
+  .logo-txt strong {
+    font-size: .82rem !important;
+  }
+
+  .logo-txt small {
+    font-size: .36rem !important;
+  }
+
+  .search-trigger,
+  .burger {
+    width: 37px !important;
+    height: 37px !important;
+    flex-basis: 37px;
+  }
+
+  .mobile li a {
+    font-size: .88rem !important;
+  }
+
+  .hero {
+    min-height: 680px !important;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem !important;
+  }
+}
+
+</style>
+
+<style id="betami-mobile-polish">
+/* =========================================================
+   PT BETAMI — POLISH MOBILE V2
+   Menjaga desktop, memperhalus pengalaman HP/tablet.
+   ========================================================= */
+@media (max-width: 1100px){
+  body{overflow-x:hidden}
+  header{z-index:1000!important}
+  header .container{width:calc(100% - 20px)!important}
+  .nav{height:auto!important;min-height:64px!important;padding:8px 10px!important;border-radius:28px!important;box-shadow:0 10px 30px rgba(0,0,0,.12)!important}
+  .betami-logo{flex:1 1 auto;min-width:0}
+  .logo-txt strong{font-size:clamp(.82rem,2.8vw,1rem)!important}
+  .logo-txt small{font-size:clamp(.36rem,1.25vw,.48rem)!important}
+  .nav-right{flex:0 0 auto!important}
+  .search-trigger,.burger{border:1px solid rgba(6,54,34,.14)!important;background:rgba(255,255,255,.28)!important;box-shadow:none!important}
+  .search-trigger i,.burger i{font-size:1.05rem!important}
+  .mobile{position:fixed!important;inset:0!important;z-index:2000!important;display:flex!important;align-items:stretch!important;justify-content:flex-end!important;padding:0!important;background:rgba(0,28,16,.58)!important;backdrop-filter:blur(5px)!important}
+  .mobile ul{width:min(88vw,390px)!important;height:100%!important;margin:0!important;padding:92px 22px 28px!important;background:#06351f!important;box-shadow:-18px 0 45px rgba(0,0,0,.28)!important;overflow-y:auto!important;text-align:left!important}
+  .mobile li{border-bottom:1px solid rgba(255,255,255,.10)!important}
+  .mobile li a{min-height:56px!important;padding:14px 4px!important;font-size:1rem!important;line-height:1.2!important;font-weight:700!important;letter-spacing:.07em!important;text-align:left!important;color:#fff!important}
+  .mobile li a:hover{padding-left:10px!important}
+  .m-close{z-index:3!important;top:18px!important;right:calc(min(88vw,390px) - 64px)!important;background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.18)!important;color:#fff!important}
+  .search-panel{z-index:2100!important}
+}
+@media (max-width:600px){
+  header .container{width:calc(100% - 12px)!important}
+  .nav{min-height:58px!important;padding:7px 8px!important;border-radius:22px!important}
+  .betami-logo{gap:6px!important}
+  .betami-logo-mark{width:40px!important;height:40px!important;flex-basis:40px!important}
+  .logo-txt strong{font-size:.84rem!important;letter-spacing:.065em!important}
+  .logo-txt small{font-size:.37rem!important;letter-spacing:.13em!important}
+  .search-trigger,.burger{width:39px!important;height:39px!important;flex-basis:39px!important}
+  .mobile ul{width:88vw!important;padding:84px 18px 24px!important}
+  .m-close{right:calc(88vw - 56px)!important;width:40px!important;height:40px!important}
+  .mobile li a{min-height:50px!important;font-size:.9rem!important}
+  .search-panel{left:7px!important;right:7px!important;top:70px!important;border-radius:18px!important}
+  .hero{min-height:650px!important;padding:112px 0 64px!important}
+  .hero h1{font-size:clamp(2.15rem,12vw,3rem)!important}
+  section{padding:58px 0!important}
+  #map{height:340px!important;min-height:340px!important}
+  .loc-actions{flex-wrap:wrap!important}
+  .loc-action{min-height:42px!important}
+  footer{padding-bottom:80px!important}
+}
+@media (max-width:380px){
+  .logo-txt strong{font-size:.76rem!important}
+  .logo-txt small{font-size:.33rem!important}
+  .betami-logo-mark{width:37px!important;height:37px!important;flex-basis:37px!important}
+  .search-trigger,.burger{width:36px!important;height:36px!important;flex-basis:36px!important}
+  .mobile ul{width:92vw!important;padding-inline:15px!important}
+  .m-close{right:calc(92vw - 52px)!important}
+}
+</style>
+
+
+<style id="betami-final-mobile-nav-fix">
+/* =========================================================
+   PT BETAMI — FINAL MOBILE NAVIGATION
+   - Search = icon only
+   - Mobile menu = compact right-side drawer
+   - Drawer always sits ABOVE navbar/header
+   - Rest of page is softly dimmed/blurred
+   ========================================================= */
+.search-trigger span{display:none!important}
+
+@media (max-width:1100px){
+  header{z-index:1001!important}
+  .mobile{
+    position:fixed!important;
+    inset:0!important;
+    z-index:50000!important;
+    display:flex!important;
+    align-items:stretch!important;
+    justify-content:flex-end!important;
+    padding:0!important;
+    background:rgba(1,20,11,.58)!important;
+    backdrop-filter:blur(7px)!important;
+    -webkit-backdrop-filter:blur(7px)!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    clip-path:none!important;
+    pointer-events:none!important;
+    transition:opacity .35s ease, visibility .35s ease!important;
+  }
+  .mobile.open{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    clip-path:none!important;
+  }
+  .mobile ul{
+    position:relative!important;
+    width:min(84vw,390px)!important;
+    height:100dvh!important;
+    min-height:100vh!important;
+    margin:0!important;
+    padding:92px 20px 28px!important;
+    background:linear-gradient(160deg,#073b22 0%,#032714 100%)!important;
+    border-left:1px solid rgba(212,175,55,.18)!important;
+    border-radius:28px 0 0 28px!important;
+    box-shadow:-24px 0 70px rgba(0,0,0,.34)!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain!important;
+    text-align:left!important;
+    transform:translateX(105%)!important;
+    transition:transform .48s cubic-bezier(.22,1,.36,1)!important;
+  }
+  .mobile.open ul{transform:translateX(0)!important}
+  .mobile li{border-bottom:1px solid rgba(255,255,255,.09)!important}
+  .mobile li:last-child{border-bottom:0!important}
+  .mobile li a{
+    display:flex!important;
+    align-items:center!important;
+    min-height:54px!important;
+    padding:14px 6px!important;
+    margin:2px 0!important;
+    border-radius:12px!important;
+    font-family:var(--font-b)!important;
+    font-size:.96rem!important;
+    line-height:1.25!important;
+    font-weight:700!important;
+    letter-spacing:.055em!important;
+    text-transform:uppercase!important;
+    color:#fff!important;
+    text-align:left!important;
+    transition:background .25s ease, color .25s ease, padding-left .25s ease!important;
+  }
+  .mobile li a:hover,
+  .mobile li a:active{
+    color:var(--gold2)!important;
+    background:rgba(212,175,55,.09)!important;
+    padding-left:12px!important;
+  }
+  .m-close{
+    position:fixed!important;
+    z-index:50003!important;
+    top:18px!important;
+    right:calc(min(84vw,390px) - 60px)!important;
+    width:42px!important;
+    height:42px!important;
+    border-radius:50%!important;
+    display:grid!important;
+    place-items:center!important;
+    background:rgba(255,255,255,.10)!important;
+    border:1px solid rgba(255,255,255,.18)!important;
+    color:#fff!important;
+    box-shadow:0 10px 30px rgba(0,0,0,.18)!important;
+  }
+  .mobile.open .m-close{animation:mobileCloseIn .45s .08s both}
+  @keyframes mobileCloseIn{
+    from{opacity:0;transform:scale(.7) rotate(-30deg)}
+    to{opacity:1;transform:scale(1) rotate(0)}
+  }
+  .search-panel{z-index:50010!important}
+}
+
+@media (max-width:600px){
+  .nav{position:relative!important;z-index:1002!important}
+  .mobile ul{
+    width:86vw!important;
+    padding:82px 16px 24px!important;
+    border-radius:24px 0 0 24px!important;
+  }
+  .mobile li a{
+    min-height:50px!important;
+    font-size:.88rem!important;
+    padding:12px 5px!important;
+  }
+  .m-close{
+    top:14px!important;
+    right:calc(86vw - 54px)!important;
+    width:40px!important;
+    height:40px!important;
+  }
+}
+
+@media (max-width:380px){
+  .mobile ul{width:88vw!important;padding-inline:14px!important}
+  .mobile li a{font-size:.84rem!important}
+  .m-close{right:calc(88vw - 52px)!important;width:38px!important;height:38px!important}
+}
+
+
+      /* ================================================================
+         BETAMI OPERATION MAP — VISUAL MARKER SYSTEM
+         Empat lokasi tetap memakai koordinat asli. Label dibuat permanen
+         agar titik yang berdekatan tidak terlihat seperti satu marker.
+         ================================================================ */
+      .marker-shell {
+        position: relative;
+        width: 190px;
+        height: 82px;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .marker-shell .pin {
+        position: absolute;
+        left: 50%;
+        top: 4px;
+        transform: translateX(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 14px 14px 14px 4px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        border: 2px solid #fff;
+        box-shadow:
+          0 7px 18px rgba(0, 0, 0, .28),
+          0 0 0 5px rgba(212, 175, 55, .16);
+        font-size: 15px;
+      }
+
+      .marker-shell .marker-stem {
+        position: absolute;
+        left: 50%;
+        top: 42px;
+        width: 2px;
+        height: 20px;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,.9);
+        box-shadow: 0 1px 4px rgba(0,0,0,.25);
+      }
+
+      .marker-shell .marker-label {
+        position: absolute;
+        left: 50%;
+        top: 61px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: rgba(2, 34, 20, .94);
+        border: 1px solid rgba(212,175,55,.55);
+        color: #fff;
+        font: 800 10px/1.1 var(--font-b);
+        letter-spacing: .02em;
+        box-shadow: 0 5px 16px rgba(0,0,0,.22);
+      }
+
+      .marker-shell.office .pin {
+        background: linear-gradient(145deg, #0b6b42, #04341f);
+      }
+
+      .marker-shell.estate .pin {
+        background: linear-gradient(145deg, #d4af37, #8f6a12);
+        color: #062516;
+      }
+
+      .marker-shell.mill .pin {
+        background: linear-gradient(145deg, #b88a22, #63470b);
+      }
+
+      /* Sedikit pemisahan visual untuk dua titik Rantau yang sangat dekat.
+         Anchor marker tetap pada koordinat asli. */
+      .marker-offset-left .pin,
+      .marker-offset-left .marker-stem,
+      .marker-offset-left .marker-label {
+        transform: translateX(calc(-50% - 26px));
+      }
+
+      .marker-offset-right .pin,
+      .marker-offset-right .marker-stem,
+      .marker-offset-right .marker-label {
+        transform: translateX(calc(-50% + 26px));
+      }
+
+      .betami-tooltip {
+        border: 1px solid rgba(212,175,55,.55) !important;
+        background: rgba(2,34,20,.95) !important;
+        color: #fff !important;
+        border-radius: 999px !important;
+        padding: 5px 9px !important;
+        font: 800 10px/1.1 var(--font-b) !important;
+        box-shadow: 0 5px 16px rgba(0,0,0,.18);
+      }
+
+      .betami-tooltip::before {
+        border-top-color: rgba(2,34,20,.95) !important;
+      }
+
+      .betami-tooltip.estate {
+        border-color: rgba(212,175,55,.9) !important;
+      }
+
+      .map-popup {
+        display: grid;
+        gap: 7px;
+        min-width: 210px;
+        color: #fff;
+      }
+
+      .map-popup strong {
+        font-family: var(--font-d);
+        color: var(--gold2);
+        font-size: 1rem;
+      }
+
+      .map-popup-type {
+        display: inline-flex;
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(212,175,55,.16);
+        color: var(--gold2);
+        font-size: .68rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+      }
+
+      .map-coord {
+        color: rgba(255,255,255,.52);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: .67rem;
+      }
+
+      .loc-note {
+        color: rgba(255,255,255,.58) !important;
+        font-style: italic;
+      }
+
+      @media (max-width: 700px) {
+        .marker-shell {
+          width: 150px;
+        }
+
+        .marker-shell .marker-label {
+          font-size: 9px;
+          padding: 4px 7px;
+        }
+
+        .marker-offset-left .pin,
+        .marker-offset-left .marker-stem,
+        .marker-offset-left .marker-label {
+          transform: translateX(calc(-50% - 20px));
+        }
+
+        .marker-offset-right .pin,
+        .marker-offset-right .marker-stem,
+        .marker-offset-right .marker-label {
+          transform: translateX(calc(-50% + 20px));
+        }
+      }
+
+      /* Marker Estate dibuat jelas dan tidak tertutup marker lain. */
+      .estate-label {
+        font-weight: 800;
+        font-size: 12px;
+        border: 0 !important;
+        border-radius: 999px !important;
+        padding: 5px 9px !important;
+        box-shadow: 0 5px 18px rgba(0,0,0,.16);
+      }
+      .estate-label::before { display:none !important; }
+</style>
+
+</head>
   <body>
     <!-- ============ PRELOADER ============ -->
     <div id="loader">
@@ -2436,18 +4049,82 @@
 
           <ul class="menu" id="menu">
             <li><a href="#beranda" class="active">Beranda</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="#produk">Produk</a></li>
-            <li><a href="#galeri">Galeri</a></li>
-            <li><a href="#peta">Map</a></li>
-            <li><a href="#berita">Berita</a></li>
+
+            <li class="has-drop">
+              <a href="#tentang">Tentang Kami</a>
+              <ul class="menu-dropdown">
+                <li class="drop-title">Perusahaan</li>
+                <li><a href="#tentang"><i class="fa-regular fa-building"></i>Profil Perusahaan</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-bullseye"></i>Visi &amp; Misi</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-users"></i>Manajemen</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-sitemap"></i>Struktur Perusahaan</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-scale-balanced"></i>Tata Kelola (GCG)</a></li>
+              </ul>
+            </li>
+
+            <li class="has-drop">
+              <a href="#produk">Bisnis Kami</a>
+              <ul class="menu-dropdown">
+                <li class="drop-title">Bisnis Terintegrasi</li>
+                <li><a href="#produk"><i class="fa-solid fa-seedling"></i>Perkebunan</a></li>
+                <li><a href="#produk"><i class="fa-solid fa-industry"></i>Pabrik Kelapa Sawit</a></li>
+                <li><a href="#produk"><i class="fa-solid fa-droplet"></i>Crude Palm Oil</a></li>
+                <li><a href="#produk"><i class="fa-solid fa-oil-well"></i>Palm Kernel Oil</a></li>
+                <li><a href="#peta"><i class="fa-solid fa-location-dot"></i>Lokasi Operasi</a></li>
+              </ul>
+            </li>
+
+            <li class="has-drop">
+              <a href="#berita">Berita</a>
+              <ul class="menu-dropdown">
+                <li class="drop-title">Informasi Terkini</li>
+                <li><a href="#berita"><i class="fa-regular fa-newspaper"></i>Berita</a></li>
+                <li><a href="#berita"><i class="fa-solid fa-bullhorn"></i>Siaran Pers</a></li>
+                <li><a href="#berita"><i class="fa-regular fa-images"></i>Galeri Kegiatan</a></li>
+              </ul>
+            </li>
+
+            <li class="has-drop">
+              <a href="#berita">Investor</a>
+              <ul class="menu-dropdown">
+                <li class="drop-title">Hubungan Investor</li>
+                <li><a href="#berita"><i class="fa-solid fa-file-lines"></i>Laporan Tahunan</a></li>
+                <li><a href="#berita"><i class="fa-solid fa-chart-line"></i>Informasi Keuangan</a></li>
+                <li><a href="#berita"><i class="fa-solid fa-chart-column"></i>Informasi Produksi</a></li>
+                <li><a href="#berita"><i class="fa-solid fa-coins"></i>Harga CPO</a></li>
+              </ul>
+            </li>
+
+            <li class="has-drop">
+              <a href="#tentang">Keberlanjutan</a>
+              <ul class="menu-dropdown">
+                <li class="drop-title">Komitmen PT. BETAMI</li>
+                <li><a href="#tentang"><i class="fa-solid fa-leaf"></i>Kebijakan Keberlanjutan</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-certificate"></i>ISPO &amp; Sertifikasi</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-earth-asia"></i>Lingkungan</a></li>
+                <li><a href="#tentang"><i class="fa-solid fa-hand-holding-heart"></i>Tanggung Jawab Sosial</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#peta">Lokasi</a></li>
             <li><a href="#kontak">Kontak</a></li>
           </ul>
 
           <div class="nav-right">
-            <button class="btn-login" onclick="openModal()">
-              <i class="fa-solid fa-lock"></i> Login
-            </button>
+            <div class="nav-search-wrap" id="navSearchWrap">
+              <button class="search-trigger" id="searchTrigger" type="button" aria-label="Buka pencarian" aria-expanded="false">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <div class="search-panel" id="searchPanel" aria-hidden="true">
+                <div class="search-box">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input id="siteSearch" type="search" autocomplete="off" placeholder="Cari menu, produk, lokasi..." />
+                  <button id="searchClose" type="button" aria-label="Tutup pencarian"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="search-hint">Ketik nama menu, produk, estate, atau pabrik.</div>
+                <div class="search-results" id="searchResults"></div>
+              </div>
+            </div>
             <button class="burger" onclick="toggleMobile()">
               <i class="fa-solid fa-bars"></i>
             </button>
@@ -2463,23 +4140,13 @@
       </button>
       <ul>
         <li><a href="#beranda" onclick="toggleMobile()">Beranda</a></li>
-        <li><a href="#tentang" onclick="toggleMobile()">Tentang</a></li>
-        <li><a href="#produk" onclick="toggleMobile()">Produk</a></li>
-        <li><a href="#galeri" onclick="toggleMobile()">Galeri</a></li>
-        <li><a href="#peta" onclick="toggleMobile()">Map</a></li>
+        <li><a href="#tentang" onclick="toggleMobile()">Tentang Kami</a></li>
+        <li><a href="#produk" onclick="toggleMobile()">Bisnis Kami</a></li>
         <li><a href="#berita" onclick="toggleMobile()">Berita</a></li>
+        <li><a href="#berita" onclick="toggleMobile()">Investor</a></li>
+        <li><a href="#tentang" onclick="toggleMobile()">Keberlanjutan</a></li>
+        <li><a href="#peta" onclick="toggleMobile()">Lokasi Operasi</a></li>
         <li><a href="#kontak" onclick="toggleMobile()">Kontak</a></li>
-        <li>
-          <a
-            href="#"
-            onclick="
-              toggleMobile();
-              openModal();
-            "
-            style="color: var(--gold)"
-            >Login</a
-          >
-        </li>
       </ul>
     </div>
 
@@ -2933,7 +4600,16 @@
               ></i>
               Daftar Lokasi
             </h4>
-            <p>8 wilayah operasi strategis</p>
+            <p>4 wilayah operasi strategis</p>
+            <button class="loc-action" type="button" onclick="focusAllLocations()" style="margin-bottom:14px;">
+              <i class="fa-solid fa-map-location-dot"></i> Tampilkan Semua Lokasi
+            </button>
+            <div class="map-status" aria-label="Ringkasan lokasi operasi">
+              <span><i class="fa-solid fa-location-dot"></i> 4 titik operasi</span>
+              <span><i class="fa-solid fa-leaf"></i> 1 estate</span>
+              <span><i class="fa-solid fa-industry"></i> 2 PKS</span>
+              <span><i class="fa-solid fa-building"></i> 1 kantor pusat</span>
+            </div>
             <!-- diisi JS -->
           </aside>
           <div id="map"></div>
@@ -3051,8 +4727,8 @@
               <div>
                 <b>Kantor Pusat</b>
                 <p>
-                  Betami Tower, Jl. Jend. Sudirman Kav. 52, Jakarta Selatan
-                  12190
+                  Jl. Bunga Raya III No. 88, Asam Kumbang, Kec. Medan Selayang,
+                  Kota Medan, Sumatera Utara 20128
                 </p>
               </div>
             </li>
@@ -3219,7 +4895,8 @@
           >
         </div>
       </div>
-    </footer>
+    <div class="map-credit">Peta: &copy; OpenStreetMap contributors</div>
+</footer>
 
     <button id="top" onclick="scrollTo({ top: 0, behavior: 'smooth' })">
       <i class="fa-solid fa-arrow-up"></i>
@@ -3484,96 +5161,330 @@
       /* ---------- MAP (LEAFLET) ---------- */
       const locs = [
         {
-          n: "Kantor Pusat — Jakarta",
-          d: "Betami Tower, Jl. Jend. Sudirman Kav. 52",
+          n: "Kantor Pusat",
+          d: "Jl. Bunga Raya III No. 88, Asam Kumbang, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20128",
           t: "Head Office",
-          c: [-6.2251, 106.809],
+          c: [3.5663069632730386, 98.62498629174051],
+          icon: "fa-building",
+          tone: "office",
         },
         {
-          n: "Estate Rokan Hulu — Riau",
-          d: "18.400 Ha · Kebun Inti & Plasma",
+          n: "Estate / Perkebunan",
+          d: "Desa Sukajadi, Kec. Rantau, Kabupaten Aceh Tamiang, Aceh",
+          note: "Area operasional perkebunan PT BETAMI",
           t: "Perkebunan",
-          c: [0.9167, 100.5],
+          // Titik estate operasional yang tercatat pada data traceability.
+          c: [4.28539, 98.08946],
+          icon: "fa-leaf",
+          tone: "estate",
         },
         {
-          n: "PKS Dumai — Riau",
-          d: "Kapasitas 90 Ton TBS/Jam · Refinery",
+          n: "PKS Rantau",
+          d: "73MX+PWQ, Suka Rakyat, Kec. Rantau, Kabupaten Aceh Tamiang, Aceh 24453",
           t: "Pabrik",
-          c: [1.6667, 101.45],
+          c: [4.2843125, 98.0998125],
+          icon: "fa-industry",
+          tone: "mill",
         },
         {
-          n: "Estate Musi Banyuasin — Sumsel",
-          d: "14.200 Ha · Sertifikasi RSPO",
-          t: "Perkebunan",
-          c: [-2.63, 103.7],
-        },
-        {
-          n: "Estate Kotawaringin — Kalteng",
-          d: "21.600 Ha · Konservasi HCV 1.200 Ha",
-          t: "Perkebunan",
-          c: [-2.5, 111.6167],
-        },
-        {
-          n: "PKS Sampit — Kalteng",
-          d: "Kapasitas 60 Ton TBS/Jam",
+          n: "PKS Meulaboh",
+          d: "Jl. Geumpang - Tutut, Gampong Baro, Kec. Panton Reu, Kabupaten Aceh Barat, Aceh 23681",
           t: "Pabrik",
-          c: [-2.5333, 112.95],
-        },
-        {
-          n: "Refinery & Biodiesel — Kalbar",
-          d: "Kapasitas 600.000 KL/Tahun",
-          t: "Industri",
-          c: [-0.0263, 109.3425],
-        },
-        {
-          n: "Estate Morowali — Sulteng",
-          d: "9.800 Ha · Program Plasma Petani",
-          t: "Perkebunan",
-          c: [-2.3, 121.8],
+          c: [4.3837, 96.1874],
+          icon: "fa-industry",
+          tone: "mill",
         },
       ];
       const map = L.map("map", {
         scrollWheelZoom: false,
         zoomControl: true,
-      }).setView([-1.5, 113], 4.4);
+      }).setView([2.5, 97.5], 7);
       L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
-          attribution: "&copy; OpenStreetMap &copy; CARTO",
+          attribution: "",
           maxZoom: 19,
         },
       ).addTo(map);
+            /* ---------- MARKER OPERASI: 4 TITIK, 4 IDENTITAS ---------- */
+      const makeIcon = (location, index) => {
+        const iconClass = location.icon || "fa-location-dot";
+        const toneClass = location.tone || "default";
+        const offsetClass =
+          location.n === "Estate / Perkebunan"
+            ? " marker-offset-left"
+            : location.n === "PKS Rantau"
+              ? " marker-offset-right"
+              : "";
+        return L.divIcon({
+          className: "betami-marker",
+          html: `
+            <div class="marker-shell ${toneClass}${offsetClass}" title="${location.n}">
+              <div class="pin">
+                <i class="fa-solid ${iconClass}"></i>
+              </div>
+              <div class="marker-stem"></div>
+              <div class="marker-label">${location.n}</div>
+            </div>`,
+          iconSize: [190, 82],
+          iconAnchor: [95, 74],
+          popupAnchor: [0, -58],
+        });
+      };
 
-      const icon = L.divIcon({
-        className: "",
-        html: '<div class="pin"><i class="fa-solid fa-leaf"></i></div>',
-        iconSize: [34, 34],
-        iconAnchor: [17, 17],
-      });
-      const list = document.getElementById("locList"),
-        markers = [];
+      const list = document.getElementById("locList");
+      const markers = [];
+      const markerLines = [];
+
       locs.forEach((l, i) => {
-        const m = L.marker(l.c, { icon })
+        const m = L.marker(l.c, {
+          icon: makeIcon(l, i),
+          zIndexOffset: 7000 + i,
+          riseOnHover: true,
+          keyboard: true,
+          title: l.n,
+          alt: l.n,
+        })
           .addTo(map)
-          .bindPopup(
-            `<b>${l.n}</b><br><span style="font-size:.82rem;opacity:.8">${l.d}</span>`,
-          );
+          .bindPopup(`
+            <div class="map-popup">
+              <strong>${l.n}</strong>
+              <span class="map-popup-type">${l.t}</span>
+              <div>${l.d}</div>
+              ${l.note ? `<small>${l.note}</small>` : ""}
+              <small class="map-coord">Koordinat: ${l.c[0].toFixed(6)}, ${l.c[1].toFixed(6)}</small>
+            </div>
+          `);
+
         markers.push(m);
+
+        /* Garis tipis hanya sebagai connector visual untuk dua titik Rantau.
+           Koordinat marker tetap koordinat asli; garis membantu pengguna
+           membedakan Estate dan PKS Rantau pada zoom nasional. */
+        if (l.n === "Estate / Perkebunan" || l.n === "PKS Rantau") {
+          const otherName =
+            l.n === "Estate / Perkebunan" ? "PKS Rantau" : "Estate / Perkebunan";
+          const other = locs.find((x) => x.n === otherName);
+          if (other) {
+            const line = L.polyline([l.c, other.c], {
+              color: "#d4af37",
+              weight: 1.5,
+              opacity: 0.45,
+              dashArray: "4 6",
+              interactive: false,
+            }).addTo(map);
+            markerLines.push(line);
+          }
+        }
+
+        /* Tooltip permanen membuat keempat lokasi tetap teridentifikasi
+           walaupun ikon terlihat berdekatan pada zoom nasional. */
+        m.bindTooltip(l.n, {
+          permanent: true,
+          direction: "top",
+          offset: [0, -43],
+          opacity: 0.96,
+          className: `betami-tooltip ${l.tone}`,
+        });
+
         const div = document.createElement("div");
         div.className = "loc";
-        div.innerHTML = `<b><i class="fa-solid fa-location-dot"></i>${l.n}</b><small>${l.d}</small><span class="chip">${l.t}</span>`;
+        div.dataset.location = l.n;
+
+        const mapsUrl =
+          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            `${l.c[0]},${l.c[1]}`
+          )}`;
+
+        div.innerHTML = `
+          <b><i class="fa-solid fa-location-dot"></i>${l.n}</b>
+          <small>${l.d}</small>
+          ${l.note ? `<small class="loc-note">${l.note}</small>` : ""}
+          <span class="chip">${l.t}</span>
+          <div class="loc-actions">
+            <button class="loc-action" type="button" data-map>
+              <i class="fa-solid fa-crosshairs"></i> Lihat di Peta
+            </button>
+            <a class="loc-action" href="${mapsUrl}" target="_blank" rel="noopener">
+              <i class="fa-solid fa-route"></i> Google Maps
+            </a>
+          </div>`;
+
         div.onclick = () => {
           document
             .querySelectorAll(".loc")
             .forEach((x) => x.classList.remove("on"));
           div.classList.add("on");
-          map.flyTo(l.c, 7, { duration: 1.3 });
-          setTimeout(() => m.openPopup(), 900);
+
+          map.invalidateSize(true);
+          map.flyTo(L.latLng(l.c[0], l.c[1]), 15, {
+            duration: 1.05,
+            easeLinearity: 0.25,
+          });
+
+          setTimeout(() => {
+            map.panTo(L.latLng(l.c[0], l.c[1]), {
+              animate: true,
+              duration: 0.45,
+            });
+            m.openPopup();
+            m.openTooltip();
+          }, 700);
         };
+
+        div.querySelector("[data-map]").addEventListener("click", (e) => {
+          e.stopPropagation();
+          div.click();
+        });
+
+        div.querySelector("a").addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+
         list.appendChild(div);
       });
+
+      /* ---------- MAP READY / RESIZE ---------- */
+      const allBounds = L.latLngBounds(locs.map((l) => l.c));
+
+      function fitAllOperationalLocations() {
+        map.invalidateSize(true);
+        map.fitBounds(allBounds, {
+          paddingTopLeft: [30, 30],
+          paddingBottomRight: [30, 30],
+          maxZoom: 8,
+          animate: true,
+          duration: 0.9,
+        });
+      }
+
+      /* Initial render dilakukan setelah layout selesai supaya Leaflet
+         tidak membaca ukuran container sebelum CSS selesai diterapkan. */
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          map.invalidateSize(true);
+          fitAllOperationalLocations();
+        }, 120);
+      });
+
+      window.addEventListener("resize", () => {
+        clearTimeout(window.__betamiMapResize);
+        window.__betamiMapResize = setTimeout(() => {
+          map.invalidateSize(true);
+        }, 180);
+      });
+
+      // Pastikan seluruh 4 lokasi operasi terdaftar pada peta.
+      // Semua empat lokasi tetap tersedia melalui fungsi fokus di bawah.
       map.on("click", () => map.scrollWheelZoom.enable());
       map.on("mouseout", () => map.scrollWheelZoom.disable());
+
+      function focusLocationByName(name) {
+        const index = locs.findIndex((l) => l.n === name);
+        if (index < 0 || !markers[index]) return;
+        const m = markers[index];
+        document.querySelectorAll(".loc").forEach((x) => x.classList.remove("on"));
+        const target = document.querySelectorAll(".loc")[index];
+        if (target) target.classList.add("on");
+        map.invalidateSize(true);
+        map.flyTo(L.latLng(locs[index].c[0], locs[index].c[1]), 15, { duration: 1.0 });
+        setTimeout(() => {
+          map.panTo(L.latLng(locs[index].c[0], locs[index].c[1]), { animate: true, duration: 0.5 });
+          m.openPopup();
+        }, 750);
+      }
+      window.focusLocationByName = focusLocationByName;
+
+      function focusAllLocations() {
+        map.invalidateSize(true);
+        fitAllOperationalLocations();
+        document.querySelectorAll(".loc").forEach((x) => x.classList.remove("on"));
+        markers.forEach((m) => m.closePopup());
+      }
+
+      /* ---------- SITE SEARCH ---------- */
+      const searchItems = [
+        { title: "Beranda", type: "Navigasi", icon: "fa-house", target: "#beranda" },
+        { title: "Tentang Kami", type: "Perusahaan", icon: "fa-building", target: "#tentang" },
+        { title: "Produk", type: "Bisnis", icon: "fa-box-open", target: "#produk" },
+        { title: "Crude Palm Oil", type: "Produk", icon: "fa-droplet", target: "bisnis/crude_palm_oil..html" },
+        { title: "Palm Kernel Oil", type: "Produk", icon: "fa-seedling", target: "#produk" },
+        { title: "Galeri", type: "Navigasi", icon: "fa-images", target: "#galeri" },
+        { title: "Peta Operasi", type: "Lokasi", icon: "fa-map-location-dot", target: "#peta" },
+        { title: "Kantor Pusat", type: "Lokasi · Medan", icon: "fa-location-dot", target: "#peta", location: "Kantor Pusat" },
+        { title: "Estate / Perkebunan", type: "Lokasi · Aceh Tamiang", icon: "fa-leaf", target: "#peta", location: "Estate / Perkebunan" },
+        { title: "PKS Rantau", type: "Pabrik · Aceh Tamiang", icon: "fa-industry", target: "#peta", location: "PKS Rantau" },
+        { title: "PKS Meulaboh", type: "Pabrik · Aceh Barat", icon: "fa-industry", target: "#peta", location: "PKS Meulaboh" },
+        { title: "Berita", type: "Newsroom", icon: "fa-newspaper", target: "#berita" },
+        { title: "Kontak", type: "Hubungi PT BETAMI", icon: "fa-envelope", target: "#kontak" },
+      ];
+      const searchTrigger = document.getElementById("searchTrigger");
+      const searchPanel = document.getElementById("searchPanel");
+      const siteSearch = document.getElementById("siteSearch");
+      const searchResults = document.getElementById("searchResults");
+      const searchClose = document.getElementById("searchClose");
+
+      function renderSearchResults(query = "") {
+        const q = query.trim().toLowerCase();
+        const results = searchItems.filter((item) =>
+          !q || `${item.title} ${item.type}`.toLowerCase().includes(q),
+        );
+        if (!results.length) {
+          searchResults.innerHTML = '<div class="search-empty">Tidak ada hasil. Coba cari <b>estate</b>, <b>PKS</b>, <b>produk</b>, atau <b>kontak</b>.</div>';
+          return;
+        }
+        searchResults.innerHTML = results.map((item, i) => `
+          <button class="search-result" type="button" data-search-index="${searchItems.indexOf(item)}">
+            <i class="fa-solid ${item.icon}"></i>
+            <span><strong>${item.title}</strong><small>${item.type}</small></span>
+          </button>`).join("");
+        searchResults.querySelectorAll("[data-search-index]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const item = searchItems[Number(btn.dataset.searchIndex)];
+            closeSearch();
+            if (/^https?:|\.html$/.test(item.target)) {
+              window.location.href = item.target;
+              return;
+            }
+            const target = document.querySelector(item.target);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (item.location && typeof focusLocationByName === "function") {
+              setTimeout(() => focusLocationByName(item.location), 500);
+            }
+          });
+        });
+      }
+      function openSearch() {
+        searchPanel.classList.add("open");
+        searchTrigger.classList.add("open");
+        searchTrigger.setAttribute("aria-expanded", "true");
+        searchPanel.setAttribute("aria-hidden", "false");
+        renderSearchResults(siteSearch.value);
+        setTimeout(() => siteSearch.focus(), 80);
+      }
+      function closeSearch() {
+        searchPanel.classList.remove("open");
+        searchTrigger.classList.remove("open");
+        searchTrigger.setAttribute("aria-expanded", "false");
+        searchPanel.setAttribute("aria-hidden", "true");
+      }
+      searchTrigger.addEventListener("click", () =>
+        searchPanel.classList.contains("open") ? closeSearch() : openSearch(),
+      );
+      searchClose.addEventListener("click", closeSearch);
+      siteSearch.addEventListener("input", (e) => renderSearchResults(e.target.value));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeSearch();
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          openSearch();
+        }
+      });
+      document.addEventListener("click", (e) => {
+        const wrap = document.getElementById("navSearchWrap");
+        if (wrap && !wrap.contains(e.target)) closeSearch();
+      });
+      renderSearchResults();
 
       /* ---------- LOGIN MODAL ---------- */
       const modal = document.getElementById("modal");
@@ -3675,5 +5586,386 @@
       updateClock();
       setInterval(updateClock, 1000);
     </script>
-  </body>
+  
+<style id="betami-visual-system">
+:root{--b-green:#063321;--b-green2:#0b4b31;--b-gold:#e2bb54;--b-gold2:#c99a2b;--b-cream:#f6f1e7;--b-paper:#fffdf8;--b-ink:#16221d;--b-muted:#718078;--b-line:rgba(15,65,42,.12);--b-shadow:0 24px 70px rgba(1,28,17,.16);--b-ease:cubic-bezier(.22,.75,.25,1)}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+::selection{background:rgba(226,187,84,.42);color:#031f15}
+section{position:relative}
+nav,.nav{transition:transform .45s var(--b-ease),box-shadow .45s var(--b-ease),background .45s var(--b-ease)}
+nav a,.nav a{transition:color .25s ease,background .25s ease,transform .25s var(--b-ease)}
+nav a:hover,.nav a:hover{transform:translateY(-1px)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid rgba(226,187,84,.65);outline-offset:3px}
+.btn,button,.cta,.loc-action,.pill{transition:transform .25s var(--b-ease),box-shadow .25s ease,background .25s ease,border-color .25s ease,color .25s ease}
+.btn:hover,button:hover,.cta:hover,.loc-action:hover{transform:translateY(-2px)}
+.btn:active,button:active,.cta:active,.loc-action:active{transform:translateY(0) scale(.98)}
+.hero,.hero-slide,.banner,.home-hero{isolation:isolate}
+.hero:before,.hero-slide:before,.banner:before,.home-hero:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(circle at 75% 25%,rgba(226,187,84,.16),transparent 28%),linear-gradient(100deg,rgba(1,31,19,.62),rgba(1,31,19,.34) 44%,rgba(1,31,19,.08))}
+.hero>* ,.hero-slide>* ,.banner>* ,.home-hero>*{position:relative;z-index:2}
+.hero h1,.hero-title,.banner h1,.home-hero h1{letter-spacing:-.035em;text-wrap:balance;text-shadow:0 10px 38px rgba(0,0,0,.2)}
+.hero p,.hero-text,.banner p,.home-hero p{max-width:62ch;line-height:1.75}
+.eyebrow,.section-kicker,.label,.overline{letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+.card,.loc,.news-card,.business-card,.feature-card,.stat-card,.gallery-item,.contact-card{position:relative;overflow:hidden;transition:transform .45s var(--b-ease),box-shadow .45s ease,border-color .45s ease,background .45s ease}
+.card:hover,.loc:hover,.news-card:hover,.business-card:hover,.feature-card:hover,.stat-card:hover,.gallery-item:hover,.contact-card:hover{transform:translateY(-6px);box-shadow:var(--b-shadow)}
+.card img,.news-card img,.business-card img,.gallery-item img{transition:transform .8s var(--b-ease),filter .8s ease}
+.card:hover img,.news-card:hover img,.business-card:hover img,.gallery-item:hover img{transform:scale(1.045);filter:saturate(1.06) contrast(1.02)}
+#peta,#lokasi,.location-section{scroll-margin-top:100px}
+.loc{border-color:rgba(226,187,84,.16)}
+.loc:hover,.loc.on{border-color:rgba(226,187,84,.58)}
+.loc.on{box-shadow:0 18px 45px rgba(0,0,0,.16)}
+.loc b{display:flex;align-items:center;gap:.65rem}
+.loc b i{transition:transform .3s var(--b-ease)}
+.loc:hover b i,.loc.on b i{transform:translateY(-2px) scale(1.08)}
+.loc small{line-height:1.65}
+.loc-actions{flex-wrap:wrap}
+.loc-action{position:relative;overflow:hidden}
+.loc-action:before{content:"";position:absolute;inset:0;transform:translateX(-110%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent);transition:transform .65s var(--b-ease)}
+.loc-action:hover:before{transform:translateX(110%)}
+#map,.leaflet-container{background:#d8e0dc}
+#map{isolation:isolate}
+#map:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:450;box-shadow:inset 0 0 0 1px rgba(3,31,21,.08),inset 0 0 60px rgba(3,31,21,.08)}
+.leaflet-control-zoom{border:0!important;box-shadow:0 14px 38px rgba(1,28,17,.12)!important;border-radius:14px!important;overflow:hidden}
+.leaflet-control-zoom a{width:38px!important;height:38px!important;line-height:38px!important;color:#063321!important;background:rgba(255,253,248,.95)!important;border-bottom-color:rgba(3,31,21,.08)!important}
+.leaflet-control-zoom a:hover{background:#f1d783!important}
+.leaflet-control-attribution{font-size:8px!important;line-height:1.2!important;padding:3px 6px!important;opacity:.22!important;background:rgba(255,255,255,.7)!important;transition:opacity .2s ease!important}
+.leaflet-control-attribution:hover{opacity:.95!important}
+.leaflet-popup-content-wrapper{border-radius:18px!important;box-shadow:var(--b-shadow)!important}
+.map-popup{min-width:210px}.map-popup strong{display:block;color:#063321;margin-bottom:.35rem}.map-popup-type{display:inline-flex;margin-bottom:.65rem;padding:.25rem .5rem;border-radius:999px;color:#063321;background:rgba(226,187,84,.22);font-size:.72rem;font-weight:800}.map-coord{display:block;margin-top:.7rem;color:#718078}
+.betami-tooltip{border:0!important;border-radius:999px!important;box-shadow:0 8px 24px rgba(0,0,0,.18)!important;font-weight:800!important}
+input,textarea,select{transition:border-color .25s ease,box-shadow .25s ease,background .25s ease}
+input:focus,textarea:focus,select:focus{border-color:#e2bb54!important;box-shadow:0 0 0 4px rgba(226,187,84,.15)!important}
+textarea{min-height:150px;resize:vertical}
+tbody tr{transition:background .2s ease}tbody tr:hover{background:rgba(226,187,84,.07)}
+.gallery-item{border-radius:20px}.gallery-item:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 48%,rgba(2,24,15,.34));opacity:.55;transition:opacity .35s ease}.gallery-item:hover:after{opacity:.9}
+footer a{transition:color .2s ease,transform .2s var(--b-ease)}footer a:hover{transform:translateX(2px)}
+.to-top,.back-to-top,#toTop{box-shadow:0 12px 30px rgba(80,56,7,.22)}.to-top:hover,.back-to-top:hover,#toTop:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(80,56,7,.28)}
+.reveal-ready{opacity:0;transform:translateY(26px);transition:opacity .8s var(--b-ease),transform .8s var(--b-ease)}.reveal-ready.revealed{opacity:1;transform:translateY(0)}
+@keyframes pageEnter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.page-enter{animation:pageEnter .8s var(--b-ease) both}
+
+.u-text-gold{color:#e2bb54!important}.u-text-green{color:#063321!important}.u-bg-cream{background:#f6f1e7!important}.u-bg-paper{background:#fffdf8!important}.u-bg-green{background:#063321!important}.u-radius-sm{border-radius:12px!important}.u-radius-md{border-radius:20px!important}.u-radius-lg{border-radius:30px!important}.u-shadow{box-shadow:var(--b-shadow)!important}.u-relative{position:relative!important}.u-hidden{overflow:hidden!important}.u-center{text-align:center!important}.u-left{text-align:left!important}.u-right{text-align:right!important}
+@media(max-width:1100px){html{scroll-padding-top:100px}.hero h1,.hero-title{letter-spacing:-.025em}#map:after{box-shadow:inset 0 0 0 1px rgba(3,31,21,.07),inset 0 0 40px rgba(3,31,21,.06)}}
+@media(max-width:768px){html{scroll-padding-top:88px}body{font-size:15px}.hero h1,.hero-title,.banner h1,.home-hero h1{letter-spacing:-.018em;line-height:1.08}.hero p,.hero-text,.banner p,.home-hero p{line-height:1.65}.loc-actions{gap:.55rem}.loc-action{flex:1 1 130px;justify-content:center}.leaflet-control-zoom a{width:36px!important;height:36px!important;line-height:36px!important}.leaflet-control-attribution{display:none!important}.map-popup{min-width:180px;font-size:12px}textarea{min-height:130px}.reveal-ready{transform:translateY(18px)}.card:hover,.loc:hover,.news-card:hover,.business-card:hover,.feature-card:hover,.stat-card:hover,.gallery-item:hover{transform:none}}
+@media(max-width:480px){html{scroll-padding-top:78px}.hero h1,.hero-title{font-size:clamp(2.15rem,11vw,3.35rem)}.loc-action{min-height:42px;font-size:.78rem}.leaflet-control-attribution{display:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+<script id="betami-visual-behavior">
+(()=>{const root=document.documentElement;document.body.classList.add('page-enter');const sel=['section h2','section h3','.card','.news-card','.business-card','.feature-card','.stat-card','.gallery-item','.loc','.contact-card'].join(',');const nodes=[...document.querySelectorAll(sel)].filter((n,i,a)=>a.indexOf(n)===i);nodes.forEach((n,i)=>{if(!n.closest('.leaflet-pane')){n.classList.add('reveal-ready');n.style.transitionDelay=`${(i%6)*.08}s`}});if('IntersectionObserver'in window){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px'});nodes.forEach(n=>o.observe(n))}else nodes.forEach(n=>n.classList.add('revealed'));const links=[...document.querySelectorAll('a[href^="#"]')].filter(a=>a.getAttribute('href').length>1);const groups=new Map;links.forEach(a=>{const id=a.getAttribute('href').slice(1),s=document.getElementById(id);if(s){if(!groups.has(id))groups.set(id,{s,links:[]});groups.get(id).links.push(a)}});if('IntersectionObserver'in window){const so=new IntersectionObserver(es=>{const v=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!v)return;links.forEach(a=>a.classList.remove('is-active'));const g=groups.get(v.target.id);if(g)g.links.forEach(a=>a.classList.add('is-active'))},{threshold:[.15,.35,.55],rootMargin:'-25% 0px -55% 0px'});groups.forEach(g=>so.observe(g.s))}const update=()=>{const max=Math.max(document.documentElement.scrollHeight-innerHeight,1);root.style.setProperty('--betami-scroll-progress',(scrollY/max).toFixed(4))};update();addEventListener('scroll',update,{passive:true});addEventListener('resize',()=>{clearTimeout(window.__betamiResizeTimer);window.__betamiResizeTimer=setTimeout(()=>dispatchEvent(new Event('resize')),180)},{passive:true});document.querySelectorAll('a[target="_blank"]').forEach(a=>{if(!a.rel.includes('noopener'))a.rel=`${a.rel} noopener`.trim()})})();
+</script>
+
+
+<script id="betami-motion-engine">
+(() => {
+  "use strict";
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const root = document.documentElement;
+  const body = document.body;
+
+  /* ---------- PAGE ENTER ---------- */
+  requestAnimationFrame(() => body.classList.add("motion-ready"));
+
+  /* ---------- POINTER GLOW ---------- */
+  if (!reduceMotion && window.matchMedia("(pointer:fine)").matches) {
+    const glow = document.createElement("div");
+    glow.className = "motion-glow";
+    glow.setAttribute("aria-hidden", "true");
+    body.appendChild(glow);
+
+    let px = innerWidth * .5;
+    let py = innerHeight * .28;
+    let tx = px, ty = py;
+    let raf = 0;
+
+    const draw = () => {
+      px += (tx - px) * .08;
+      py += (ty - py) * .08;
+      root.style.setProperty("--cursor-x", `${px}px`);
+      root.style.setProperty("--cursor-y", `${py}px`);
+      raf = requestAnimationFrame(draw);
+    };
+    draw();
+
+    addEventListener("pointermove", e => {
+      tx = e.clientX;
+      ty = e.clientY;
+    }, {passive:true});
+
+    addEventListener("pointerleave", () => {
+      tx = innerWidth * .5;
+      ty = innerHeight * .28;
+    }, {passive:true});
+  }
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  const updateProgress = () => {
+    const max = Math.max(document.documentElement.scrollHeight - innerHeight, 1);
+    root.style.setProperty("--betami-scroll-progress", Math.min(scrollY / max, 1).toFixed(4));
+  };
+  updateProgress();
+  addEventListener("scroll", updateProgress, {passive:true});
+
+  /* ---------- SCROLL REVEAL ---------- */
+  const revealSelector = [
+    "section h2",
+    "section h3",
+    ".card",
+    ".news-card",
+    ".business-card",
+    ".feature-card",
+    ".stat-card",
+    ".gallery-item",
+    ".loc",
+    ".contact-card",
+    ".cta",
+    ".eyebrow",
+    ".kicker"
+  ].join(",");
+
+  const revealNodes = [...document.querySelectorAll(revealSelector)]
+    .filter(el => !el.closest(".leaflet-container"))
+    .filter((el, i, arr) => arr.indexOf(el) === i);
+
+  revealNodes.forEach((el, i) => {
+    el.classList.add("motion-reveal");
+    if (i % 4 === 1) el.dataset.motion = "left";
+    if (i % 4 === 2) el.dataset.motion = "right";
+    if (i % 7 === 0) el.dataset.motion = "scale";
+    el.style.transitionDelay = `${Math.min((i % 5) * 70, 280)}ms`;
+  });
+
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: .12,
+      rootMargin: "0px 0px -40px 0px"
+    });
+    revealNodes.forEach(el => revealObserver.observe(el));
+  } else {
+    revealNodes.forEach(el => el.classList.add("is-visible"));
+  }
+
+  /* ---------- STAGGER CHILDREN ---------- */
+  document.querySelectorAll(
+    ".stats-grid,.features-grid,.news-grid,.business-grid,.gallery-grid,.loc-list"
+  ).forEach(group => {
+    [...group.children].forEach((child, i) => {
+      child.style.transitionDelay = `${Math.min(i * 80, 480)}ms`;
+    });
+  });
+
+  /* ---------- BUTTON RIPPLE ---------- */
+  document.querySelectorAll("button,.btn,.loc-action,.cta a").forEach(btn => {
+    btn.classList.add("motion-btn");
+    btn.addEventListener("click", e => {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement("span");
+      ripple.className = "ripple";
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 700);
+    });
+  });
+
+  /* ---------- CARD TILT ---------- */
+  if (!reduceMotion && window.matchMedia("(pointer:fine)").matches) {
+    const cards = document.querySelectorAll(
+      ".card,.news-card,.business-card,.feature-card,.stat-card,.gallery-item"
+    );
+
+    cards.forEach(card => {
+      card.classList.add("motion-card");
+      card.addEventListener("pointermove", e => {
+        if (card.closest(".leaflet-container")) return;
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width;
+        const y = (e.clientY - r.top) / r.height;
+        const rx = (0.5 - y) * 3.5;
+        const ry = (x - 0.5) * 4.5;
+        card.style.transform =
+          `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+
+  /* ---------- IMAGE MOTION ---------- */
+  document.querySelectorAll(".gallery-item,.image-card,.hero-media").forEach(el => {
+    el.classList.add("motion-image");
+  });
+
+  /* ---------- NAV SCROLL STATE ---------- */
+  const navCandidates = document.querySelectorAll(
+    "header,.site-header,.navbar,.topbar"
+  );
+  const onScrollNav = () => {
+    navCandidates.forEach(el => el.classList.toggle("motion-scrolled", scrollY > 30));
+  };
+  onScrollNav();
+  addEventListener("scroll", onScrollNav, {passive:true});
+
+  /* ---------- HERO PARALLAX ---------- */
+  if (!reduceMotion) {
+    const heroLayers = document.querySelectorAll(
+      ".hero::before,.home-hero::before,.hero-bg,.hero-image,.banner-bg"
+    );
+    const hero = document.querySelector(".hero,.home-hero,.banner");
+    if (hero) {
+      const moveHero = () => {
+        const y = Math.min(scrollY * .12, 70);
+        hero.style.setProperty("--hero-shift", `${y}px`);
+      };
+      addEventListener("scroll", moveHero, {passive:true});
+      moveHero();
+    }
+  }
+
+  /* ---------- NUMBER COUNTERS ---------- */
+  const counterCandidates = [...document.querySelectorAll(
+    ".counter,.counter-value,[data-count],[data-target]"
+  )];
+
+  const parseNumber = el => {
+    const raw = el.dataset.count || el.dataset.target || el.textContent;
+    const match = String(raw).replace(/,/g,"").match(/-?[\d.]+/);
+    return match ? Number(match[0]) : null;
+  };
+
+  const animateCounter = el => {
+    if (el.dataset.counted === "1") return;
+    const target = parseNumber(el);
+    if (target === null || !Number.isFinite(target)) return;
+    el.dataset.counted = "1";
+
+    const original = el.textContent.trim();
+    const suffix = original.replace(/[-\d.,\s]+/g, "");
+    const duration = 1300;
+    const start = performance.now();
+
+    const tick = now => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const value = target % 1 ? (target * eased).toFixed(1) : Math.round(target * eased);
+      el.textContent = `${Number(value).toLocaleString("id-ID")}${suffix}`;
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = original;
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if (counterCandidates.length && "IntersectionObserver" in window && !reduceMotion) {
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.65});
+    counterCandidates.forEach(el => {
+      el.classList.add("counter-value");
+      counterObserver.observe(el);
+    });
+  }
+
+  /* ---------- ACTIVE SECTION ---------- */
+  const sections = [...document.querySelectorAll("section[id]")];
+  const navLinks = [...document.querySelectorAll('a[href^="#"]')];
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            "is-active",
+            link.getAttribute("href") === id
+          );
+        });
+      });
+    }, {
+      rootMargin: "-25% 0px -60% 0px",
+      threshold: 0
+    });
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
+  /* ---------- SMOOTH ANCHOR ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const id = link.getAttribute("href");
+      if (!id || id === "#") return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start"
+      });
+    });
+  });
+
+  /* ---------- FLOATING PARTICLES IN HERO ---------- */
+  if (!reduceMotion) {
+    document.querySelectorAll(".hero,.home-hero").forEach(hero => {
+      const layer = document.createElement("div");
+      layer.className = "motion-particles";
+      layer.setAttribute("aria-hidden", "true");
+
+      for (let i = 0; i < 14; i++) {
+        const dot = document.createElement("span");
+        dot.className = "motion-particle";
+        dot.style.left = `${Math.random() * 100}%`;
+        dot.style.top = `${55 + Math.random() * 42}%`;
+        dot.style.animationDuration = `${5 + Math.random() * 7}s`;
+        dot.style.animationDelay = `${Math.random() * -8}s`;
+        dot.style.opacity = `${.15 + Math.random() * .35}`;
+        layer.appendChild(dot);
+      }
+      hero.appendChild(layer);
+    });
+  }
+
+  /* ---------- ESC CLOSE FOR MOBILE MENU / MODALS ---------- */
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    const mobile = document.querySelector(".mobile.open");
+    if (mobile && typeof window.toggleMobile === "function") {
+      window.toggleMobile();
+    }
+  });
+
+  /* ---------- RESIZE SAFETY FOR LEAFLET ---------- */
+  let resizeTimer;
+  addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (window.map && typeof window.map.invalidateSize === "function") {
+        window.map.invalidateSize(true);
+      }
+    }, 220);
+  }, {passive:true});
+
+  /* ---------- EXTERNAL LINKS ---------- */
+  document.querySelectorAll('a[target="_blank"]').forEach(a => {
+    const rel = a.getAttribute("rel") || "";
+    if (!/\bnoopener\b/.test(rel)) {
+      a.setAttribute("rel", `${rel} noopener`.trim());
+    }
+  });
+
+})();
+</script>
+
+</body>
 </html>

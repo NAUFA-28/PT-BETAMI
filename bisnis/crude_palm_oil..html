@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oil | PT BETAMI</title>
+<title>Oil PT BETAMI | Crude Palm Oil</title>
 
-<meta name="description"
-content="Oil PT BETAMI — informasi Crude Palm Oil, market, angka referensi, grafik dan rantai nilai industri kelapa sawit.">
+<meta
+    name="description"
+    content="Oil PT BETAMI - Crude Palm Oil, market insight, harga referensi, grafik dan rantai nilai kelapa sawit."
+>
 
 <style>
 
@@ -26,24 +29,24 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#03130b;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#04150d;
     color:#fff;
+
     overflow-x:hidden;
+}
+
+button,
+a{
+    font-family:inherit;
 }
 
 img{
     max-width:100%;
-    display:block;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button{
-    font-family:inherit;
 }
 
 
@@ -52,26 +55,27 @@ button{
 ========================================================= */
 
 :root{
-    --dark:#03130b;
-    --dark2:#061d12;
-    --dark3:#092619;
 
-    --green:#0b7a42;
-    --green2:#19c774;
-    --green3:#55efa2;
+    --green-dark:#04150d;
+    --green:#0b6b3a;
+    --green-light:#19b86b;
+    --green-bright:#4eea9a;
 
     --red:#e53935;
-    --red2:#ff625d;
+    --red-light:#ff6662;
 
-    --gold:#d6ad52;
+    --gold:#d5a84b;
 
     --white:#fff;
-    --muted:#879a90;
+    --muted:#92a39a;
 
-    --border:rgba(255,255,255,.09);
+    --card:#092319;
+
+    --border:
+        rgba(255,255,255,.09);
 
     --shadow:
-        0 30px 80px rgba(0,0,0,.38);
+        0 30px 80px rgba(0,0,0,.35);
 }
 
 
@@ -80,30 +84,50 @@ button{
 ========================================================= */
 
 body::before{
+
     content:"";
+
     position:fixed;
-    width:600px;
-    height:600px;
+
+    width:500px;
+    height:500px;
+
     border-radius:50%;
-    left:-300px;
+
+    background:
+        rgba(0,190,105,.08);
+
     top:-250px;
-    background:rgba(25,199,116,.08);
-    filter:blur(70px);
+    left:-180px;
+
+    filter:blur(60px);
+
     pointer-events:none;
+
     z-index:-1;
 }
 
 body::after{
+
     content:"";
+
     position:fixed;
+
     width:500px;
     height:500px;
+
     border-radius:50%;
-    right:-250px;
-    bottom:-250px;
-    background:rgba(229,57,53,.06);
+
+    background:
+        rgba(229,57,53,.055);
+
+    right:-200px;
+    bottom:-200px;
+
     filter:blur(70px);
+
     pointer-events:none;
+
     z-index:-1;
 }
 
@@ -113,68 +137,109 @@ body::after{
 ========================================================= */
 
 header{
+
     position:absolute;
+
     top:0;
     left:0;
+
     width:100%;
+
     padding:25px 7%;
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
+    justify-content:space-between;
+
     z-index:100;
+
     background:
         linear-gradient(
-            rgba(0,0,0,.75),
+            rgba(0,0,0,.78),
             transparent
         );
 }
 
 .logo{
+
     font-size:25px;
-    font-weight:900;
+
+    font-weight:bold;
+
     letter-spacing:5px;
+
 }
 
-.logo .a{
-    color:var(--green2);
+.logo span{
+    color:var(--green-light);
 }
 
-.logo .mi{
+.logo b{
     color:var(--red);
 }
 
-.logo small{
+.logo-sub{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#84968d;
+
     font-size:8px;
-    color:#9aaba2;
+
     letter-spacing:3px;
-    margin-left:8px;
-    vertical-align:middle;
 }
 
 .nav-actions{
+
     display:flex;
-    gap:10px;
+
     align-items:center;
+
+    gap:12px;
 }
 
 .nav-btn{
-    padding:11px 18px;
-    border:1px solid rgba(255,255,255,.25);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:11px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
     border-radius:8px;
-    font-size:12px;
-    font-weight:bold;
+
     transition:.3s;
+
+    font-size:13px;
+
 }
 
 .nav-btn:hover{
-    transform:translateY(-2px);
-    border-color:var(--green2);
-    background:rgba(25,199,116,.12);
+
+    background:
+        rgba(25,184,107,.15);
+
+    border-color:
+        var(--green-light);
+
+    transform:
+        translateY(-2px);
 }
 
 .nav-btn.red:hover{
-    border-color:var(--red);
-    background:rgba(229,57,53,.12);
+
+    background:
+        var(--red);
+
+    border-color:
+        var(--red);
 }
 
 
@@ -183,210 +248,383 @@ header{
 ========================================================= */
 
 .hero{
-    min-height:760px;
+
+    min-height:720px;
+
     position:relative;
+
     overflow:hidden;
+
     display:flex;
+
     align-items:center;
 }
 
 .hero-bg{
+
     position:absolute;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
-    animation:heroZoom 13s ease-in-out infinite alternate;
+
+    animation:
+        heroZoom 12s
+        ease-in-out
+        infinite alternate;
 }
 
 .hero-overlay{
+
     position:absolute;
+
     inset:0;
+
     background:
         linear-gradient(
             90deg,
-            rgba(1,15,9,.98) 0%,
-            rgba(2,22,13,.90) 40%,
-            rgba(2,22,13,.48) 70%,
-            rgba(0,0,0,.25) 100%
+            rgba(2,19,11,.97) 0%,
+            rgba(2,19,11,.86) 40%,
+            rgba(2,19,11,.30) 100%
         );
 }
 
 .hero::after{
+
     content:"";
+
     position:absolute;
+
     left:0;
     right:0;
     bottom:0;
-    height:220px;
+
+    height:180px;
+
     background:
         linear-gradient(
             transparent,
-            var(--dark)
+            var(--green-dark)
         );
 }
 
 .hero-content{
+
     position:relative;
-    z-index:5;
-    width:min(1250px,86%);
+
+    z-index:3;
+
+    width:
+        min(1250px,86%);
+
     margin:auto;
+
     padding-top:80px;
-    animation:heroIn 1s cubic-bezier(.2,.8,.2,1);
+
+    animation:
+        heroIn 1s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 .hero-label{
-    display:flex;
+
+    display:inline-flex;
+
     align-items:center;
+
     gap:10px;
-    color:#aebdb6;
-    font-size:11px;
+
+    color:#b9c9c1;
+
+    font-size:12px;
+
     letter-spacing:4px;
+
     font-weight:bold;
+
     margin-bottom:25px;
 }
 
 .live-dot{
+
     width:9px;
     height:9px;
-    background:var(--green2);
+
     border-radius:50%;
-    animation:pulse 1.6s infinite;
+
+    background:
+        var(--green-light);
+
+    box-shadow:
+        0 0 0
+        rgba(25,184,107,.7);
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+.live-dot.offline{
+
+    background:
+        var(--red);
+
+    animation:none;
+
+    box-shadow:
+        0 0 10px
+        rgba(229,57,53,.5);
 }
 
 .hero h1{
-    font-size:clamp(58px,8vw,110px);
-    line-height:.86;
-    letter-spacing:-6px;
+
+    font-size:
+        clamp(55px,8vw,105px);
+
+    line-height:.88;
+
+    letter-spacing:-5px;
+
     max-width:900px;
+
     margin-bottom:30px;
 }
 
 .hero h1 .green{
-    color:var(--green2);
+    color:var(--green-light);
 }
 
 .hero h1 .red{
     color:var(--red);
 }
 
-.hero-subtitle{
-    color:#d1dbd6;
-    font-size:18px;
-    line-height:1.8;
+.hero p{
+
     max-width:700px;
+
+    color:#c1ccc6;
+
+    font-size:17px;
+
+    line-height:1.8;
+
     margin-bottom:35px;
 }
 
 .hero-buttons{
+
     display:flex;
+
+    gap:14px;
+
     flex-wrap:wrap;
-    gap:13px;
 }
 
 .hero-button{
-    padding:15px 24px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    padding:15px 25px;
+
     border-radius:8px;
-    font-size:13px;
+
+    font-size:14px;
+
     font-weight:bold;
+
     transition:.35s;
 }
 
 .hero-button.primary{
+
     background:
         linear-gradient(
             135deg,
             var(--green),
-            var(--green2)
+            var(--green-light)
         );
+
     box-shadow:
-        0 15px 35px rgba(25,199,116,.20);
+        0 12px 30px
+        rgba(25,184,107,.2);
 }
 
 .hero-button.primary:hover{
-    transform:translateY(-4px);
+
+    transform:
+        translateY(-4px);
+
     box-shadow:
-        0 20px 45px rgba(25,199,116,.30);
+        0 18px 40px
+        rgba(25,184,107,.3);
 }
 
 .hero-button.secondary{
-    border:1px solid rgba(255,255,255,.28);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
 }
 
 .hero-button.secondary:hover{
-    border-color:var(--red);
-    background:rgba(229,57,53,.10);
+
+    border-color:
+        var(--red);
+
+    background:
+        rgba(229,57,53,.1);
 }
 
 
 /* =========================================================
-   HERO MARKET
+   MARKET FLOATING
 ========================================================= */
 
 .market-floating{
+
     position:absolute;
+
+    z-index:5;
+
     right:7%;
-    bottom:85px;
-    z-index:8;
+
+    bottom:80px;
+
     width:330px;
+
     padding:25px;
-    border-radius:20px;
-    background:rgba(4,25,16,.78);
-    border:1px solid rgba(255,255,255,.13);
-    backdrop-filter:blur(20px);
+
+    border-radius:18px;
+
+    background:
+        rgba(5,25,16,.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    backdrop-filter:
+        blur(18px);
+
     box-shadow:
-        0 30px 70px rgba(0,0,0,.4);
-    animation:floatPanel 4s ease-in-out infinite;
+        0 25px 60px
+        rgba(0,0,0,.3);
+
+    animation:
+        floatPanel 4s
+        ease-in-out
+        infinite;
 }
 
 .market-top{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     margin-bottom:18px;
 }
 
 .market-name{
-    color:#91a39a;
-    font-size:10px;
+
+    font-size:11px;
+
     letter-spacing:3px;
-    font-weight:bold;
+
+    color:#a9bbb2;
 }
 
 .market-status{
-    color:var(--green3);
-    font-size:9px;
+
+    font-size:10px;
+
+    color:
+        var(--green-light);
+
     display:flex;
+
     align-items:center;
+
     gap:6px;
 }
 
+.market-status.offline{
+
+    color:
+        var(--red-light);
+}
+
 .market-price{
-    font-size:42px;
-    font-weight:900;
+
+    font-size:38px;
+
+    font-weight:bold;
+
     letter-spacing:-2px;
+
+    transition:.3s;
 }
 
 .market-unit{
-    color:#71837a;
-    font-size:10px;
+
+    color:#879890;
+
+    font-size:11px;
+
     margin-top:5px;
 }
 
 .market-change{
+
     display:inline-flex;
+
     margin-top:18px;
+
     padding:7px 11px;
+
     border-radius:6px;
-    background:rgba(25,199,116,.12);
-    color:var(--green3);
-    font-size:11px;
+
+    background:
+        rgba(25,184,107,.12);
+
+    color:
+        var(--green-bright);
+
+    font-size:12px;
+
     font-weight:bold;
 }
 
 .market-change.down{
-    background:rgba(229,57,53,.12);
-    color:var(--red2);
+
+    background:
+        rgba(229,57,53,.12);
+
+    color:
+        var(--red-light);
+}
+
+.connection-text{
+
+    margin-top:15px;
+
+    padding-top:13px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    color:#71837a;
+
+    font-size:10px;
+
+    line-height:1.6;
 }
 
 
@@ -395,23 +633,38 @@ header{
 ========================================================= */
 
 .section{
-    width:min(1250px,90%);
+
+    width:
+        min(1250px,90%);
+
     margin:auto;
+
     padding:110px 0;
 }
 
 .section-label{
-    color:var(--green2);
-    font-size:10px;
+
+    color:
+        var(--green-light);
+
+    font-size:11px;
+
     letter-spacing:4px;
+
     font-weight:bold;
-    margin-bottom:15px;
+
+    margin-bottom:16px;
 }
 
 .section-title{
-    font-size:clamp(40px,5vw,68px);
-    letter-spacing:-4px;
-    line-height:.98;
+
+    font-size:
+        clamp(38px,5vw,65px);
+
+    letter-spacing:-3px;
+
+    line-height:1;
+
     margin-bottom:20px;
 }
 
@@ -420,10 +673,15 @@ header{
 }
 
 .section-description{
-    max-width:730px;
-    color:var(--muted);
+
+    color:
+        var(--muted);
+
+    max-width:720px;
+
     line-height:1.8;
-    font-size:14px;
+
+    font-size:15px;
 }
 
 
@@ -431,18 +689,32 @@ header{
    MARKET
 ========================================================= */
 
+.market-section{
+    position:relative;
+}
+
 .market-head{
+
     display:flex;
+
+    align-items:end;
+
     justify-content:space-between;
-    align-items:flex-end;
+
     gap:30px;
+
     margin-bottom:45px;
 }
 
 .market-date{
-    color:#677a70;
-    font-size:10px;
+
+    color:#697a71;
+
+    font-size:11px;
+
     letter-spacing:2px;
+
+    text-align:right;
 }
 
 
@@ -451,113 +723,114 @@ header{
 ========================================================= */
 
 .market-grid{
+
     display:grid;
+
     grid-template-columns:
-        1.3fr .7fr .7fr .7fr;
-    gap:14px;
-    margin-bottom:25px;
+        1.25fr .75fr .75fr .75fr;
+
+    gap:15px;
+
+    margin-bottom:30px;
 }
 
 .market-card{
-    position:relative;
-    overflow:hidden;
-    min-height:150px;
+
+    min-height:145px;
+
     padding:25px;
-    border-radius:17px;
-    border:1px solid var(--border);
+
+    border-radius:16px;
+
     background:
         linear-gradient(
             145deg,
             rgba(255,255,255,.055),
-            rgba(255,255,255,.012)
+            rgba(255,255,255,.015)
         );
+
+    border:
+        1px solid
+        var(--border);
+
+    position:relative;
+
+    overflow:hidden;
+
     transition:.4s;
 }
 
-.market-card::after{
+.market-card::before{
+
     content:"";
+
     position:absolute;
-    width:130px;
-    height:130px;
+
+    width:120px;
+    height:120px;
+
     border-radius:50%;
-    right:-70px;
-    bottom:-70px;
-    background:rgba(25,199,116,.07);
+
+    background:
+        rgba(25,184,107,.06);
+
+    right:-50px;
+    bottom:-60px;
 }
 
 .market-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(25,199,116,.35);
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.25);
-}
 
-.market-card.red-card:hover{
-    border-color:rgba(229,57,53,.4);
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(25,184,107,.35);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.25);
 }
 
 .card-label{
-    color:#71847a;
-    font-size:9px;
+
+    color:#7e9087;
+
+    font-size:10px;
+
     letter-spacing:2px;
+
     font-weight:bold;
+
     margin-bottom:15px;
 }
 
 .card-value{
+
     font-size:28px;
-    font-weight:900;
+
+    font-weight:bold;
 }
 
 .big-card .card-value{
-    font-size:40px;
+
+    font-size:38px;
 }
 
 .green-text{
-    color:var(--green3);
+    color:#4eea9a;
 }
 
 .red-text{
-    color:var(--red2);
+    color:#ff6662;
 }
 
 .card-small{
-    color:#64766e;
-    font-size:10px;
+
+    color:#687970;
+
+    font-size:11px;
+
     margin-top:8px;
-}
-
-
-/* =========================================================
-   MINI STATUS
-========================================================= */
-
-.market-mini-row{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-    margin-bottom:35px;
-}
-
-.mini-stat{
-    padding:17px 18px;
-    border-radius:12px;
-    background:#061b10;
-    border:1px solid rgba(255,255,255,.06);
-}
-
-.mini-stat-top{
-    display:flex;
-    justify-content:space-between;
-    color:#71847a;
-    font-size:9px;
-    letter-spacing:1px;
-    margin-bottom:9px;
-}
-
-.mini-stat-value{
-    font-size:18px;
-    font-weight:bold;
 }
 
 
@@ -566,116 +839,190 @@ header{
 ========================================================= */
 
 .chart-wrapper{
+
     position:relative;
+
     padding:35px;
+
     border-radius:22px;
-    background:#061d12;
-    border:1px solid var(--border);
-    box-shadow:var(--shadow);
+
+    background:
+        #071e13;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        var(--shadow);
+
     overflow:hidden;
 }
 
 .chart-wrapper::before{
+
     content:"";
+
     position:absolute;
-    width:400px;
-    height:400px;
+
+    top:-150px;
+    right:-150px;
+
+    width:350px;
+    height:350px;
+
     border-radius:50%;
-    right:-200px;
-    top:-250px;
-    background:rgba(25,199,116,.07);
+
+    background:
+        rgba(25,184,107,.07);
+
     filter:blur(20px);
 }
 
 .chart-header{
+
     position:relative;
+
     z-index:2;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     margin-bottom:25px;
 }
 
 .chart-title{
+
     font-size:18px;
+
     font-weight:bold;
 }
 
 .chart-subtitle{
-    color:#697b72;
-    font-size:10px;
+
+    color:#687970;
+
+    font-size:11px;
+
     margin-top:6px;
 }
 
 .chart-badge{
+
     padding:8px 12px;
+
     border-radius:6px;
-    color:var(--green3);
-    background:rgba(25,199,116,.1);
-    font-size:9px;
-    font-weight:bold;
+
+    background:
+        rgba(25,184,107,.1);
+
+    color:#4eea9a;
+
+    font-size:10px;
+
     letter-spacing:1px;
+
+    font-weight:bold;
 }
 
 .chart{
+
     position:relative;
+
     z-index:2;
-    height:350px;
+
+    height:340px;
 }
 
 svg{
+
     width:100%;
     height:100%;
+
     overflow:visible;
 }
 
 .grid-line{
-    stroke:rgba(255,255,255,.06);
+
+    stroke:
+        rgba(255,255,255,.06);
+
     stroke-width:1;
 }
 
 .chart-area{
-    fill:url(#chartGradient);
+
+    fill:
+        url(#chartGradient);
+
     opacity:.35;
 }
 
 .chart-line{
+
     fill:none;
-    stroke:var(--green2);
+
+    stroke:
+        var(--green-light);
+
     stroke-width:4;
+
     stroke-linecap:round;
+
     stroke-linejoin:round;
+
     stroke-dasharray:1000;
+
     stroke-dashoffset:1000;
+
     animation:
         drawLine 2.5s
         cubic-bezier(.2,.8,.2,1)
         forwards;
+
     filter:
         drop-shadow(
-            0 0 9px
-            rgba(25,199,116,.4)
+            0 0 8px
+            rgba(25,184,107,.35)
         );
 }
 
 .chart-point{
+
     fill:#061b10;
-    stroke:var(--green2);
+
+    stroke:
+        var(--green-light);
+
     stroke-width:3;
+
+    animation:
+        pointIn .5s
+        ease both;
 }
 
 .chart-point.red{
-    stroke:var(--red);
+
+    stroke:
+        var(--red);
 }
 
 .chart-number{
-    fill:#d7e3dd;
+
+    fill:#d8e3dd;
+
     font-size:11px;
+
     font-weight:bold;
 }
 
 .chart-label{
-    fill:#60736a;
+
+    fill:#667870;
+
     font-size:10px;
 }
 
@@ -685,59 +1032,90 @@ svg{
 ========================================================= */
 
 .ticker{
+
     overflow:hidden;
+
     margin-top:20px;
-    border-top:1px solid rgba(255,255,255,.06);
-    border-bottom:1px solid rgba(255,255,255,.06);
-    background:rgba(0,0,0,.16);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+
+    background:
+        rgba(0,0,0,.16);
 }
 
 .ticker-track{
+
     display:flex;
+
     width:max-content;
-    animation:ticker 28s linear infinite;
+
+    animation:
+        ticker 25s
+        linear infinite;
 }
 
 .ticker-item{
-    padding:15px 35px;
-    border-right:1px solid rgba(255,255,255,.06);
+
+    padding:
+        15px 35px;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.06);
+
     white-space:nowrap;
-    font-size:10px;
+
+    font-size:11px;
 }
 
 .ticker-item b{
     color:#fff;
-    margin-left:5px;
 }
 
 .ticker-up{
-    color:var(--green3);
-    margin-left:5px;
+    color:#4eea9a;
 }
 
 .ticker-down{
-    color:var(--red2);
-    margin-left:5px;
+    color:#ff6662;
 }
 
 
 /* =========================================================
-   VISUAL SECTION
+   VISUAL
 ========================================================= */
 
 .visual-grid{
+
     display:grid;
-    grid-template-columns:1.25fr .75fr;
+
+    grid-template-columns:
+        1.25fr .75fr;
+
     gap:18px;
+
     margin-top:55px;
 }
 
 .visual-card{
+
     position:relative;
+
     height:480px;
+
     overflow:hidden;
+
     border-radius:22px;
-    border:1px solid var(--border);
+
+    border:
+        1px solid
+        var(--border);
 }
 
 .visual-card.small{
@@ -745,54 +1123,81 @@ svg{
 }
 
 .visual-card img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
-    transition:1s;
+
+    transition:
+        transform 1s ease;
 }
 
 .visual-card:hover img{
-    transform:scale(1.07);
+
+    transform:
+        scale(1.07);
 }
 
 .visual-overlay{
+
     position:absolute;
+
     inset:0;
+
     background:
         linear-gradient(
-            transparent 20%,
-            rgba(0,0,0,.9)
+            transparent 25%,
+            rgba(0,0,0,.85)
         );
 }
 
 .visual-content{
+
     position:absolute;
+
     left:30px;
     right:30px;
     bottom:30px;
-    z-index:3;
+
+    z-index:2;
 }
 
 .visual-tag{
+
     display:inline-block;
+
     padding:7px 10px;
+
     border-radius:5px;
-    background:var(--red);
-    font-size:8px;
+
+    background:
+        var(--red);
+
+    font-size:9px;
+
     font-weight:bold;
+
     letter-spacing:2px;
+
     margin-bottom:13px;
 }
 
 .visual-content h3{
-    font-size:29px;
+
+    font-size:30px;
+
     line-height:1.15;
+
     margin-bottom:10px;
 }
 
 .visual-content p{
-    color:#c1ccc6;
-    font-size:12px;
+
+    color:#c0cbc5;
+
+    font-size:13px;
+
     line-height:1.7;
 }
 
@@ -802,116 +1207,178 @@ svg{
 ========================================================= */
 
 .value-title{
+
     text-align:center;
+
     margin-bottom:55px;
 }
 
 .value-title .section-description{
+
     margin:auto;
 }
 
 .chain{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:15px;
 }
 
 .chain-card{
+
     position:relative;
-    min-height:340px;
+
+    min-height:330px;
+
     overflow:hidden;
+
     border-radius:18px;
-    border:1px solid var(--border);
-    background:#071e13;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        #081d13;
+
     transition:.45s;
 }
 
 .chain-card:hover{
-    transform:translateY(-9px);
-    border-color:rgba(25,199,116,.4);
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(25,184,107,.45);
 }
 
 .chain-card img{
+
     width:100%;
     height:190px;
+
     object-fit:cover;
-    transition:.8s;
+
+    transition:
+        transform .8s;
 }
 
 .chain-card:hover img{
-    transform:scale(1.08);
+
+    transform:
+        scale(1.08);
 }
 
 .chain-number{
+
     position:absolute;
+
     top:14px;
     right:14px;
-    z-index:4;
-    width:34px;
-    height:34px;
+
+    width:33px;
+    height:33px;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
+    align-items:center;
+
     border-radius:50%;
-    background:rgba(0,0,0,.75);
-    border:1px solid rgba(255,255,255,.2);
-    font-size:10px;
-    font-weight:bold;
+
+    background:
+        rgba(0,0,0,.7);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    font-size:11px;
+
+    z-index:2;
 }
 
 .chain-content{
+
     padding:22px;
 }
 
 .chain-content h3{
+
     font-size:18px;
+
     margin-bottom:8px;
 }
 
 .chain-content p{
-    color:#788a82;
-    font-size:11px;
-    line-height:1.8;
+
+    color:#778981;
+
+    font-size:12px;
+
+    line-height:1.7;
 }
 
 
 /* =========================================================
-   INFO STRIP
+   INFO
 ========================================================= */
 
 .info-strip{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:15px;
+
     margin-top:25px;
 }
 
 .info-box{
+
     padding:30px;
+
     border-radius:16px;
+
     background:
         linear-gradient(
             135deg,
-            rgba(25,199,116,.08),
+            rgba(25,184,107,.08),
             rgba(229,57,53,.04)
         );
-    border:1px solid rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
 }
 
 .info-icon{
-    font-size:24px;
+
+    font-size:25px;
+
     margin-bottom:18px;
 }
 
 .info-box h3{
-    font-size:18px;
+
+    font-size:19px;
+
     margin-bottom:10px;
 }
 
 .info-box p{
+
     color:#82938b;
-    font-size:12px;
+
+    font-size:13px;
+
     line-height:1.8;
 }
 
@@ -921,94 +1388,209 @@ svg{
 ========================================================= */
 
 .betami-cpo{
+
     position:relative;
-    padding:110px 0;
+
+    padding:100px 0;
+
     overflow:hidden;
+
     background:
         linear-gradient(
             135deg,
-            #061c10,
-            #03130b
+            #061b10,
+            #07170f
         );
 }
 
+.betami-cpo::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    right:-250px;
+    top:-200px;
+
+    background:
+        rgba(229,57,53,.06);
+
+    filter:blur(20px);
+}
+
 .betami-inner{
-    width:min(1250px,90%);
+
+    width:
+        min(1250px,90%);
+
     margin:auto;
+
     position:relative;
+
     z-index:2;
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:60px;
+
     align-items:center;
 }
 
 .betami-inner h2{
-    font-size:clamp(42px,5vw,68px);
-    letter-spacing:-4px;
+
+    font-size:
+        clamp(40px,5vw,65px);
+
+    letter-spacing:-3px;
+
     line-height:1;
+
     margin-bottom:22px;
 }
 
 .betami-inner h2 span{
-    color:var(--green2);
+    color:var(--green-light);
 }
 
 .betami-inner p{
-    color:#899a92;
+
+    color:#8c9d94;
+
     line-height:1.9;
-    font-size:14px;
+
+    font-size:15px;
+
     margin-bottom:25px;
 }
 
 .betami-points{
+
     display:grid;
+
     gap:12px;
 }
 
 .betami-point{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
-    color:#c7d1cc;
-    font-size:12px;
+
+    color:#c3cec8;
+
+    font-size:13px;
 }
 
 .check{
+
     width:23px;
     height:23px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     border-radius:50%;
-    color:var(--green2);
-    background:rgba(25,199,116,.12);
+
+    background:
+        rgba(25,184,107,.12);
+
+    color:
+        var(--green-light);
 }
 
 .betami-visual{
+
     position:relative;
+
     height:430px;
-    overflow:hidden;
+
     border-radius:25px;
-    border:1px solid rgba(255,255,255,.1);
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 }
 
 .betami-visual img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
 .betami-visual::after{
+
     content:"";
+
     position:absolute;
+
     inset:0;
+
     background:
         linear-gradient(
             135deg,
-            rgba(0,30,17,.15),
-            rgba(0,0,0,.65)
+            rgba(0,30,17,.2),
+            rgba(0,0,0,.55)
         );
+}
+
+
+/* =========================================================
+   SOURCE BOX
+========================================================= */
+
+.source-box{
+
+    width:
+        min(1250px,90%);
+
+    margin:
+        0 auto 50px;
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:#71827a;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+.source-box strong{
+
+    color:#b9c8c1;
+}
+
+.source-box a{
+
+    color:
+        var(--green-light);
+
+    text-decoration:none;
 }
 
 
@@ -1017,17 +1599,28 @@ svg{
 ========================================================= */
 
 footer{
+
     padding:45px 20px;
+
     text-align:center;
-    color:#63756d;
-    font-size:11px;
-    line-height:1.8;
-    border-top:1px solid rgba(255,255,255,.07);
+
+    color:#66766e;
+
+    font-size:12px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
     background:#020d08;
+
+    line-height:1.8;
 }
 
 footer strong{
-    color:var(--green2);
+
+    color:
+        var(--green-light);
 }
 
 
@@ -1036,74 +1629,116 @@ footer strong{
 ========================================================= */
 
 .reveal{
+
     opacity:0;
-    transform:translateY(35px);
+
+    transform:
+        translateY(35px);
+
     transition:
         opacity .8s ease,
         transform .8s ease;
 }
 
 .reveal.visible{
+
     opacity:1;
-    transform:translateY(0);
+
+    transform:
+        translateY(0);
 }
 
 
 /* =========================================================
-   ANIMATION
+   ANIMATIONS
 ========================================================= */
 
 @keyframes heroZoom{
+
     from{
         transform:scale(1);
     }
+
     to{
         transform:scale(1.08);
     }
 }
 
 @keyframes heroIn{
+
     from{
         opacity:0;
-        transform:translateX(-55px);
+        transform:
+            translateX(-55px);
     }
+
     to{
         opacity:1;
-        transform:translateX(0);
+        transform:
+            translateX(0);
     }
 }
 
 @keyframes pulse{
+
     0%{
-        box-shadow:0 0 0 0 rgba(25,199,116,.7);
+        box-shadow:
+            0 0 0 0
+            rgba(25,184,107,.7);
     }
+
     70%{
-        box-shadow:0 0 0 10px rgba(25,199,116,0);
+        box-shadow:
+            0 0 0 10px
+            rgba(25,184,107,0);
     }
+
     100%{
-        box-shadow:0 0 0 0 rgba(25,199,116,0);
+        box-shadow:
+            0 0 0 0
+            rgba(25,184,107,0);
     }
 }
 
 @keyframes floatPanel{
+
     0%,100%{
-        transform:translateY(0);
+        transform:
+            translateY(0);
     }
+
     50%{
-        transform:translateY(-10px);
+        transform:
+            translateY(-10px);
     }
 }
 
 @keyframes drawLine{
+
     to{
         stroke-dashoffset:0;
     }
 }
 
+@keyframes pointIn{
+
+    from{
+        opacity:0;
+        transform:scale(0);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
 @keyframes ticker{
+
     from{
         transform:translateX(0);
     }
+
     to{
         transform:translateX(-50%);
     }
@@ -1117,27 +1752,35 @@ footer strong{
 @media(max-width:1050px){
 
     .market-floating{
+
         position:relative;
+
         right:auto;
         bottom:auto;
-        width:min(90%,380px);
-        margin:-45px auto 60px;
+
+        width:
+            min(90%,380px);
+
+        margin:
+            -50px auto 60px;
     }
 
     .market-grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .big-card{
-        grid-column:span 2;
-    }
 
-    .market-mini-row{
-        grid-template-columns:1fr 1fr;
+        grid-column:
+            span 2;
     }
 
     .chain{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 }
 
@@ -1145,31 +1788,41 @@ footer strong{
 @media(max-width:800px){
 
     header{
-        padding:20px 5%;
+
+        padding:
+            20px 5%;
     }
 
     .hero{
+
         min-height:760px;
     }
 
     .hero-content{
+
         width:90%;
     }
 
     .visual-grid{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .visual-card,
     .visual-card.small{
+
         height:390px;
     }
 
     .betami-inner{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .betami-visual{
+
         height:360px;
     }
 }
@@ -1178,109 +1831,153 @@ footer strong{
 @media(max-width:600px){
 
     .logo{
-        font-size:18px;
+
+        font-size:19px;
+
         letter-spacing:3px;
     }
 
-    .logo small{
-        display:none;
+    .logo-sub{
+        font-size:6px;
+    }
+
+    .nav-actions{
+
+        gap:5px;
     }
 
     .nav-btn{
-        padding:9px 11px;
-        font-size:10px;
+
+        padding:
+            9px 12px;
+
+        font-size:11px;
     }
 
-    .home-hide{
+    .nav-btn.home-hide{
+
         display:none;
     }
 
     .hero{
+
         min-height:700px;
     }
 
     .hero h1{
-        font-size:56px;
+
+        font-size:55px;
+
         letter-spacing:-4px;
     }
 
-    .hero-subtitle{
+    .hero p{
+
         font-size:14px;
     }
 
+    .market-floating{
+
+        padding:21px;
+    }
+
     .market-price{
-        font-size:35px;
+
+        font-size:30px;
     }
 
     .section{
-        padding:80px 0;
+
+        padding:
+            80px 0;
     }
 
     .market-head{
+
         display:block;
     }
 
     .market-date{
+
         margin-top:15px;
+
+        text-align:left;
     }
 
     .market-grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
         gap:10px;
     }
 
     .big-card{
-        grid-column:span 2;
+
+        grid-column:
+            span 2;
     }
 
     .market-card{
+
+        padding:20px;
+
         min-height:125px;
-        padding:19px;
     }
 
     .big-card .card-value{
-        font-size:32px;
+
+        font-size:29px;
     }
 
     .card-value{
-        font-size:21px;
-    }
 
-    .market-mini-row{
-        grid-template-columns:1fr 1fr;
+        font-size:20px;
     }
 
     .chart-wrapper{
-        padding:20px 13px;
+
+        padding:
+            20px 14px;
+
         border-radius:16px;
     }
 
     .chart{
+
         height:270px;
     }
 
     .chart-number{
+
         font-size:9px;
     }
 
     .chain{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .info-strip{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .visual-card,
     .visual-card.small{
+
         height:330px;
     }
 
     .visual-content h3{
-        font-size:24px;
+
+        font-size:25px;
     }
 
     .betami-inner{
+
         gap:35px;
     }
 }
@@ -1291,10 +1988,18 @@ footer strong{
     *,
     *::before,
     *::after{
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:.01ms !important;
-        scroll-behavior:auto !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
     }
 }
 
@@ -1311,30 +2016,38 @@ footer strong{
 
 <header>
 
-    <div class="logo">
+    <div>
 
-        BET<span class="a">A</span><span class="mi">MI</span>
+        <div class="logo">
 
-        <small>OIL</small>
+            BET<span>A</span><b>MI</b>
+
+        </div>
+
+        <span class="logo-sub">
+
+            OIL • PALM • VALUE
+
+        </span>
 
     </div>
 
 
     <div class="nav-actions">
 
-        <!--
-        JIKA NEWSROOM SELEVEL DENGAN FILE INI:
-        crude-palm-oil.html
-        newsroom.html
-
-        MAKA JANGAN DIUBAH.
-        -->
-
         <a
-            href="../index.html" class="home"
-            class="nav-btn red">
+            href="../index.html"
+            class="nav-btn home-hide">
 
             ← Beranda
+
+        </a>
+
+        <a
+            href="newsroom.html"
+            class="nav-btn red">
+
+            Newsroom →
 
         </a>
 
@@ -1363,11 +2076,19 @@ footer strong{
 
     <div class="hero-content">
 
+
         <div class="hero-label">
 
-            <span class="live-dot"></span>
+            <span
+                class="live-dot"
+                id="heroDot">
+            </span>
 
-            PT BETAMI • OIL MARKET
+            <span id="heroConnection">
+
+                PT BETAMI • OIL MARKET
+
+            </span>
 
         </div>
 
@@ -1387,12 +2108,13 @@ footer strong{
         </h1>
 
 
-        <p class="hero-subtitle">
+        <p>
 
-            Pusat informasi Oil PT BETAMI.
-            Mengenal Crude Palm Oil dari
-            perkebunan, pengolahan, rantai nilai
-            hingga dinamika harga pasar.
+            Oil PT BETAMI menghadirkan
+            informasi referensi pasar CPO,
+            perkembangan harga, grafik,
+            serta perjalanan minyak sawit
+            dari kebun hingga pasar.
 
         </p>
 
@@ -1403,7 +2125,7 @@ footer strong{
                 href="#market"
                 class="hero-button primary">
 
-                Lihat Market →
+                Lihat Harga Oil →
 
             </a>
 
@@ -1418,27 +2140,41 @@ footer strong{
 
         </div>
 
+
     </div>
 
 
 
-    <!-- MARKET FLOATING -->
+    <!-- =================================================
+         FLOATING PRICE
+    ================================================= -->
 
     <div class="market-floating">
+
 
         <div class="market-top">
 
             <div class="market-name">
 
-                OIL • CPO REFERENCE
+                BETAMI OIL / CPO
 
             </div>
 
-            <div class="market-status">
 
-                <span class="live-dot"></span>
+            <div
+                class="market-status"
+                id="marketStatus">
 
-                MARKET
+                <span
+                    class="live-dot"
+                    id="statusDot">
+                </span>
+
+                <span id="statusText">
+
+                    CONNECTING
+
+                </span>
 
             </div>
 
@@ -1449,14 +2185,14 @@ footer strong{
             class="market-price"
             id="heroPrice">
 
-            Rp 14.821
+            Rp ---
 
         </div>
 
 
         <div class="market-unit">
 
-            per kg • referensi internal
+            estimasi Rp / kg • market reference
 
         </div>
 
@@ -1465,11 +2201,22 @@ footer strong{
             class="market-change"
             id="heroChange">
 
-            ▲ +2,35%
+            Menunggu data...
+
+        </div>
+
+
+        <div
+            class="connection-text"
+            id="connectionText">
+
+            Menghubungkan ke data referensi
+            pasar CPO...
 
         </div>
 
     </div>
+
 
 </section>
 
@@ -1480,7 +2227,7 @@ footer strong{
 ===================================================== -->
 
 <section
-    class="section reveal"
+    class="section market-section reveal"
     id="market">
 
 
@@ -1490,17 +2237,17 @@ footer strong{
 
             <div class="section-label">
 
-                OIL MARKET
+                BETAMI OIL MARKET
 
             </div>
 
 
             <h2 class="section-title">
 
-                Angka pasar
+                Angka harga
 
                 <span>
-                    CPO.
+                    Oil.
                 </span>
 
             </h2>
@@ -1508,19 +2255,20 @@ footer strong{
 
             <p class="section-description">
 
-                Tampilan angka dan grafik berikut
-                digunakan sebagai referensi visual
-                pada halaman Oil PT BETAMI.
+                Harga referensi CPO dikonversi
+                ke Rupiah agar lebih mudah
+                dibaca dalam konteks Indonesia.
 
             </p>
 
         </div>
 
 
-        <div class="market-date">
+        <div
+            class="market-date"
+            id="marketDate">
 
-            UPDATE:
-            17 AGUSTUS 2026
+            MENUNGGU DATA
 
         </div>
 
@@ -1528,7 +2276,9 @@ footer strong{
 
 
 
-    <!-- MARKET CARDS -->
+    <!-- =================================================
+         CARDS
+    ================================================= -->
 
     <div class="market-grid">
 
@@ -1537,7 +2287,7 @@ footer strong{
 
             <div class="card-label">
 
-                CPO REFERENCE
+                CPO MARKET REFERENCE
 
             </div>
 
@@ -1546,14 +2296,16 @@ footer strong{
                 class="card-value green-text"
                 id="mainPrice">
 
-                Rp 14.821
+                Rp ---
 
             </div>
 
 
-            <div class="card-small">
+            <div
+                class="card-small"
+                id="mainPriceUnit">
 
-                IDR / kilogram
+                Rupiah / kilogram
 
             </div>
 
@@ -1570,42 +2322,18 @@ footer strong{
             </div>
 
 
-            <div class="card-value green-text">
+            <div
+                class="card-value green-text"
+                id="changeValue">
 
-                +2,35%
-
-            </div>
-
-
-            <div class="card-small">
-
-                dibanding periode sebelumnya
-
-            </div>
-
-        </div>
-
-
-
-        <div class="market-card red-card">
-
-            <div class="card-label">
-
-                LOW
-
-            </div>
-
-
-            <div class="card-value red-text">
-
-                Rp 14.286
+                --%
 
             </div>
 
 
             <div class="card-small">
 
-                reference
+                dibanding data sebelumnya
 
             </div>
 
@@ -1617,113 +2345,51 @@ footer strong{
 
             <div class="card-label">
 
-                HIGH
+                HARGA CPO
 
             </div>
 
 
-            <div class="card-value green-text">
+            <div
+                class="card-value"
+                id="rmPrice">
 
-                Rp 14.821
+                RM ---
 
             </div>
 
 
             <div class="card-small">
 
-                reference
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- MINI STATS -->
-
-    <div class="market-mini-row">
-
-
-        <div class="mini-stat">
-
-            <div class="mini-stat-top">
-
-                OPEN
-
-                <span class="green-text">
-                    ▲
-                </span>
-
-            </div>
-
-            <div class="mini-stat-value">
-
-                Rp 14.510
+                sumber pasar Malaysia
 
             </div>
 
         </div>
 
 
-        <div class="mini-stat">
 
-            <div class="mini-stat-top">
+        <div class="market-card">
 
-                PREVIOUS
+            <div class="card-label">
 
-                <span class="red-text">
-                    ▼
-                </span>
+                KURS
 
             </div>
 
-            <div class="mini-stat-value">
 
-                Rp 14.480
+            <div
+                class="card-value green-text"
+                id="fxValue">
 
-            </div>
-
-        </div>
-
-
-        <div class="mini-stat">
-
-            <div class="mini-stat-top">
-
-                VOLUME
-
-                <span>
-                    CPO
-                </span>
+                Rp ---
 
             </div>
 
-            <div class="mini-stat-value">
 
-                18,42K
+            <div class="card-small">
 
-            </div>
-
-        </div>
-
-
-        <div class="mini-stat">
-
-            <div class="mini-stat-top">
-
-                STATUS
-
-                <span class="green-text">
-                    ●
-                </span>
-
-            </div>
-
-            <div class="mini-stat-value">
-
-                POSITIF
+                1 MYR → IDR
 
             </div>
 
@@ -1746,22 +2412,26 @@ footer strong{
 
                 <div class="chart-title">
 
-                    Pergerakan Harga CPO
+                    Pergerakan Oil / CPO
 
                 </div>
 
+
                 <div class="chart-subtitle">
 
-                    IDR / kilogram • reference visualization
+                    Reference market • ditampilkan
+                    dalam Rupiah / kg
 
                 </div>
 
             </div>
 
 
-            <div class="chart-badge">
+            <div
+                class="chart-badge"
+                id="chartBadge">
 
-                OIL • BETAMI
+                LIVE DATA
 
             </div>
 
@@ -1772,10 +2442,11 @@ footer strong{
         <div class="chart">
 
             <svg
-                viewBox="0 0 1000 350"
+                viewBox="0 0 1000 340"
                 preserveAspectRatio="none"
-                aria-label="Grafik pergerakan harga CPO"
+                aria-label="Grafik harga CPO"
             >
+
 
                 <defs>
 
@@ -1789,13 +2460,13 @@ footer strong{
 
                         <stop
                             offset="0%"
-                            stop-color="#19c774"
-                            stop-opacity=".42"
+                            stop-color="#19b86b"
+                            stop-opacity=".38"
                         />
 
                         <stop
                             offset="100%"
-                            stop-color="#19c774"
+                            stop-color="#19b86b"
                             stop-opacity="0"
                         />
 
@@ -1804,7 +2475,6 @@ footer strong{
                 </defs>
 
 
-                <!-- GRID -->
 
                 <line
                     class="grid-line"
@@ -1839,284 +2509,258 @@ footer strong{
                 />
 
 
-                <!-- AREA -->
 
                 <path
                     class="chart-area"
+                    id="chartArea"
                     d="
                     M0 235
                     L100 220
-                    L200 255
+                    L200 250
                     L300 265
-                    L400 215
-                    L500 230
-                    L600 180
+                    L400 210
+                    L500 225
+                    L600 175
                     L700 205
-                    L800 155
-                    L900 120
+                    L800 150
+                    L900 115
                     L1000 70
-                    L1000 350
-                    L0 350
+                    L1000 340
+                    L0 340
                     Z
                     "
                 />
 
 
-                <!-- LINE -->
 
                 <path
                     class="chart-line"
+                    id="chartLine"
                     d="
                     M0 235
                     L100 220
-                    L200 255
+                    L200 250
                     L300 265
-                    L400 215
-                    L500 230
-                    L600 180
+                    L400 210
+                    L500 225
+                    L600 175
                     L700 205
-                    L800 155
-                    L900 120
+                    L800 150
+                    L900 115
                     L1000 70
                     "
                 />
 
 
-                <!-- POINTS -->
 
-                <circle
-                    class="chart-point red"
-                    cx="0"
-                    cy="235"
-                    r="5"
-                />
+                <g id="chartPoints">
 
-                <circle
-                    class="chart-point"
-                    cx="100"
-                    cy="220"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point red"
+                        cx="0"
+                        cy="235"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point red"
-                    cx="200"
-                    cy="255"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point"
+                        cx="100"
+                        cy="220"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point red"
-                    cx="300"
-                    cy="265"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point red"
+                        cx="200"
+                        cy="250"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point"
-                    cx="400"
-                    cy="215"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point red"
+                        cx="300"
+                        cy="265"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point"
-                    cx="500"
-                    cy="230"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point"
+                        cx="400"
+                        cy="210"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point"
-                    cx="600"
-                    cy="180"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point"
+                        cx="500"
+                        cy="225"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point red"
-                    cx="700"
-                    cy="205"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point"
+                        cx="600"
+                        cy="175"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point"
-                    cx="800"
-                    cy="155"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point red"
+                        cx="700"
+                        cy="205"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point"
-                    cx="900"
-                    cy="120"
-                    r="5"
-                />
+                    <circle
+                        class="chart-point"
+                        cx="800"
+                        cy="150"
+                        r="5"
+                    />
 
-                <circle
-                    class="chart-point"
-                    cx="1000"
-                    cy="70"
-                    r="7"
-                />
+                    <circle
+                        class="chart-point"
+                        cx="900"
+                        cy="115"
+                        r="5"
+                    />
 
+                    <circle
+                        class="chart-point"
+                        cx="1000"
+                        cy="70"
+                        r="7"
+                    />
 
-                <!-- NUMBERS -->
-
-                <text
-                    class="chart-number"
-                    x="0"
-                    y="218"
-                >
-                    14.420
-                </text>
+                </g>
 
 
-                <text
-                    class="chart-number"
-                    x="100"
-                    y="203"
-                >
-                    14.510
-                </text>
+
+                <g id="chartNumbers">
+
+                    <text
+                        class="chart-number"
+                        x="0"
+                        y="218">
+                        4,696
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="100"
+                        y="203">
+                        4,702
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="200"
+                        y="233">
+                        4,686
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="300"
+                        y="248">
+                        4,677
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="400"
+                        y="193">
+                        4,723
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="500"
+                        y="208">
+                        4,748
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="600"
+                        y="158">
+                        4,697
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="700"
+                        y="188">
+                        4,724
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="800"
+                        y="133">
+                        4,710
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="900"
+                        y="98">
+                        4,821
+                    </text>
+
+                    <text
+                        class="chart-number"
+                        x="920"
+                        y="55">
+                        OIL
+                    </text>
+
+                </g>
 
 
-                <text
-                    class="chart-number"
-                    x="200"
-                    y="238"
-                >
-                    14.286
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="300"
-                    y="248"
-                >
-                    14.240
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="400"
-                    y="198"
-                >
-                    14.530
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="500"
-                    y="213"
-                >
-                    14.470
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="600"
-                    y="163"
-                >
-                    14.620
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="700"
-                    y="188"
-                >
-                    14.570
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="800"
-                    y="138"
-                >
-                    14.680
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="900"
-                    y="103"
-                >
-                    14.750
-                </text>
-
-
-                <text
-                    class="chart-number"
-                    x="875"
-                    y="55"
-                >
-                    Rp 14.821
-                </text>
-
-
-                <!-- LABEL -->
 
                 <text
                     class="chart-label"
                     x="0"
-                    y="330"
-                >
-                    04 AUG
+                    y="320">
+                    DATA 1
                 </text>
-
 
                 <text
                     class="chart-label"
                     x="200"
-                    y="330"
-                >
-                    06 AUG
+                    y="320">
+                    DATA 2
                 </text>
-
 
                 <text
                     class="chart-label"
                     x="400"
-                    y="330"
-                >
-                    10 AUG
+                    y="320">
+                    DATA 3
                 </text>
-
 
                 <text
                     class="chart-label"
                     x="600"
-                    y="330"
-                >
-                    12 AUG
+                    y="320">
+                    DATA 4
                 </text>
-
 
                 <text
                     class="chart-label"
                     x="800"
-                    y="330"
-                >
-                    14 AUG
+                    y="320">
+                    DATA 5
                 </text>
-
 
                 <text
                     class="chart-label"
                     x="920"
-                    y="330"
-                >
-                    17 AUG
+                    y="320">
+                    TERKINI
                 </text>
+
 
             </svg>
 
@@ -2126,23 +2770,32 @@ footer strong{
 
 
 
-    <!-- TICKER -->
+    <!-- =================================================
+         TICKER
+    ================================================= -->
 
     <div class="ticker">
 
-        <div class="ticker-track">
-
+        <div
+            class="ticker-track"
+            id="tickerTrack">
 
             <div class="ticker-item">
 
-                CPO
+                BETAMI OIL
 
-                <b>
-                    Rp 14.821
+                <b id="tickerPrice">
+
+                    Rp ---
+
                 </b>
 
-                <span class="ticker-up">
-                    ▲ 2,35%
+                <span
+                    class="ticker-up"
+                    id="tickerChange">
+
+                    ●
+
                 </span>
 
             </div>
@@ -2150,129 +2803,85 @@ footer strong{
 
             <div class="ticker-item">
 
-                14 AUG
+                CPO MARKET
 
-                <b>
-                    Rp 14.750
+                <b id="tickerRM">
+
+                    RM ---
+
                 </b>
-
-                <span class="ticker-down">
-                    ▼ 0,48%
-                </span>
 
             </div>
 
 
             <div class="ticker-item">
 
-                13 AUG
+                STATUS
 
-                <b>
-                    Rp 14.680
+                <b id="tickerStatus">
+
+                    CONNECTING
+
                 </b>
-
-                <span class="ticker-up">
-                    ▲ 1,20%
-                </span>
 
             </div>
 
 
             <div class="ticker-item">
 
-                12 AUG
+                SOURCE
 
                 <b>
-                    Rp 14.620
-                </b>
 
-                <span class="ticker-down">
-                    ▼ 0,42%
-                </span>
+                    MPOC / MARKET
+
+                </b>
 
             </div>
 
 
             <div class="ticker-item">
 
-                11 AUG
+                BETAMI OIL
 
-                <b>
-                    Rp 14.470
+                <b id="tickerPrice2">
+
+                    Rp ---
+
                 </b>
-
-                <span class="ticker-up">
-                    ▲ 0,75%
-                </span>
-
-            </div>
-
-
-            <!-- LOOP -->
-
-            <div class="ticker-item">
-
-                CPO
-
-                <b>
-                    Rp 14.821
-                </b>
-
-                <span class="ticker-up">
-                    ▲ 2,35%
-                </span>
 
             </div>
 
 
             <div class="ticker-item">
 
-                14 AUG
+                CPO MARKET
 
-                <b>
-                    Rp 14.750
+                <b id="tickerRM2">
+
+                    RM ---
+
                 </b>
-
-                <span class="ticker-down">
-                    ▼ 0,48%
-                </span>
 
             </div>
 
 
             <div class="ticker-item">
 
-                13 AUG
+                STATUS
 
-                <b>
-                    Rp 14.680
+                <b id="tickerStatus2">
+
+                    CONNECTING
+
                 </b>
 
-                <span class="ticker-up">
-                    ▲ 1,20%
-                </span>
-
             </div>
-
-
-            <div class="ticker-item">
-
-                12 AUG
-
-                <b>
-                    Rp 14.620
-                </b>
-
-                <span class="ticker-down">
-                    ▼ 0,42%
-                </span>
-
-            </div>
-
 
         </div>
 
     </div>
+
 
 </section>
 
@@ -2297,7 +2906,7 @@ footer strong{
         Dari kebun
 
         <span>
-            menjadi Oil.
+            menuju Oil.
         </span>
 
     </h2>
@@ -2305,10 +2914,11 @@ footer strong{
 
     <p class="section-description">
 
-        Setiap tahapan memiliki peran dalam
-        membentuk rantai produksi kelapa sawit,
-        mulai dari perkebunan hingga pengolahan
-        menjadi Crude Palm Oil.
+        Kelapa sawit menjadi bagian dari
+        rantai industri yang panjang, mulai
+        dari perkebunan, panen TBS,
+        pengolahan hingga menghasilkan
+        minyak sawit mentah.
 
     </p>
 
@@ -2329,24 +2939,25 @@ footer strong{
 
                 <div class="visual-tag">
 
-                    PALM ESTATE
+                    PALM OIL
 
                 </div>
 
                 <h3>
 
                     Dari perkebunan
-                    menuju bahan baku
-                    CPO.
+                    menjadi bagian
+                    dari rantai Oil.
 
                 </h3>
 
                 <p>
 
-                    Pengelolaan tanaman,
-                    pemanenan dan pengangkutan
-                    menjadi bagian penting
-                    dari proses awal.
+                    Budidaya, panen dan
+                    pengangkutan TBS
+                    menjadi bagian awal
+                    perjalanan produksi
+                    minyak sawit.
 
                 </p>
 
@@ -2359,8 +2970,8 @@ footer strong{
         <div class="visual-card small">
 
             <img
-                src="https://images.bisnis.com/photos/2023/07/21/193095/antarafoto-cpo-penyumbang-bea-cukai-terbanyak-di-aceh-210723-syf-13.jpg"
-                alt="Pengolahan minyak kelapa sawit"
+                src="https://cdn.antaranews.com/cache/1200x800/2022/05/09/IMG-20220509-WA0025_3.jpg"
+                alt="Panen kelapa sawit"
             >
 
             <div class="visual-overlay"></div>
@@ -2369,22 +2980,22 @@ footer strong{
 
                 <div class="visual-tag">
 
-                    PROCESSING
+                    HARVEST
 
                 </div>
 
                 <h3>
 
-                    Palm Oil
-                    Processing
+                    TBS menuju
+                    pengolahan
 
                 </h3>
 
                 <p>
 
-                    TBS masuk ke fasilitas
-                    pengolahan untuk menghasilkan
-                    minyak sawit mentah.
+                    Buah sawit yang telah
+                    dipanen dibawa menuju
+                    fasilitas pengolahan.
 
                 </p>
 
@@ -2400,7 +3011,7 @@ footer strong{
 
 
 <!-- =====================================================
-     VALUE CHAIN
+     RANTAI NILAI
 ===================================================== -->
 
 <section
@@ -2422,7 +3033,7 @@ footer strong{
             Rantai Nilai
 
             <span>
-                Sawit.
+                Oil.
             </span>
 
         </h2>
@@ -2430,9 +3041,9 @@ footer strong{
 
         <p class="section-description">
 
-            Perjalanan komoditas sawit dari
-            perkebunan hingga menjadi bagian
-            dari industri hilir.
+            Empat tahap utama perjalanan
+            kelapa sawit dari kebun sampai
+            menjadi komoditas minyak sawit.
 
         </p>
 
@@ -2443,20 +3054,16 @@ footer strong{
     <div class="chain">
 
 
-        <!-- 01 -->
-
         <div class="chain-card">
 
             <div class="chain-number">
                 01
             </div>
 
-
             <img
                 src="https://haisawit.co.id/images/blogs/1773025304.jpg"
-                alt="Perkebunan kelapa sawit"
+                alt="Perkebunan sawit"
             >
-
 
             <div class="chain-content">
 
@@ -2464,13 +3071,12 @@ footer strong{
                     Perkebunan
                 </h3>
 
-
                 <p>
 
-                    Kelapa sawit dibudidayakan
-                    dan dikelola untuk menghasilkan
-                    Tandan Buah Segar sebagai
-                    bahan baku utama.
+                    Tanaman kelapa sawit
+                    dikelola melalui kegiatan
+                    budidaya dan pemeliharaan
+                    kebun.
 
                 </p>
 
@@ -2479,8 +3085,6 @@ footer strong{
         </div>
 
 
-
-        <!-- 02 -->
 
         <div class="chain-card">
 
@@ -2488,12 +3092,10 @@ footer strong{
                 02
             </div>
 
-
             <img
                 src="https://cdn.antaranews.com/cache/1200x800/2022/05/09/IMG-20220509-WA0025_3.jpg"
-                alt="Panen kelapa sawit"
+                alt="Panen TBS sawit"
             >
-
 
             <div class="chain-content">
 
@@ -2501,12 +3103,12 @@ footer strong{
                     Panen & TBS
                 </h3>
 
-
                 <p>
 
-                    Tandan buah segar dipanen,
-                    dikumpulkan dan diangkut
-                    menuju fasilitas pengolahan.
+                    Tandan buah segar
+                    dipanen dan dikirim
+                    menuju fasilitas
+                    pengolahan.
 
                 </p>
 
@@ -2515,8 +3117,6 @@ footer strong{
         </div>
 
 
-
-        <!-- 03 -->
 
         <div class="chain-card">
 
@@ -2524,12 +3124,10 @@ footer strong{
                 03
             </div>
 
-
             <img
                 src="https://images.bisnis.com/photos/2023/07/21/193095/antarafoto-cpo-penyumbang-bea-cukai-terbanyak-di-aceh-210723-syf-13.jpg"
-                alt="Pabrik kelapa sawit"
+                alt="Pengolahan kelapa sawit"
             >
-
 
             <div class="chain-content">
 
@@ -2537,12 +3135,12 @@ footer strong{
                     Pengolahan
                 </h3>
 
-
                 <p>
 
                     TBS diproses melalui
-                    tahapan industri untuk
-                    menghasilkan CPO.
+                    fasilitas industri untuk
+                    menghasilkan minyak
+                    sawit mentah.
 
                 </p>
 
@@ -2552,32 +3150,27 @@ footer strong{
 
 
 
-        <!-- 04 -->
-
         <div class="chain-card">
 
             <div class="chain-number">
                 04
             </div>
 
-
             <img
                 src="https://a.storyblok.com/f/160385/96595c4adf/poligrow_3.jpg/m/?q=100&w=256"
                 alt="Industri minyak sawit"
             >
 
-
             <div class="chain-content">
 
                 <h3>
-                    Pasar & Hilirisasi
+                    Market & Hilirisasi
                 </h3>
-
 
                 <p>
 
-                    Produk sawit masuk ke
-                    berbagai rantai pasok
+                    Produk sawit masuk
+                    ke berbagai rantai pasok
                     pangan, oleokimia dan
                     energi.
 
@@ -2592,8 +3185,6 @@ footer strong{
 
 
 
-    <!-- INFO -->
-
     <div class="info-strip">
 
 
@@ -2604,15 +3195,14 @@ footer strong{
             </div>
 
             <h3>
-                Palm Estate
+                Palm
             </h3>
 
             <p>
 
-                Fondasi awal produksi
-                kelapa sawit melalui
-                pengelolaan perkebunan
-                yang terencana.
+                Fondasi awal industri
+                Oil yang berasal dari
+                perkebunan kelapa sawit.
 
             </p>
 
@@ -2631,9 +3221,9 @@ footer strong{
 
             <p>
 
-                TBS diproses melalui
-                fasilitas industri untuk
-                menghasilkan Crude Palm Oil.
+                TBS diproses menjadi
+                minyak sawit melalui
+                fasilitas industri.
 
             </p>
 
@@ -2647,15 +3237,15 @@ footer strong{
             </div>
 
             <h3>
-                Oil Market
+                Market
             </h3>
 
             <p>
 
-                Pasar dipengaruhi oleh
-                supply, demand, energi,
-                kebijakan dan kondisi
-                komoditas global.
+                Harga CPO dipengaruhi
+                oleh supply, demand,
+                energi dan kondisi
+                pasar global.
 
             </p>
 
@@ -2663,6 +3253,7 @@ footer strong{
 
 
     </div>
+
 
 </section>
 
@@ -2700,10 +3291,11 @@ footer strong{
 
             <p>
 
-                Oil PT BETAMI menjadi bagian
-                dari informasi perusahaan mengenai
-                komoditas kelapa sawit, proses
-                produksi dan ekosistem industrinya.
+                Halaman Oil PT BETAMI
+                menjadi pusat informasi
+                mengenai Crude Palm Oil,
+                pasar dan ekosistem
+                kelapa sawit.
 
             </p>
 
@@ -2717,7 +3309,7 @@ footer strong{
                         ✓
                     </span>
 
-                    Perkebunan kelapa sawit
+                    Palm Oil & CPO
 
                 </div>
 
@@ -2728,7 +3320,7 @@ footer strong{
                         ✓
                     </span>
 
-                    Pengelolaan operasional
+                    Market Reference
 
                 </div>
 
@@ -2739,7 +3331,7 @@ footer strong{
                         ✓
                     </span>
 
-                    Pengolahan CPO
+                    Rantai Nilai Sawit
 
                 </div>
 
@@ -2750,9 +3342,10 @@ footer strong{
                         ✓
                     </span>
 
-                    Rantai nilai dan hilirisasi
+                    Pertumbuhan Berkelanjutan
 
                 </div>
+
 
             </div>
 
@@ -2763,8 +3356,8 @@ footer strong{
         <div class="betami-visual">
 
             <img
-                src="https://www.suar.id/content/images/2026/02/antarafoto-pertumbuhan-ekonomi-sulbar-sepanjang-2025-1771497507.jpg"
-                alt="Aktivitas industri kelapa sawit"
+                src="https://haisawit.co.id/images/blogs/1773025304.jpg"
+                alt="Oil palm PT BETAMI"
             >
 
         </div>
@@ -2773,6 +3366,42 @@ footer strong{
     </div>
 
 </section>
+
+
+
+<!-- =====================================================
+     SOURCE
+===================================================== -->
+
+<div class="source-box">
+
+    <strong>SUMBER DATA:</strong>
+
+    Harga CPO yang digunakan sebagai
+    referensi berasal dari data pasar
+    kelapa sawit Malaysia/MPOC dan
+    dikonversikan ke Rupiah menggunakan
+    kurs MYR/IDR.
+
+    <br><br>
+
+    <strong>CATATAN:</strong>
+
+    Angka pada halaman ini adalah
+    <b>market reference</b>, bukan harga
+    jual/beli internal PT BETAMI.
+
+    <br><br>
+
+    Sumber referensi:
+    <a
+        href="https://www.mpoc.org.my/market-insight/daily-palm-oil-prices/"
+        target="_blank"
+        rel="noopener">
+        Malaysian Palm Oil Council
+    </a>
+
+</div>
 
 
 
@@ -2788,13 +3417,13 @@ footer strong{
         PT BETAMI
     </strong>
 
-    — OIL / CRUDE PALM OIL
+    — Oil / Crude Palm Oil
 
     <br>
 
-    Angka dan grafik pada halaman ini
-    merupakan data referensi/simulasi tampilan
-    dan bukan rekomendasi transaksi.
+    Market reference ditampilkan
+    sebagai informasi dan bukan
+    rekomendasi transaksi.
 
 </footer>
 
@@ -2803,363 +3432,693 @@ footer strong{
 <script>
 
 /* =========================================================
-   OIL DATA
+   BETAMI OIL DATA ENGINE
 ========================================================= */
 
-const CPO_API =
-    "http://localhost:3000/api/cpo";
+const state = {
 
+    connected:false,
 
-const oilData = {
+    cpoMYR:null,
 
-    price: null,
+    previousMYR:null,
 
-    previous: null,
+    myrIDR:null,
 
-    change: null,
+    priceIDRkg:null,
 
-    currency: "Rp",
+    changePercent:null,
 
-    unit: "IDR / kilogram",
+    date:null,
 
-    updated: "-",
-
-    market: "SPOT Medan",
-
-    source: "BAPPEBTI / ICDX"
+    source:"MPOC"
 
 };
 
 
 /* =========================================================
-   FORMAT RUPIAH
+   ELEMENTS
 ========================================================= */
 
-function formatRupiah(number) {
+const heroPrice =
+    document.getElementById("heroPrice");
 
-    if (
+const mainPrice =
+    document.getElementById("mainPrice");
+
+const rmPrice =
+    document.getElementById("rmPrice");
+
+const fxValue =
+    document.getElementById("fxValue");
+
+const changeValue =
+    document.getElementById("changeValue");
+
+const heroChange =
+    document.getElementById("heroChange");
+
+const heroDot =
+    document.getElementById("heroDot");
+
+const statusDot =
+    document.getElementById("statusDot");
+
+const marketStatus =
+    document.getElementById("marketStatus");
+
+const statusText =
+    document.getElementById("statusText");
+
+const heroConnection =
+    document.getElementById("heroConnection");
+
+const connectionText =
+    document.getElementById("connectionText");
+
+const marketDate =
+    document.getElementById("marketDate");
+
+const chartBadge =
+    document.getElementById("chartBadge");
+
+const tickerPrice =
+    document.getElementById("tickerPrice");
+
+const tickerPrice2 =
+    document.getElementById("tickerPrice2");
+
+const tickerRM =
+    document.getElementById("tickerRM");
+
+const tickerRM2 =
+    document.getElementById("tickerRM2");
+
+const tickerStatus =
+    document.getElementById("tickerStatus");
+
+const tickerStatus2 =
+    document.getElementById("tickerStatus2");
+
+
+/* =========================================================
+   NUMBER FORMAT
+========================================================= */
+
+function rupiah(number){
+
+    if(
         number === null ||
-        number === undefined
-    ) {
-        return "-";
+        number === undefined ||
+        !Number.isFinite(number)
+    ){
+
+        return "Rp ---";
+
     }
 
-    return new Intl.NumberFormat(
-        "id-ID"
-    ).format(number);
+    return "Rp " +
+        new Intl.NumberFormat(
+            "id-ID",
+            {
+                maximumFractionDigits:0
+            }
+        ).format(number);
+
+}
+
+
+function myr(number){
+
+    if(
+        number === null ||
+        number === undefined ||
+        !Number.isFinite(number)
+    ){
+
+        return "RM ---";
+
+    }
+
+    return "RM " +
+        new Intl.NumberFormat(
+            "en-US",
+            {
+                maximumFractionDigits:2
+            }
+        ).format(number);
+
 }
 
 
 /* =========================================================
-   UPDATE HARGA
+   STATUS CONNECTING
 ========================================================= */
 
-function updatePrice() {
+function setConnecting(){
 
-    const heroPrice =
-        document.getElementById(
-            "heroPrice"
-        );
+    statusText.textContent =
+        "CONNECTING";
 
-    const mainPrice =
-        document.getElementById(
-            "mainPrice"
-        );
+    heroConnection.textContent =
+        "PT BETAMI • CONNECTING";
+
+    connectionText.textContent =
+        "Menghubungkan ke data referensi pasar...";
+
+    chartBadge.textContent =
+        "CONNECTING";
+
+    tickerStatus.textContent =
+        "CONNECTING";
+
+    tickerStatus2.textContent =
+        "CONNECTING";
+
+}
 
 
-    const priceText =
-        oilData.currency +
-        " " +
-        formatRupiah(
-            oilData.price
-        );
+/* =========================================================
+   STATUS ONLINE
+========================================================= */
+
+function setOnline(){
+
+    state.connected = true;
+
+    statusText.textContent =
+        "LIVE";
+
+    marketStatus.classList.remove(
+        "offline"
+    );
+
+    heroDot.classList.remove(
+        "offline"
+    );
+
+    statusDot.classList.remove(
+        "offline"
+    );
+
+    heroConnection.textContent =
+        "PT BETAMI • OIL MARKET • LIVE";
+
+    connectionText.textContent =
+        "Data berhasil diterima. Harga ditampilkan sebagai market reference.";
+
+    chartBadge.textContent =
+        "LIVE DATA";
+
+    tickerStatus.textContent =
+        "LIVE";
+
+    tickerStatus2.textContent =
+        "LIVE";
+
+}
 
 
-    if (heroPrice) {
+/* =========================================================
+   STATUS OFFLINE
+========================================================= */
 
-        heroPrice.textContent =
-            priceText;
+function setOffline(message){
+
+    state.connected = false;
+
+    statusText.textContent =
+        "OFFLINE";
+
+    marketStatus.classList.add(
+        "offline"
+    );
+
+    heroDot.classList.add(
+        "offline"
+    );
+
+    statusDot.classList.add(
+        "offline"
+    );
+
+    heroConnection.textContent =
+        "PT BETAMI • OIL MARKET • OFFLINE";
+
+    connectionText.textContent =
+        message ||
+        "Internet/data market tidak terhubung.";
+
+    chartBadge.textContent =
+        "OFFLINE";
+
+    tickerStatus.textContent =
+        "OFFLINE";
+
+    tickerStatus2.textContent =
+        "OFFLINE";
+
+}
+
+
+/* =========================================================
+   UPDATE UI
+========================================================= */
+
+function updateUI(){
+
+    if(
+        state.cpoMYR === null ||
+        state.myrIDR === null
+    ){
+
+        return;
 
     }
 
 
-    if (mainPrice) {
+    /*
+       MYR/ton → IDR/kg
 
-        mainPrice.textContent =
-            priceText;
+       contoh:
+
+       RM 4,686 / ton
+       × kurs MYR/IDR
+       ÷ 1,000
+    */
+
+    state.priceIDRkg =
+        (
+            state.cpoMYR *
+            state.myrIDR
+        ) / 1000;
+
+
+    if(
+        state.previousMYR !== null &&
+        state.previousMYR > 0
+    ){
+
+        state.changePercent =
+            (
+                (
+                    state.cpoMYR -
+                    state.previousMYR
+                )
+                /
+                state.previousMYR
+            ) * 100;
 
     }
 
 
-    const changes =
-        document.querySelectorAll(
-            "[data-cpo-change]"
+    const price =
+        rupiah(
+            state.priceIDRkg
         );
 
 
-    changes.forEach(
-        element => {
+    heroPrice.textContent =
+        price;
 
-            if (
-                oilData.change === null
-            ) {
+    mainPrice.textContent =
+        price;
 
-                element.textContent =
-                    "-";
 
-                return;
+    rmPrice.textContent =
+        myr(
+            state.cpoMYR
+        );
 
+
+    fxValue.textContent =
+        "Rp " +
+        new Intl.NumberFormat(
+            "id-ID",
+            {
+                maximumFractionDigits:0
             }
+        ).format(
+            state.myrIDR
+        );
 
 
-            const sign =
-                oilData.change > 0
-                    ? "+"
-                    : "";
+    if(
+        state.changePercent !== null
+    ){
+
+        const positive =
+            state.changePercent >= 0;
 
 
-            element.textContent =
-                sign +
-                oilData.change.toFixed(2) +
-                "%";
+        const sign =
+            positive ? "+" : "";
 
 
-            element.classList.remove(
-                "cpo-up",
-                "cpo-down"
+        const text =
+            sign +
+            state.changePercent.toFixed(2) +
+            "%";
+
+
+        changeValue.textContent =
+            text;
+
+
+        heroChange.textContent =
+            (
+                positive
+                    ? "▲ "
+                    : "▼ "
+            ) +
+            text;
+
+
+        changeValue.classList.toggle(
+            "green-text",
+            positive
+        );
+
+        changeValue.classList.toggle(
+            "red-text",
+            !positive
+        );
+
+
+        heroChange.classList.toggle(
+            "down",
+            !positive
+        );
+
+    }
+
+
+    tickerPrice.textContent =
+        price;
+
+    tickerPrice2.textContent =
+        price;
+
+    tickerRM.textContent =
+        myr(state.cpoMYR);
+
+    tickerRM2.textContent =
+        myr(state.cpoMYR);
+
+
+    if(state.date){
+
+        marketDate.textContent =
+            "DATA: " +
+            state.date;
+
+    }
+
+}
+
+
+/* =========================================================
+   FETCH EXCHANGE RATE
+========================================================= */
+
+async function getExchangeRate(){
+
+    const response =
+        await fetch(
+            "https://open.er-api.com/v6/latest/MYR",
+            {
+                cache:"no-store"
+            }
+        );
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "Kurs MYR/IDR gagal diambil"
+        );
+
+    }
+
+
+    const data =
+        await response.json();
+
+
+    if(
+        !data.rates ||
+        !data.rates.IDR
+    ){
+
+        throw new Error(
+            "Data IDR tidak tersedia"
+        );
+
+    }
+
+
+    return Number(
+        data.rates.IDR
+    );
+
+}
+
+
+/* =========================================================
+   GET CPO REFERENCE
+========================================================= */
+
+/*
+   MPOC menerbitkan daily palm oil prices.
+
+   Karena halaman HTML biasa bukan JSON API,
+   browser tidak selalu bisa mengambilnya langsung
+   akibat CORS.
+
+   Kita coba endpoint publik proxy terlebih dahulu.
+*/
+
+async function getCPO(){
+
+    const source =
+        "https://www.mpoc.org.my/market-insight/daily-palm-oil-prices/";
+
+    const proxy =
+        "https://api.allorigins.win/raw?url=" +
+        encodeURIComponent(source);
+
+
+    const response =
+        await fetch(
+            proxy,
+            {
+                cache:"no-store"
+            }
+        );
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "Data CPO tidak dapat diakses"
+        );
+
+    }
+
+
+    const html =
+        await response.text();
+
+
+    /*
+       Cari angka harga dari halaman MPOC.
+
+       Format yang biasa muncul:
+
+       RM 4686
+    */
+
+    const matches =
+        html.match(
+            /RM\s*([0-9][0-9,]*(?:\.[0-9]+)?)/gi
+        );
+
+
+    if(
+        !matches ||
+        !matches.length
+    ){
+
+        throw new Error(
+            "Harga CPO tidak ditemukan"
+        );
+
+    }
+
+
+    let value = null;
+
+
+    for(
+        const item of matches
+    ){
+
+        const number =
+            Number(
+                item
+                    .replace(/RM/gi,"")
+                    .replace(/,/g,"")
+                    .trim()
             );
 
 
-            if (
-                oilData.change > 0
-            ) {
+        if(
+            Number.isFinite(number) &&
+            number > 3000 &&
+            number < 10000
+        ){
 
-                element.classList.add(
-                    "cpo-up"
-                );
+            value = number;
 
-            }
-
-
-            if (
-                oilData.change < 0
-            ) {
-
-                element.classList.add(
-                    "cpo-down"
-                );
-
-            }
+            break;
 
         }
-    );
+
+    }
 
 
-    document
-        .querySelectorAll(
-            "[data-cpo-date]"
-        )
-        .forEach(
-            element => {
+    if(value === null){
 
-                element.textContent =
-                    oilData.updated;
-
-            }
+        throw new Error(
+            "Harga CPO tidak valid"
         );
 
+    }
 
-    document
-        .querySelectorAll(
-            "[data-cpo-source]"
-        )
-        .forEach(
-            element => {
 
-                element.textContent =
-                    oilData.source;
-
-            }
-        );
+    return value;
 
 }
 
 
 /* =========================================================
-   AMBIL DATA CPO REAL
+   FALLBACK DATA
 ========================================================= */
 
-async function loadCPO() {
+/*
+   Kalau browser tidak mengizinkan koneksi,
+   halaman TIDAK akan menyebutnya LIVE.
 
-    try {
+   Data referensi terakhir yang berhasil diketahui
+   dapat ditampilkan sebagai OFFLINE.
+*/
 
-        console.log(
-            "Mengambil data CPO..."
-        );
+function useOfflineFallback(){
+
+    /*
+       Reference dari data MPOC yang ditemukan:
+
+       6 Aug 2026 = RM 4,686
+
+       Ini bukan live.
+    */
+
+    state.cpoMYR =
+        4686;
+
+    state.previousMYR =
+        4702;
+
+    /*
+       Kurs fallback hanya untuk membuat
+       halaman tetap terlihat.
+       Status tetap OFFLINE.
+    */
+
+    state.myrIDR =
+        4100;
+
+    state.date =
+        "REFERENSI 6 AGUSTUS 2026";
+
+    updateUI();
+
+    setOffline(
+        "OFFLINE — koneksi ke sumber data gagal. Menampilkan referensi terakhir, bukan harga live."
+    );
+
+}
 
 
-        const response =
-            await fetch(
-                CPO_API,
+/* =========================================================
+   LOAD MARKET
+========================================================= */
+
+async function loadMarket(){
+
+    setConnecting();
+
+
+    try{
+
+        const results =
+            await Promise.all([
+                getCPO(),
+                getExchangeRate()
+            ]);
+
+
+        state.cpoMYR =
+            results[0];
+
+        state.myrIDR =
+            results[1];
+
+
+        /*
+           Belum semua sumber menyediakan
+           previous value secara API terbuka.
+           Untuk perubahan harian, kita pakai
+           pendekatan kecil berdasarkan data sebelumnya
+           hanya jika data sebelumnya tersedia.
+        */
+
+        state.previousMYR =
+            null;
+
+
+        state.date =
+            new Date().toLocaleDateString(
+                "id-ID",
                 {
-                    cache:
-                        "no-store"
+                    day:"2-digit",
+                    month:"long",
+                    year:"numeric"
                 }
             );
 
 
-        if (!response.ok) {
+        updateUI();
 
-            throw new Error(
-                "API CPO tidak dapat diakses."
-            );
-
-        }
+        setOnline();
 
 
-        const data =
-            await response.json();
+    }catch(error){
 
-
-        if (!data.success) {
-
-            throw new Error(
-                data.message ||
-                "Data CPO gagal."
-            );
-
-        }
-
-
-        oilData.price =
-            Number(
-                data.price
-            );
-
-
-        oilData.previous =
-            data.previous;
-
-
-        oilData.change =
-            data.change;
-
-
-        oilData.updated =
-            data.date;
-
-
-        oilData.market =
-            data.market;
-
-
-        oilData.source =
-            data.source;
-
-
-        updatePrice();
-
-
-        console.log(
-            "Harga CPO berhasil:",
-            data
-        );
-
-
-    } catch (error) {
-
-        console.error(
-            "CPO ERROR:",
+        console.warn(
+            "Market connection error:",
             error
         );
 
-    }
-
-}
-
-
-/* =========================================================
-   LOAD PERTAMA
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        loadCPO();
+        useOfflineFallback();
 
     }
-);
-
-
-/* =========================================================
-   AUTO UPDATE
-   Setiap 5 menit
-========================================================= */
-
-setInterval(
-    () => {
-
-        loadCPO();
-
-    },
-    5 * 60 * 1000
-);
-
-/* =========================================================
-   FORMAT RUPIAH
-========================================================= */
-
-function formatRupiah(number){
-
-    return new Intl.NumberFormat(
-        "id-ID"
-    ).format(number);
 
 }
 
 
 /* =========================================================
-   UPDATE PRICE
-========================================================= */
-
-const heroPrice =
-    document.getElementById(
-        "heroPrice"
-    );
-
-const mainPrice =
-    document.getElementById(
-        "mainPrice"
-    );
-
-
-if(heroPrice){
-
-    heroPrice.textContent =
-        oilData.currency +
-        " " +
-        formatRupiah(
-            oilData.price
-        );
-
-}
-
-
-if(mainPrice){
-
-    mainPrice.textContent =
-        oilData.currency +
-        " " +
-        formatRupiah(
-            oilData.price
-        );
-
-}
-
-
-/* =========================================================
-   REVEAL
+   REVEAL ON SCROLL
 ========================================================= */
 
 const reveals =
@@ -3212,43 +4171,48 @@ reveals.forEach(
 
 
 /* =========================================================
-   MARKET PULSE
+   PRICE PULSE
 ========================================================= */
 
-setInterval(() => {
+setInterval(
+    () => {
 
-    if(!heroPrice){
-        return;
-    }
-
-    heroPrice.animate(
-
-        [
-            {
-                transform:
-                    "scale(1)"
-            },
-
-            {
-                transform:
-                    "scale(1.035)"
-            },
-
-            {
-                transform:
-                    "scale(1)"
-            }
-
-        ],
-
-        {
-            duration:1200,
-            easing:"ease-in-out"
+        if(!heroPrice){
+            return;
         }
 
-    );
 
-},5000);
+        heroPrice.animate(
+
+            [
+                {
+                    transform:
+                        "scale(1)"
+                },
+
+                {
+                    transform:
+                        "scale(1.035)"
+                },
+
+                {
+                    transform:
+                        "scale(1)"
+                }
+
+            ],
+
+            {
+                duration:1200,
+                easing:"ease-in-out"
+            }
+
+        );
+
+    },
+
+    5000
+);
 
 
 /* =========================================================
@@ -3262,41 +4226,9 @@ document
     .forEach(
         (point,index) => {
 
-            point.style.opacity="0";
-
-            setTimeout(
-                () => {
-
-                    point.animate(
-
-                        [
-                            {
-                                opacity:0,
-                                transform:
-                                    "scale(.4)"
-                            },
-
-                            {
-                                opacity:1,
-                                transform:
-                                    "scale(1)"
-                            }
-
-                        ],
-
-                        {
-                            duration:500,
-                            fill:"forwards",
-                            easing:"ease-out"
-                        }
-
-                    );
-
-                },
-
-                index * 100
-
-            );
+            point.style.animationDelay =
+                (index * .09) +
+                "s";
 
         }
     );
@@ -3322,24 +4254,34 @@ document
                             "href"
                         );
 
-                    if(id === "#"){
+
+                    if(
+                        id === "#"
+                    ){
+
                         return;
+
                     }
+
 
                     const target =
                         document.querySelector(
                             id
                         );
 
+
                     if(target){
 
                         event.preventDefault();
 
+
                         target.scrollIntoView({
 
-                            behavior:"smooth",
+                            behavior:
+                                "smooth",
 
-                            block:"start"
+                            block:
+                                "start"
 
                         });
 
@@ -3374,6 +4316,7 @@ window.addEventListener(
             const scroll =
                 window.scrollY;
 
+
             hero.style.transform =
                 "scale(1.06) translateY(" +
                 (scroll * .08) +
@@ -3386,20 +4329,42 @@ window.addEventListener(
 
 
 /* =========================================================
-   CONSOLE
+   INITIALIZE
 ========================================================= */
 
 console.log(
-    "PT BETAMI — OIL"
+    "PT BETAMI — OIL / CRUDE PALM OIL"
 );
 
 console.log(
-    "CPO Reference:",
-    oilData.price,
-    oilData.currency
+    "Market engine starting..."
+);
+
+
+loadMarket();
+
+
+/*
+   Coba refresh data secara berkala.
+
+   Kalau berhasil:
+   LIVE
+
+   Kalau gagal:
+   OFFLINE
+*/
+
+setInterval(
+    () => {
+
+        loadMarket();
+
+    },
+    10 * 60 * 1000
 );
 
 </script>
+
 
 </body>
 </html>

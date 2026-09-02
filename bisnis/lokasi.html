@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estate / Perkebunan — PT BETAMI</title>
+<meta name="description" content="Profil Estate / Perkebunan PT BETAMI di Suka Rakyat, Kecamatan Rantau, Kabupaten Aceh Tamiang.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --g900:#03210f;--g800:#052e17;--g700:#074d25;--g600:#0a6b33;
+  --g500:#12904a;--gold:#d4af37;--gold2:#f2d98b;--gold3:#8f6b16;
+  --cream:#f8f6f0;--ink:#0d1512;--muted:#6d7a72;--white:#fff;
+  --shadow:0 30px 70px -25px rgba(3,33,15,.45);
+  --font-d:"Playfair Display",serif;--font-b:"Plus Jakarta Sans",sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--font-b);background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.7}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1280px,92%);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold3);margin-bottom:18px}
+.eyebrow:before{content:"";width:38px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.eyebrow.light{color:var(--gold2)}
+h1,h2,h3,h4{font-family:var(--font-d);line-height:1.15;font-weight:700}
+.sec-title{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.5px}
+.sec-title span{background:linear-gradient(100deg,var(--gold3),var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+.lead{color:var(--muted);max-width:680px}
+section{padding:115px 0;position:relative}
+.text-c{text-align:center}
+.text-c .lead{margin-inline:auto}
+.text-c .eyebrow:after{content:"";width:38px;height:1px;background:linear-gradient(270deg,var(--gold),transparent)}
+
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 30px;border-radius:60px;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;border:none;cursor:pointer;transition:.45s var(--ease)}
+.btn-gold{background:linear-gradient(120deg,var(--gold3),var(--gold) 45%,var(--gold2));color:var(--g900);box-shadow:0 18px 40px -14px rgba(212,175,55,.65)}
+.btn-gold:hover{transform:translateY(-4px);box-shadow:0 26px 55px -14px rgba(212,175,55,.8)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:#fff;color:var(--g800);transform:translateY(-4px)}
+
+#loader{position:fixed;inset:0;z-index:99999;background:var(--g900);display:grid;place-items:center;transition:.8s}
+#loader.done{opacity:0;visibility:hidden}
+.ld-wrap{text-align:center}.ld-leaf{font-size:3rem;color:var(--gold);animation:leaf 1.6s infinite alternate}
+@keyframes leaf{to{transform:rotate(25deg) scale(1.1);opacity:1}from{transform:rotate(-25deg) scale(.9);opacity:.5}}
+.ld-name{font-family:var(--font-d);color:#fff;font-size:1.9rem;letter-spacing:.5em;margin:22px 0 6px;text-indent:.5em}
+.ld-sub{color:rgba(255,255,255,.45);font-size:.7rem;letter-spacing:.35em;text-transform:uppercase}
+.ld-bar{width:220px;height:2px;background:rgba(255,255,255,.12);margin:26px auto 0;overflow:hidden}
+.ld-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
+
+.topbar{background:var(--g900);color:rgba(255,255,255,.7);font-size:.76rem;padding:9px 0;border-bottom:1px solid rgba(212,175,55,.16)}
+.topbar .inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.tb-left,.tb-right{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.tb-left i{color:var(--gold);margin-right:7px}
+.tb-stock{color:var(--gold2);font-weight:700;letter-spacing:.08em}
+
+header{position:fixed;top:38px;left:0;right:0;z-index:1001;transition:.6s var(--ease)}
+header.scrolled{top:0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 28px;border-radius:70px;margin-top:16px;background:rgba(3,33,15,.35);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.12);transition:.6s var(--ease)}
+header.scrolled .nav{background:rgba(255,255,255,.92);border-color:rgba(3,33,15,.08);box-shadow:0 20px 50px -25px rgba(3,33,15,.4);margin-top:10px}
+.logo{display:flex;align-items:center;gap:13px;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(140deg,var(--g600),var(--g800));box-shadow:0 10px 25px -10px rgba(10,107,51,.9);color:#fff;font-size:1.3rem}
+.logo-txt strong{font-family:var(--font-d);font-size:1.28rem;color:#fff;letter-spacing:.14em;display:block;line-height:1}
+.logo-txt small{font-size:.55rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:700}
+header.scrolled .logo-txt strong{color:var(--g800)}
+.menu{display:flex;align-items:center;gap:4px}
+.menu li a{padding:11px 16px;font-size:.79rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.85);border-radius:40px;display:block;transition:.35s}
+.menu li a:hover,.menu li a.active{color:var(--gold2);background:rgba(212,175,55,.12)}
+header.scrolled .menu li a{color:var(--g800)}
+header.scrolled .menu li a:hover,header.scrolled .menu li a.active{color:var(--gold3);background:rgba(212,175,55,.14)}
+.btn-login{padding:12px 26px;border-radius:50px;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(120deg,var(--gold3),var(--gold),var(--gold2));color:var(--g900);border:none;box-shadow:0 12px 30px -12px rgba(212,175,55,.7)}
+.burger{display:none}
+
+.hero{position:relative;min-height:92vh;display:grid;align-items:center;overflow:hidden;padding:170px 0 120px}
+.hero-bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1920&q=90") center/cover}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(3,33,15,.95),rgba(5,46,23,.78) 45%,rgba(3,33,15,.32))}
+.hero-bg:before{content:"";position:absolute;inset:0;opacity:.35;background-image:linear-gradient(rgba(212,175,55,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.07) 1px,transparent 1px);background-size:80px 80px}
+.hero-in{position:relative;z-index:2}
+.badge-cert{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.badge-cert span{padding:7px 16px;border-radius:40px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(212,175,55,.45);color:var(--gold2);background:rgba(212,175,55,.08);backdrop-filter:blur(6px)}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5.4rem);color:#fff;letter-spacing:-2px;margin-bottom:25px;max-width:900px}
+.hero h1 em{font-style:italic;background:linear-gradient(100deg,var(--gold3),var(--gold) 40%,var(--gold2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:rgba(255,255,255,.78);font-size:1.05rem;max-width:690px;margin-bottom:36px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+.stats{position:relative;z-index:5;margin-top:-75px}
+.stats-in{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-radius:24px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border:1px solid rgba(212,175,55,.25)}
+.stat{padding:34px 25px;text-align:center;border-right:1px solid rgba(3,33,15,.07)}
+.stat:last-child{border:none}.stat i{color:var(--gold);font-size:1.25rem;margin-bottom:10px;display:block}.stat h3{font-size:1.6rem;color:var(--g800)}.stat p{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:5px}
+
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:76px;align-items:center}
+.about-photos{position:relative;padding:0 0 65px 65px}
+.ph-main{border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.ph-main img{height:510px;object-fit:cover;width:100%;transition:1.2s var(--ease)}
+.ph-main:hover img{transform:scale(1.06)}
+.ph-sub{position:absolute;left:0;bottom:0;width:55%;border-radius:20px;overflow:hidden;border:8px solid var(--cream);box-shadow:var(--shadow)}
+.ph-sub img{height:220px;object-fit:cover;width:100%}
+.ph-frame{position:absolute;top:-22px;right:-22px;width:180px;height:180px;border:2px solid var(--gold);border-radius:20px;z-index:-1;opacity:.7}
+.exp-badge{position:absolute;right:-10px;top:55px;background:linear-gradient(150deg,var(--g700),var(--g900));color:#fff;padding:20px 24px;border-radius:18px;text-align:center;box-shadow:var(--shadow);border:1px solid rgba(212,175,55,.35)}
+.exp-badge strong{font-family:var(--font-d);font-size:2rem;color:var(--gold2);display:block;line-height:1}
+.exp-badge span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.about-copy p{color:var(--muted);margin-bottom:20px}
+.about-list{margin:25px 0 32px;display:grid;gap:13px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;font-size:.92rem}
+.about-list i{color:var(--gold);margin-top:5px}
+
+.dark-sec{background:radial-gradient(1200px 600px at 85% 15%,rgba(18,144,74,.25),transparent),linear-gradient(160deg,var(--g900),#04180c 70%);color:#fff}
+.dark-sec .lead{color:rgba(255,255,255,.62)}.dark-sec .sec-title{color:#fff}
+.chain{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:55px}
+.chain-card{position:relative;border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.03);transition:.5s var(--ease)}
+.chain-card:hover{transform:translateY(-10px);border-color:rgba(212,175,55,.45)}
+.chain-card img{width:100%;height:250px;object-fit:cover}
+.chain-number{position:absolute;top:18px;left:18px;background:var(--gold);color:var(--g900);padding:7px 11px;border-radius:30px;font-size:.68rem;font-weight:800;z-index:2}
+.chain-content{padding:25px}.chain-content h3{font-size:1.35rem;margin-bottom:9px}.chain-content p{color:rgba(255,255,255,.62);font-size:.84rem}
+.info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
+.info-box{padding:27px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.025)}
+.info-icon{font-size:1.4rem;color:var(--gold);margin-bottom:10px}.info-box h3{font-size:1.15rem}.info-box p{color:#83948b;font-size:.8rem;margin-top:7px}
+
+.location-panel{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.map-card{border-radius:25px;overflow:hidden;min-height:430px;background:linear-gradient(145deg,#0a4326,#021a0e);box-shadow:var(--shadow);position:relative}
+.map-card iframe{width:100%;height:430px;border:0;filter:saturate(.9)}
+.address-card{padding:15px 0}
+.address-card .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold3);font-weight:800;margin-bottom:12px}
+.address-card h2{font-size:2.7rem;color:var(--g800);margin-bottom:15px}
+.address-card p{color:var(--muted);line-height:1.9}
+.address-item{display:flex;gap:15px;margin-top:23px;padding-top:20px;border-top:1px solid rgba(3,33,15,.1)}
+.address-item i{color:var(--gold);font-size:1.15rem;margin-top:4px}.address-item b{display:block;color:var(--g800);font-size:.9rem}.address-item span{font-size:.78rem;color:var(--muted)}
+.location-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+.betami{background:linear-gradient(135deg,var(--g900),#061b10);color:#fff;overflow:hidden}
+.betami-inner{width:min(1250px,90%);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.betami-inner h2{font-size:clamp(40px,5vw,65px);letter-spacing:-3px;line-height:1;margin-bottom:22px}
+.betami-inner h2 span{color:#58c889}.betami-inner p{color:#8c9d94;line-height:1.9;font-size:15px;margin-bottom:25px}
+.points{display:grid;gap:12px}.point{display:flex;align-items:center;gap:12px;color:#c3cec8;font-size:13px}
+.check{width:23px;height:23px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(25,184,107,.12);color:#58c889}
+.visual{height:430px;border-radius:25px;overflow:hidden;border:1px solid rgba(255,255,255,.1);position:relative}
+.visual img{width:100%;height:100%;object-fit:cover}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,30,17,.15),rgba(0,0,0,.58))}
+
+footer{padding:45px 20px;text-align:center;color:#66766e;font-size:12px;border-top:1px solid rgba(255,255,255,.07);background:#020d08;line-height:1.8}
+
+@media(max-width:1000px){
+  .menu{display:none}.burger{display:block}.stats-in{grid-template-columns:1fr 1fr}
+  .about-grid,.location-panel,.betami-inner{grid-template-columns:1fr;gap:45px}
+  .chain{grid-template-columns:1fr 1fr}.info-strip{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  section{padding:80px 0}.nav{padding:12px 18px}.btn-login{padding:10px 17px}
+  .hero{min-height:90vh;padding-top:145px}.hero h1{font-size:2.8rem}
+  .stats{margin-top:-45px}.stats-in{grid-template-columns:1fr 1fr}.stat{padding:25px 12px}
+  .about-photos{padding-left:30px}.ph-main img{height:380px}.ph-sub{width:58%}.exp-badge{right:-4px;top:30px}
+  .chain{grid-template-columns:1fr}.chain-card img{height:220px}.map-card,.map-card iframe{min-height:330px;height:330px}
+  .address-card h2{font-size:2.1rem}.betami-inner{width:92%}.visual{height:330px}
+}
+</style>
+</head>
+
+<body>
+<div id="loader">
+  <div class="ld-wrap">
+    <div class="ld-leaf">🌿</div>
+    <div class="ld-name">BETAMI</div>
+    <div class="ld-sub">Estate • Sustainable Palm Oil</div>
+    <div class="ld-bar"><i></i></div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container inner">
+    <div class="tb-left">
+      <span><i class="fa-solid fa-location-dot"></i>Rantau • Aceh Tamiang</span>
+      <span><i class="fa-solid fa-leaf"></i>Estate / Perkebunan</span>
+    </div>
+    <div class="tb-right"><span class="tb-stock">PT BETAMI • OPERATIONS</span></div>
+  </div>
+</div>
+
+<header id="header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><i class="fa-solid fa-leaf"></i></div>
+      <div class="logo-txt"><strong>PT.BETAMI</strong><small>PT Benih Tamiang</small></div>
+    </a>
+    <ul class="menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="index.html#tentang">Tentang</a></li>
+      <li><a href="index.html#produk">Produk</a></li>
+      <li><a href="index.html#peta" class="active">Lokasi Operasi</a></li>
+      <li><a href="index.html#berita">Berita</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+    </ul>
+    <button class="btn-login" onclick="location.href='index.html#peta'"><i class="fa-solid fa-arrow-left"></i> Kembali</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-in">
+    <div class="badge-cert">
+      <span><i class="fa-solid fa-map-pin"></i> Lokasi Operasi</span>
+      <span>Aceh Tamiang</span><span>Rantau</span><span>PT BETAMI</span>
+    </div>
+    <div class="eyebrow light">PT BETAMI • ESTATE</div>
+    <h1>Menjaga <em>Perkebunan</em>,<br>Merawat Rantai Nilai.</h1>
+    <p>
+      Mengenal lebih dekat Estate / Perkebunan PT BETAMI yang berlokasi di
+      73MX+PWQ, Suka Rakyat, Kecamatan Rantau, Kabupaten Aceh Tamiang, Aceh 24453.
+    </p>
+    <div class="hero-cta">
+      <a href="#profil" class="btn btn-gold">Jelajahi Estate <i class="fa-solid fa-arrow-down"></i></a>
+      <a href="#lokasi" class="btn btn-ghost"><i class="fa-solid fa-location-dot"></i> Lihat Lokasi</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container">
+    <div class="stats-in">
+      <div class="stat"><i class="fa-solid fa-tree"></i><h3>ESTATE</h3><p>Unit Perkebunan</p></div>
+      <div class="stat"><i class="fa-solid fa-location-dot"></i><h3>RANTAU</h3><p>Aceh Tamiang</p></div>
+      <div class="stat"><i class="fa-solid fa-seedling"></i><h3>PALM</h3><p>Kelapa Sawit</p></div>
+      <div class="stat"><i class="fa-solid fa-route"></i><h3>73MX+PWQ</h3><p>Lokasi</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="profil">
+  <div class="container about-grid">
+    <div class="about-photos">
+      <div class="ph-frame"></div>
+      <div class="ph-main">
+        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1200&q=90" alt="Perkebunan kelapa sawit PT BETAMI">
+      </div>
+      <div class="ph-sub">
+        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=90" alt="Area hijau perkebunan">
+      </div>
+      <div class="exp-badge"><strong>ESTATE</strong><span>Rantau • Aceh Tamiang</span></div>
+    </div>
+
+    <div class="about-copy">
+      <div class="eyebrow">Profil Lokasi</div>
+      <h2 class="sec-title">Estate <span>PT BETAMI.</span></h2>
+      <p style="margin-top:20px">
+        Estate / Perkebunan merupakan bagian penting dari rantai operasional kelapa sawit.
+        Halaman ini menjadi pusat informasi lokasi untuk membantu mengenali area operasional
+        PT BETAMI di Suka Rakyat, Kecamatan Rantau, Kabupaten Aceh Tamiang.
+      </p>
+      <p>
+        Dari area perkebunan, aktivitas budidaya dan pemeliharaan tanaman menjadi bagian
+        awal dari perjalanan Tandan Buah Segar menuju fasilitas pengolahan.
+      </p>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-circle-check"></i><span><b>Lokasi:</b> 73MX+PWQ, Suka Rakyat, Kecamatan Rantau</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><b>Wilayah:</b> Kabupaten Aceh Tamiang, Aceh</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><b>Fungsi:</b> Estate / Perkebunan Kelapa Sawit</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span><b>Keterhubungan:</b> Mendukung rantai nilai kebun hingga pengolahan</span></li>
+      </ul>
+      <a href="#aktivitas" class="btn btn-gold">Lihat Aktivitas <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="dark-sec" id="aktivitas">
+  <div class="container">
+    <div class="text-c">
+      <div class="eyebrow light">ESTATE VALUE CHAIN</div>
+      <h2 class="sec-title">Dari Kebun Menuju <span>Nilai.</span></h2>
+      <p class="lead" style="margin-top:16px">
+        Aktivitas estate merupakan bagian awal dari rantai nilai kelapa sawit,
+        mulai dari pengelolaan tanaman hingga hasil panen diteruskan untuk pengolahan.
+      </p>
+    </div>
+
+    <div class="chain">
+      <article class="chain-card">
+        <div class="chain-number">01</div>
+        <img src="https://haisawit.co.id/images/blogs/1773025304.jpg" alt="Perkebunan kelapa sawit">
+        <div class="chain-content">
+          <h3>Budidaya Kebun</h3>
+          <p>Pengelolaan tanaman, pemeliharaan area kebun, dan kegiatan operasional perkebunan.</p>
+        </div>
+      </article>
+
+      <article class="chain-card">
+        <div class="chain-number">02</div>
+        <img src="https://cdn.antaranews.com/cache/1200x800/2022/05/09/IMG-20220509-WA0025_3.jpg" alt="Panen kelapa sawit">
+        <div class="chain-content">
+          <h3>Panen TBS</h3>
+          <p>Tandan Buah Segar dipanen dan dipersiapkan untuk diteruskan menuju fasilitas pengolahan.</p>
+        </div>
+      </article>
+
+      <article class="chain-card">
+        <div class="chain-number">03</div>
+        <img src="https://images.bisnis.com/photos/2023/07/21/193095/antarafoto-cpo-penyumbang-bea-cukai-terbanyak-di-aceh-210723-syf-13.jpg" alt="Pengolahan kelapa sawit">
+        <div class="chain-content">
+          <h3>Menuju Pengolahan</h3>
+          <p>Hasil kebun menjadi bagian dari alur pasok menuju pabrik kelapa sawit untuk pengolahan.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-box"><div class="info-icon">🌱</div><h3>Plantation</h3><p>Fondasi awal rantai nilai kelapa sawit berada pada pengelolaan kebun.</p></div>
+      <div class="info-box"><div class="info-icon">🚜</div><h3>Harvest</h3><p>Kegiatan panen dan pengangkutan mendukung kesinambungan pasokan.</p></div>
+      <div class="info-box"><div class="info-icon">⚙️</div><h3>Processing</h3><p>Hasil kebun diteruskan menuju fasilitas pengolahan sesuai alur operasional.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="lokasi">
+  <div class="container location-panel">
+    <div class="map-card">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=98.07%2C4.25%2C98.13%2C4.32&layer=mapnik&marker=4.2843125%2C98.0998125"
+        loading="lazy"
+        title="Peta Estate PT BETAMI">
+      </iframe>
+    </div>
+
+    <div class="address-card">
+      <div class="label">Lokasi Estate / Perkebunan</div>
+      <h2>Suka Rakyat,<br><span style="color:var(--gold3)">Rantau.</span></h2>
+      <p>
+        Lokasi yang ditetapkan untuk Estate / Perkebunan PT BETAMI berada di
+        73MX+PWQ, Suka Rakyat, Kecamatan Rantau, Kabupaten Aceh Tamiang, Aceh 24453.
+      </p>
+
+      <div class="address-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div><b>Alamat</b><span>73MX+PWQ, Suka Rakyat, Kec. Rantau, Kabupaten Aceh Tamiang, Aceh 24453</span></div>
+      </div>
+      <div class="address-item">
+        <i class="fa-solid fa-map-pin"></i>
+        <div><b>Koordinat</b><span>4.2843125, 98.0998125</span></div>
+      </div>
+
+      <div class="location-buttons">
+        <a class="btn btn-gold" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=4.2843125,98.0998125">
+          Buka Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a class="btn btn-ghost" style="background:var(--g800);color:#fff;border-color:var(--g700)" href="index.html#peta">
+          <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="betami">
+  <div class="betami-inner">
+    <div>
+      <div class="eyebrow light">PT BETAMI • ESTATE</div>
+      <h2>Growing with<br><span>purpose.</span></h2>
+      <p>
+        Perkebunan bukan sekadar area produksi. Ia menjadi bagian dari ekosistem
+        yang menghubungkan tanaman, manusia, pengelolaan lahan, hasil panen,
+        hingga fasilitas pengolahan dalam satu rantai nilai.
+      </p>
+      <div class="points">
+        <div class="point"><span class="check">✓</span> Pengelolaan kebun yang terencana</div>
+        <div class="point"><span class="check">✓</span> Rantai pasok kebun menuju pengolahan</div>
+        <div class="point"><span class="check">✓</span> Perhatian pada keberlanjutan operasional</div>
+        <div class="point"><span class="check">✓</span> Terhubung dengan jaringan operasi PT BETAMI</div>
+      </div>
+    </div>
+    <div class="visual">
+      <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=90" alt="Area hijau perkebunan">
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 PT BETAMI — PT Benih Tamiang. Halaman Estate / Perkebunan.
+</footer>
+
+<script>
+window.addEventListener("load",()=>{
+  setTimeout(()=>document.getElementById("loader").classList.add("done"),700);
+});
+const header=document.getElementById("header");
+window.addEventListener("scroll",()=>{
+  header.classList.toggle("scrolled",window.scrollY>45);
+});
+</script>
+</body>
+</html>
